@@ -21,3 +21,60 @@ DarkRP.createCategory{
 Add new categories under the next line!
 ---------------------------------------------------------------------------]]
 
+DarkRP.createCategory{
+	name = "Pistols",
+	categorises = "shipments",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+}
+DarkRP.createCategory{
+	name = "Machine Guns",
+	categorises = "shipments",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+}
+DarkRP.createCategory{
+	name = "Sub-Machine Guns",
+	categorises = "shipments",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+}
+DarkRP.createCategory{
+	name = "Sniper Rifles",
+	categorises = "shipments",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+}
+DarkRP.createCategory{
+	name = "Revolvers",
+	categorises = "shipments",
+	startExpanded = true,
+	color = Color(0, 107, 0, 255),
+}
+
+DarkRP.createCategory{
+    name = "Printers",
+    categorises = "entities",
+    startExpanded = true,
+    color = Color(0, 107, 0, 255),
+	 canSee = fp{fn.Id, true},
+	 sortOrder = 99,
+}
+
+DarkRP.createCategory{
+    name = "Restraints",
+    categorises = "shipments",
+    startExpanded = true,
+    color = Color(150, 70, 0, 255),
+	 canSee = fp{fn.Id, true},
+	 sortOrder = 98,
+}
+
+DarkRP.createCategory{
+    name = "Other",
+    categorises = "jobs",
+    startExpanded = true,
+    color = Color(10, 10, 10, 255),
+	 canSee = fp{fn.Id, true},
+	 sortOrder = 101,
+}

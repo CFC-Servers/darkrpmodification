@@ -18,7 +18,7 @@ Set to true or false.
 -- voice3D - Enable/disable 3DVoice is enabled.
 GM.Config.voice3D                       = true
 -- AdminsCopWeapons - Enable/disable admins spawning with cop weapons.
-GM.Config.AdminsCopWeapons              = true
+GM.Config.AdminsCopWeapons              = false
 -- adminBypassJobCustomCheck - Enable/disable whether an admin can force set a job with whenever customCheck returns false.
 GM.Config.adminBypassJobRestrictions    = true
 -- allow people getting their own custom jobs.
@@ -72,7 +72,7 @@ GM.Config.deathpov                      = false
 -- decalcleaner - Enable/Disable clearing every player's decals.
 GM.Config.decalcleaner                  = false
 -- disallowClientsideScripts - Clientside scripts can be very useful for customizing the HUD or to aid in building. This option bans those scripts.
-GM.Config.disallowClientsideScripts     = false
+GM.Config.disallowClientsideScripts     = true
 -- doorwarrants - Enable/disable Warrant requirement to enter property.
 GM.Config.doorwarrants                  = true
 -- dropmoneyondeath - Enable/disable whether people drop money on death.
@@ -134,7 +134,7 @@ GM.Config.propspawning                  = true
 -- removeclassitems - Enable/disable shipments/microwaves/etc. removal when someone changes team.
 GM.Config.removeclassitems              = true
 -- removeondisconnect - Enable/disable shipments/microwaves/etc. removal when someone disconnects.
-GM.Config.removeondisconnect            = true
+GM.Config.removeondisconnect            = false
 -- respawninjail - Enable/disable whether people can respawn in jail when they die.
 GM.Config.respawninjail                 = true
 -- restrictallteams - Enable/disable Players can only be citizen until an admin allows them.
@@ -158,7 +158,7 @@ GM.Config.unlockdoorsonstart            = false
 -- voiceradius - Enable/disable local voice chat.
 GM.Config.voiceradius                   = true
 -- tax - Whether players pay taxes on their wallets.
-GM.Config.wallettax                     = false
+GM.Config.wallettax                     = true
 -- wantedrespawn - Whether players remain wanted on respawn.
 GM.Config.wantedrespawn                 = false
 -- wantedsuicide - Enable/Disable suiciding while you are wanted by the police.
@@ -180,7 +180,7 @@ GM.Config.adminnpcs                     = 3
 -- adminsents - Whether or not SENTs should be admin only. 0 = everyone, 1 = admin or higher, 2 = superadmin or higher, 3 = rcon only
 GM.Config.adminsents                    = 1
 -- adminvehicles - Whether or not vehicles should be admin only. 0 = everyone, 1 = admin or higher, 2 = superadmin or higher, 3 = rcon only
-GM.Config.adminvehicles                 = 3
+GM.Config.adminvehicles                 = 2
 -- adminweapons - Who can spawn weapons: 0: admins only, 1: supadmins only, 2: no one, 3: everyone
 GM.Config.adminweapons                  = 1
 -- arrestspeed - Sets the max arrest speed.
@@ -217,7 +217,7 @@ GM.Config.maxdrugs                      = 2
 -- maxfoods - Sets the max food cartons per Microwave owner.
 GM.Config.maxfoods                      = 2
 -- maxfooditems - Sets the max amount of food items a player can buy from the F4 menu.
-GM.Config.maxfooditems                  = 20
+GM.Config.maxfooditems                  = 50
 -- maxlawboards - The maximum number of law boards the mayor can place.
 GM.Config.maxlawboards                  = 2
 -- maxletters - Sets max letters.
@@ -271,11 +271,11 @@ GM.Config.startingmoney                 = 500
 -- vehiclecost - Sets the cost of a vehicle (To own it).
 GM.Config.vehiclecost                   = 40
 -- wallettaxmax - Maximum percentage of tax to be paid.
-GM.Config.wallettaxmax                  = 5
+GM.Config.wallettaxmax                  = 0
 -- wallettaxmin - Minimum percentage of tax to be paid.
-GM.Config.wallettaxmin                  = 1
+GM.Config.wallettaxmin                  = 0
 -- wallettaxtime - Time in seconds between taxing players. Requires server restart.
-GM.Config.wallettaxtime                 = 600
+GM.Config.wallettaxtime                 = 900
 -- wantedtime - Number of seconds for which a player is wanted for.
 GM.Config.wantedtime                    = 120
 -- walkspeed - Sets the max walking speed.
@@ -323,6 +323,7 @@ GM.Config.F1MenuHelpPageTitle = "DarkRP Wiki"
 GM.Config.DefaultPlayerGroups = {
     ["STEAM_0:0:00000000"] = "superadmin",
     ["STEAM_0:0:11111111"] = "admin",
+	["STEAM_0:0:37556596"] = "superadmin",
 }
 
 -- Custom modules in this addon that are disabled.
@@ -338,7 +339,6 @@ GM.Config.DisallowDrop = {
     ["gmod_camera"] = true,
     ["gmod_tool"] = true,
     ["keys"] = true,
-    ["lockpick"] = true,
     ["med_kit"] = true,
     ["pocket"] = true,
     ["stunstick"] = true,
@@ -347,15 +347,21 @@ GM.Config.DisallowDrop = {
     ["weapon_physcannon"] = true,
     ["weapon_physgun"] = true,
     ["weaponchecker"] = true,
+	["weapon_fists"] = true,
+	["weapon_cuff_police"] = true,
+	["weapon_stungun"] = true,
+	["m9k_m29satan"] = true,
+	["m9k_m92beretta"] = true,
 }
 
 -- The list of weapons people spawn with.
 GM.Config.DefaultWeapons = {
     "keys",
+	"weapon_fists",
     "weapon_physcannon",
     "gmod_camera",
     "gmod_tool",
-    "pocket",
+    "itemstore_pickup",
     "weapon_physgun",
 }
 
@@ -414,7 +420,6 @@ GM.Config.AdminWeapons = {
 GM.Config.DefaultLaws = {
     "Do not attack other citizens except in self-defence.",
     "Do not steal or break into people's homes.",
-    "Money printers/drugs are illegal.",
 }
 
 GM.Config.PocketBlacklist = {
@@ -441,6 +446,11 @@ GM.Config.PocketBlacklist = {
     ["gmod_light"] = true,
     ["gmod_lamp"] = true,
     ["gmod_emitter"] = true,
+	["budget_printer"] = true,
+	["overclocked_printer"] = true,
+	["finetuned_printer"] = true,
+	["darkrp_tip_jar"] = true,
+	["weapon_cuff_police"] = true,
 }
 
 -- These weapons are classed as 'legal' in the weapon checker and are not stripped when confiscating weapons.
@@ -515,6 +525,6 @@ GM.Config.hitCustomerCooldown = 240
 Hungermod module
 ---------------------------------------------------------------------------]]
 -- hungerspeed <Amount> - Set the rate at which players will become hungry (2 is the default).
-GM.Config.hungerspeed = 2
+GM.Config.hungerspeed = .5
 -- starverate <Amount> - How much health that is taken away every second the player is starving  (3 is the default).
-GM.Config.starverate = 3
+GM.Config.starverate = 1

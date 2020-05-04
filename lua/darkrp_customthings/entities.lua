@@ -16,3 +16,39 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
 
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
+
+DarkRP.createEntity("Overclocked Money Printer", {
+	ent = "overclocked_printer",
+	model = "models/props_c17/consolebox01a.mdl",
+	price = 2000,
+	max = 2,
+	cmd = "buyocprinter",
+	category = "Printers",
+})
+
+DarkRP.createEntity("Fine-Tuned Money Printer", {
+	ent = "finetuned_printer",
+	model = "models/props_c17/consolebox01a.mdl",
+	price = 2000,
+	max = 2,
+	cmd = "buyftprinter",
+	category = "Printers",
+})
+
+DarkRP.createEntity("Budget Money Printer", {
+	ent = "budget_printer",
+	model = "models/props_c17/consolebox05a.mdl",
+	price = 600,
+	max = 2,
+	cmd = "buybudgetprinter",
+	category = "Printers",
+})
+
+DarkRP.createEntity("Money Printer", {
+    ent = "money_printer",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 1000,
+    max = 2,
+    cmd = "buymoneyprinter",
+	category = "Printers",
+})
