@@ -5,7 +5,7 @@ AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("shared.lua")
 include("shared.lua")
 
-ENT.SeizeReward = 950
+ENT.SeizeReward = 1050
 
 local PrintMore
 function ENT:Initialize()
