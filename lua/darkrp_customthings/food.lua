@@ -35,12 +35,6 @@ DarkRP.createFood("Beer", {
     price = 10
 })
 
-DarkRP.createFood("Cheeseburger", {
-    model = "models/foodnhouseholditems/burgersims2.mdl",
-    energy = 30,
-    price = 30
-})
-
 DarkRP.createFood("Cake", {
     model = "models/foodnhouseholditems/cake.mdl",
     energy = 100,
@@ -59,6 +53,12 @@ DarkRP.createFood("Champagne", {
     price = 20
 })
 
+DarkRP.createFood("Cheeseburger", {
+    model = "models/foodnhouseholditems/burgersims2.mdl",
+    energy = 30,
+    price = 30
+})
+
 DarkRP.createFood("Cheese Wheel", {
     model = "models/foodnhouseholditems/cheesewheel1a.mdl",
     energy = 100,
@@ -71,6 +71,12 @@ DarkRP.createFood("Cheese Slice", {
     price = 10
 })
 
+DarkRP.createFood("Chicken Wrap", {
+    model = "models/foodnhouseholditems/chicken_wrap.mdl",
+    energy = 25,
+    price = 25
+})
+
 DarkRP.createFood("Chips", {
     model = "models/foodnhouseholditems/chipsbag1.mdl",
     energy = 20,
@@ -81,6 +87,12 @@ DarkRP.createFood("Cereal", {
     model = "models/foodnhouseholditems/chocorings.mdl",
     energy = 30,
     price = 30
+})
+
+DarkRP.createFood("Coconut Drink", {
+    model = "models/foodnhouseholditems/coconut_drink.mdl",
+    energy = 20,
+    price = 20
 })
 
 DarkRP.createFood("Bottle of Soda", {
@@ -113,8 +125,32 @@ DarkRP.createFood("Hotdog", {
     price = 25
 })
 
-DarkRP.createFood("Icecream", {
+DarkRP.createFood("Neapolitan Icecream", {
+    model = "models/foodnhouseholditems/icecream1.mdl",
+    energy = 20,
+    price = 20
+})
+
+DarkRP.createFood("Vanilla Icecream", {
+    model = "models/foodnhouseholditems/icecream2.mdl",
+    energy = 20,
+    price = 20
+})
+
+DarkRP.createFood("Strawberry Icecream", {
+    model = "models/foodnhouseholditems/icecream3.mdl",
+    energy = 20,
+    price = 20
+})
+
+DarkRP.createFood("Chocolate Icecream", {
     model = "models/foodnhouseholditems/icecream4.mdl",
+    energy = 20,
+    price = 20
+})
+
+DarkRP.createFood("Pistacho Icecream", {
+    model = "models/foodnhouseholditems/icecream5.mdl",
     energy = 20,
     price = 20
 })
@@ -179,6 +215,12 @@ DarkRP.createFood("Slice of Pizza", {
     price = 10
 })
 
+DarkRP.createFood("Pretzel", {
+    model = "models/foodnhouseholditems/pretzel.mdl",
+    energy = 15,
+    price = 15
+})
+
 DarkRP.createFood("Sandwich", {
     model = "models/foodnhouseholditems/sandwich.mdl",
     energy = 25,
@@ -203,6 +245,12 @@ DarkRP.createFood("Toblerone", {
     price = 15
 })
 
+DarkRP.createFood("Toast", {
+    model = "models/foodnhouseholditems/toast.mdl",
+    energy = 15,
+    price = 15
+})
+
 DarkRP.createFood("Turkey", {
     model = "models/foodnhouseholditems/turkey.mdl",
     energy = 75,
@@ -219,4 +267,28 @@ DarkRP.createFood("Wine", {
     model = "models/foodnhouseholditems/wine_red3.mdl",
     energy = 30,
     price = 30
+})
+
+DarkRP.createFood("Bass", {
+    model = "models/foodnhouseholditems/fishbass.mdl",
+    energy = 40,
+    price = 40
+})
+
+DarkRP.createFood("Catfish", {
+    model = "models/foodnhouseholditems/fishcatfish.mdl",
+    energy = 60,
+    price = 60
+})
+
+DarkRP.createFood("Golden Fish", {
+    model = "models/foodnhouseholditems/fishgolden.mdl",
+    energy = 50,
+    price = 50
+})
+
+DarkRP.createFood("Rainbow Fish", {
+    model = "models/foodnhouseholditems/fishrainbow.mdl",
+    energy = 20,
+    price = 20
 })
