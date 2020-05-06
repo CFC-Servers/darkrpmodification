@@ -104,3 +104,7 @@ TCBDealer.vehicleTable["mere63tdm"] = {
 TCBDealer.vehicleTable["mer_slrtdm"] = {
 	price = 140000,
 }
+
+TCBDealer.vehicleTable["f350tdm"] = {
+	price = 30000,
+}
