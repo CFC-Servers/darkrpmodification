@@ -420,6 +420,7 @@ GM.Config.AdminWeapons = {
 GM.Config.DefaultLaws = {
     "Do not attack other citizens except in self-defence.",
     "Do not steal or break into people's homes.",
+    "Money printers/drugs are illegal.",
 }
 
 GM.Config.PocketBlacklist = {
