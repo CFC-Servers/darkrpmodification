@@ -203,18 +203,6 @@ DarkRP.createFood("Pineapple Drink", {
     price = 20
 })
 
-DarkRP.createFood("Pizza", {
-    model = "models/foodnhouseholditems/pizza.mdl",
-    energy = 80,
-    price = 80
-})
-
-DarkRP.createFood("Slice of Pizza", {
-    model = "models/foodnhouseholditems/pizzaslice.mdl",
-    energy = 10,
-    price = 10
-})
-
 DarkRP.createFood("Pretzel", {
     model = "models/foodnhouseholditems/pretzel.mdl",
     energy = 15,
