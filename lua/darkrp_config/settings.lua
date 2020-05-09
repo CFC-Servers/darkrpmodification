@@ -158,7 +158,7 @@ GM.Config.unlockdoorsonstart            = false
 -- voiceradius - Enable/disable local voice chat.
 GM.Config.voiceradius                   = true
 -- tax - Whether players pay taxes on their wallets.
-GM.Config.wallettax                     = true
+GM.Config.wallettax                     = false
 -- wantedrespawn - Whether players remain wanted on respawn.
 GM.Config.wantedrespawn                 = false
 -- wantedsuicide - Enable/Disable suiciding while you are wanted by the police.
