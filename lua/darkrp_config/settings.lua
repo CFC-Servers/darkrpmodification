@@ -347,17 +347,20 @@ GM.Config.DisallowDrop = {
     ["weapon_physcannon"] = true,
     ["weapon_physgun"] = true,
     ["weaponchecker"] = true,
-	["weapon_fists"] = true,
-	["weapon_cuff_police"] = true,
-	["weapon_stungun"] = true,
-	["m9k_m29satan"] = true,
-	["m9k_m92beretta"] = true,
+    ["weapon_fists"] = true,
+    ["weapon_cuff_police"] = true,
+    ["weapon_stungun"] = true,
+    ["m9k_m29satan"] = true,
+    ["m9k_m92beretta"] = true,
+    ["m9k_m16a4_acog"] = true,
+    ["m9k_m3"] = true,
+    ["m9k_mp5sd"] = true,
 }
 
 -- The list of weapons people spawn with.
 GM.Config.DefaultWeapons = {
     "keys",
-	"weapon_fists",
+    "weapon_fists",
     "weapon_physcannon",
     "gmod_camera",
     "gmod_tool",
@@ -447,11 +450,11 @@ GM.Config.PocketBlacklist = {
     ["gmod_light"] = true,
     ["gmod_lamp"] = true,
     ["gmod_emitter"] = true,
-	["budget_printer"] = true,
-	["overclocked_printer"] = true,
-	["finetuned_printer"] = true,
-	["darkrp_tip_jar"] = true,
-	["weapon_cuff_police"] = true,
+    ["budget_printer"] = true,
+    ["overclocked_printer"] = true,
+    ["finetuned_printer"] = true,
+    ["darkrp_tip_jar"] = true,
+    ["weapon_cuff_police"] = true,
 }
 
 -- These weapons are classed as 'legal' in the weapon checker and are not stripped when confiscating weapons.
