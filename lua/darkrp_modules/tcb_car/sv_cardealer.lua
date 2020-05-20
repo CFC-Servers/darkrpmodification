@@ -354,10 +354,30 @@ function TCBDealer.spawnVehicle(length, ply)
 		local vehicleList = list.Get("Vehicles")[vehID]
 		if !vehicleList then return end
 
-		local spawnedVehicle = ents.Create(vehicleList.Class)
-		if !spawnedVehicle then return end
+		local spawnedVehicle
+		local vehicleClass = vehicleList.Class
 
-		spawnedVehicle:SetModel(vehicleList.Model)
+		local isSimfPhys = string.sub(vehicleClass, 1, 9) == "sim_fphys"
+
+		if isSimfPhys then
+		    if not simfphys then
+		        error("Tried to spawn a simfphys vehicle but simfphys isn't initialized!")
+		        return
+            end
+		    spawnedVehicle = simfphys.SpawnVehicleSimple(vehicleClass, spawnPoint.pos, spawnPoint.ang)
+        else
+            spawnedVehicle = ents.Create(vehicleClass)
+		    spawnedVehicle:SetModel(vehicleList.Model)
+            spawnedVehicle:SetPos(spawnPoint.pos)
+            spawnedVehicle:SetAngles(spawnPoint.ang)
+            spawnedVehicle:Spawn()
+            spawnedVehicle:Activate()
+        end
+
+		if not spawnedVehicle then
+		    error("Tried to spawn a vehicle but failed! (" .. vehicleClass .. ")")
+		    return
+		end
 
 		if vehicleList.KeyValues then
 			for k, v in pairs(vehicleList.KeyValues) do
@@ -367,18 +387,14 @@ function TCBDealer.spawnVehicle(length, ply)
 
 		spawnedVehicle.VehicleTable = vehicleList
 
-		spawnedVehicle:SetPos(spawnPoint.pos)
-		spawnedVehicle:SetAngles(spawnPoint.ang)
-		spawnedVehicle:Spawn()
-		spawnedVehicle:Activate()
-
 		spawnedVehicle:keysOwn(ply)
 		spawnedVehicle:keysLock()
 
 		spawnedVehicle:SetNWString("dealerName", vehicle.name or vehicleList.Name)
 		spawnedVehicle:SetNWString("dealerClass", vehID)
 
-		gamemode.Call(PlayerSpawnedVehicle, ply, spawnedVehicle)
+		-- TODO: Decide what this is supposed to do and how to handle it with simfphys (which might already call it)
+		--gamemode.Call(PlayerSpawnedVehicle, ply, spawnedVehicle)
 		ply:SetNWEntity("currentVehicle", spawnedVehicle)
 
 		--> Color
