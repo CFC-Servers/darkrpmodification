@@ -55,7 +55,7 @@ DarkRP.disabledDefaults["jobs"] = {
     ["gundealer"] = true,
     ["hobo"]      = true,
     ["mayor"]     = true,
-    ["medic"]     = false,
+    ["medic"]     = true,
     ["mobboss"]   = true,
 }
 
