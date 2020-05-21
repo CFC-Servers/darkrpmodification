@@ -340,3 +340,15 @@ DarkRP.createShipment("Sticky Grenade", {
 	allowed = {TEAM_BLACKMARKET},
 	category = "Other",
 })
+
+DarkRP.createShipment("Health Vial", {
+	model = "models/healthvial.mdl",
+	entity = "item_healthvial",
+	price = 7500,
+	amount = 10,
+	separate = false,
+	pricesep = 750,
+	noship = false,
+	allowed = {TEAM_MEDIC},
+	category = "Other",
+})
