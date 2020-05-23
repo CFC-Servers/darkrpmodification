@@ -355,6 +355,7 @@ GM.Config.DisallowDrop = {
     ["m9k_m16a4_acog"] = true,
     ["m9k_m3"] = true,
     ["m9k_mp5sd"] = true,
+    ["weapon_defibrillator"] = true,
 }
 
 -- The list of weapons people spawn with.
@@ -455,6 +456,7 @@ GM.Config.PocketBlacklist = {
     ["finetuned_printer"] = true,
     ["darkrp_tip_jar"] = true,
     ["weapon_cuff_police"] = true,
+    ["weapon_defibrillator"] = true,
 }
 
 -- These weapons are classed as 'legal' in the weapon checker and are not stripped when confiscating weapons.
