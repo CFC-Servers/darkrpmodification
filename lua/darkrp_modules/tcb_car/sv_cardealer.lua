@@ -110,8 +110,7 @@ function TCBDealer.spawnDealer()
 	--> Precache
 	if TCBDealer.settings.precache then
 		for k,v in pairs(TCBDealer.vehicleTable) do
-			
-			local vehicleList = list.Get("Vehicles")[k]
+            local vehicleList = list.Get("Vehicles")[k] or list.Get("simfphys_vehicles")[k]
 			if !vehicleList then return end
 
 			util.PrecacheModel(vehicleList.Model)
@@ -184,7 +183,7 @@ function TCBDealer.purchaseVehicle(length, ply)
 	end
 	local vehicle = TCBDealer.vehicleTable[vehID]
 
-	local vehicleInfo = list.Get("Vehicles")[vehID]
+	local vehicleInfo = list.Get("Vehicles")[vehID] or list.Get("simfphys_vehicles")[vehID]
 	if !vehicleInfo then return end
 
 	local vehName = vehicle.name or vehicleInfo.Name
@@ -228,7 +227,7 @@ function TCBDealer.sellVehicle(length, ply)
 	end
 	vehicle = TCBDealer.vehicleTable[vehID]
 
-	local vehicleInfo = list.Get("Vehicles")[vehID]
+	local vehicleInfo = list.Get("Vehicles")[vehID] or list.Get("simfphys_vehicles")[vehID]
 	if !vehicleInfo then return end
 
 	local vehName = vehicle.name or vehicleInfo.Name
@@ -351,20 +350,21 @@ function TCBDealer.spawnVehicle(length, ply)
 		end
 
 		--> Spawn
-		local vehicleList = list.Get("Vehicles")[vehID]
+		local vehicleList = list.Get("Vehicles")[vehID] or list.Get("simfphys_vehicles")[vehID]
 		if !vehicleList then return end
 
 		local spawnedVehicle
 		local vehicleClass = vehicleList.Class
 
-		local isSimfPhys = string.sub(vehicleClass, 1, 9) == "sim_fphys"
-
+		local isSimfPhys = list.Get("simfphys_vehicles")[vehID] ~= nil
+    
 		if isSimfPhys then
 		    if not simfphys then
 		        error("Tried to spawn a simfphys vehicle but simfphys isn't initialized!")
 		        return
             end
-		    spawnedVehicle = simfphys.SpawnVehicleSimple(vehicleClass, spawnPoint.pos, spawnPoint.ang)
+            
+		    spawnedVehicle = simfphys.SpawnVehicleSimple(vehID, spawnPoint.pos, spawnPoint.ang)
         else
             spawnedVehicle = ents.Create(vehicleClass)
 		    spawnedVehicle:SetModel(vehicleList.Model)
