@@ -296,7 +296,7 @@ local function carDealer()
 		--> Vehicle Info
 		local vehicleInfo = {}
 		if !v.name or !v.mdl then
-			vehicleInfo = list.Get("Vehicles")[k]
+			vehicleInfo = list.Get("Vehicles")[k] or list.Get("simfphys_vehicles")[k]
 			if !vehicleInfo then continue end
 		end
 
