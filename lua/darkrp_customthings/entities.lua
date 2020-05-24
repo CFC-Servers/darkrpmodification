@@ -43,3 +43,19 @@ DarkRP.createEntity("Money Printer", {
     cmd = "buymoneyprinter",
 	category = "Printers",
 })
+
+DarkRP.createEntity("Printer", { 
+    ent = "tierp_printer", 
+    model = "models/freeman/money_printer.mdl", 
+    price = 10000, 
+    max = 2, 
+    cmd = "buytierprinter" 
+}) 
+ 
+DarkRP.createEntity("Printer Battery", { 
+    ent = "tierp_battery", 
+    model = "models/freeman/giant_battery.mdl", 
+    price = 500, 
+    max = 2, 
+    cmd = "buytierbattery" 
+}) 
