@@ -17,37 +17,28 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
-DarkRP.createEntity("Fine-Tuned Money Printer", {
-	ent = "finetuned_printer",
-	model = "models/props_c17/consolebox01a.mdl",
-	price = 2000,
+DarkRP.createEntity("Weapons Bench", {
+	ent = "bcrafting_weaponsbench",
+	model = "models/workshop/workbench/workbench_weapons.mdl",
+	price = 500,
 	max = 1,
-	cmd = "buyftprinter",
-	category = "Printers",
+	cmd = "buyweaponsbench",
+	allowed = {TEAM_GUN},
 })
 
-DarkRP.createEntity("Budget Money Printer", {
-	ent = "budget_printer",
-	model = "models/props_c17/consolebox05a.mdl",
-	price = 600,
+DarkRP.createEntity("Crafting Bench", {
+	ent = "bcrafting_generalbench",
+	model = "models/workshop/workbench/workbench.mdl",
+	price = 500,
 	max = 1,
-	cmd = "buybudgetprinter",
-	category = "Printers",
-})
-
-DarkRP.createEntity("Money Printer", {
-    ent = "money_printer",
-    model = "models/props_c17/consolebox01a.mdl",
-    price = 1000,
-    max = 1,
-    cmd = "buymoneyprinter",
-	category = "Printers",
+	cmd = "buycraftingbench",
+	allowed = {TEAM_BLACKMARKET},
 })
 
 DarkRP.createEntity("Printer", { 
     ent = "tierp_printer", 
     model = "models/freeman/money_printer.mdl", 
-    price = 10000, 
+    price = 3000, 
     max = 2, 
     cmd = "buytierprinter" 
 }) 
