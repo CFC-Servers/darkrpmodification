@@ -58,53 +58,75 @@ TCBDealer.dealerSpawns["rp_downtown_tits_v2"] = {
 	}
 }
 
+TCBDealer.dealerSpawns["rp_southside"] = {
+	{
+		pos = Vector(-7583, 1600, 32.031250),
+		ang = Angle(0, 0, 0),
+		mdl = "models/Humans/Group01/male_07.mdl",
+
+		spawns = {
+			{
+				pos = Vector(-6967, 1058, 24.031250),
+				ang = Angle(0, 180, 0)
+			},
+			{
+				pos = Vector(-7405, 1060, 24.031250),
+				ang = Angle(0, 0, 0)
+			},
+
+		}
+	}
+}
+
 --[[---------------------------------------------------------
 	Vehicles - http://facepunch.com/showthread.php?t=1481400 / https://www.youtube.com/watch?v=WSTBFk6nX6k
 -----------------------------------------------------------]]
-TCBDealer.vehicleTable["f100tdm"] = {
+TCBDealer.vehicleTable["sim_fphys_mw_cop_1st"] = {
+	price = 0,
+	customCheck = function(ply) return table.HasValue({TEAM_POLICE, TEAM_CHIEF, TEAM_DEA}, ply:Team()) end,
+	CustomCheckFailMsg = "This vehicle is only available to police officers",
+}
+
+TCBDealer.vehicleTable["sim_fphys_mobscot"] = {
+	price = 750,
+}
+
+TCBDealer.vehicleTable["sim_fphys_rnsw"] = {
+	price = 1500,
+}
+
+TCBDealer.vehicleTable["sim_fphys_van"] = {
+	price = 2000,
+}
+
+TCBDealer.vehicleTable["sim_fphys_pwzaz"] = {
+	price = 3000,
+}
+
+TCBDealer.vehicleTable["sim_fphys_pwvan"] = {
+	price = 4000,
+}
+
+TCBDealer.vehicleTable["sim_fphys_pwhatchback"] = {
+	price = 5000,
+}
+
+TCBDealer.vehicleTable["sim_fphys_pwmoskvich"] = {
+	price = 6000,
+}
+
+TCBDealer.vehicleTable["sim_fphys_pwvolga"] = {
+	price = 7000,
+}
+
+TCBDealer.vehicleTable["sim_fphys_pwtrabant"] = {
 	price = 8000,
 }
 
-TCBDealer.vehicleTable["focussvttdm"] = {
-	price = 24000,
+TCBDealer.vehicleTable["sim_fphys_pwtrabant02"] = {
+	price = 8000,
 }
 
-TCBDealer.vehicleTable["mustanggttdm"] = {
-	price = 52000,
-}
-
-TCBDealer.vehicleTable["hon_crxsirtdm"] = {
+TCBDealer.vehicleTable["sim_fphys_pwavia"] = {
 	price = 10000,
-}
-
-TCBDealer.vehicleTable["s2000tdm"] = {
-	price = 24000,
-}
-
-TCBDealer.vehicleTable["miuracontdm"] = {
-	price = 60000,
-}
-
-TCBDealer.vehicleTable["gallardotdm"] = {
-	price = 120000,
-}
-
-TCBDealer.vehicleTable["reventonrtdm"] = {
-	price = 160000,
-}
-
-TCBDealer.vehicleTable["mer300seltdm"] = {
-	price = 42000,
-}
-
-TCBDealer.vehicleTable["mere63tdm"] = {
-	price = 50000,
-}
-
-TCBDealer.vehicleTable["mer_slrtdm"] = {
-	price = 140000,
-}
-
-TCBDealer.vehicleTable["f350tdm"] = {
-	price = 30000,
 }
