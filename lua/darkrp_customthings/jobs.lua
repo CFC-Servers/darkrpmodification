@@ -16,19 +16,171 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomJobFields
 Add your custom jobs under the following line:
 ---------------------------------------------------------------------------]]
 
+TEAM_CITIZEN = DarkRP.createJob("Citizen", {
+    color = Color(20, 150, 20, 255),
+    model = {
+        "models/player/zelpa/female_01.mdl",
+        "models/player/zelpa/female_01_b.mdl",
+        "models/player/zelpa/female_02.mdl",
+        "models/player/zelpa/female_02_b.mdl",
+        "models/player/zelpa/female_03.mdl",
+        "models/player/zelpa/female_03_b.mdl",
+        "models/player/zelpa/female_04.mdl",
+        "models/player/zelpa/female_04_b.mdl",
+        "models/player/zelpa/female_06.mdl",
+        "models/player/zelpa/female_06_b.mdl",
+        "models/player/zelpa/female_07.mdl",
+        "models/player/zelpa/female_07_b.mdl",
+        "models/player/zelpa/male_01.mdl",
+        "models/player/zelpa/male_02.mdl",
+        "models/player/zelpa/male_03.mdl",
+        "models/player/zelpa/male_04.mdl",
+        "models/player/zelpa/male_05.mdl",
+        "models/player/zelpa/male_06.mdl",
+        "models/player/zelpa/male_07.mdl",
+        "models/player/zelpa/male_08.mdl",
+        "models/player/zelpa/male_09.mdl",
+        "models/player/zelpa/male_10.mdl",
+        "models/player/zelpa/male_11.mdl",
+	"models/joshers/badasses/playermodels/breen.mdl",
+	"models/joshers/badasses/playermodels/breen_closed.mdl",
+	"models/joshers/badasses/playermodels/barney.mdl",
+	"models/joshers/badasses/playermodels/barney_closed.mdl",
+	"models/joshers/badasses/playermodels/eli.mdl",
+	"models/joshers/badasses/playermodels/eli_closed.mdl",
+	"models/joshers/badasses/playermodels/gman.mdl",
+	"models/joshers/badasses/playermodels/gman_closed.mdl",
+	"models/joshers/badasses/playermodels/gordon.mdl",
+	"models/joshers/badasses/playermodels/gordon_closed.mdl",
+	"models/joshers/badasses/playermodels/grigori.mdl",
+	"models/joshers/badasses/playermodels/grigori_closed.mdl",
+	"models/joshers/badasses/playermodels/kleiner.mdl",
+	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
+	"models/joshers/badasses/playermodels/magnusson.mdl",
+	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
+	"models/joshers/badasses/playermodels/odessa.mdl",
+	"models/joshers/badasses/playermodels/odessa_closed.mdl"
+    },
+    description = [[The Citizen is the most basic level of society you can hold besides being a hobo. You have no specific role in city life.]],
+    weapons = {},
+    command = "citizen",
+    max = 0,
+    salary = GAMEMODE.Config.normalsalary,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Citizens",
+})
+
+TEAM_MECHANIC = DarkRP.createJob("Mechanic", {
+    color = Color(30, 200, 100, 255),
+    model = {
+        "models/player/zelpa/female_01.mdl",
+        "models/player/zelpa/female_01_b.mdl",
+        "models/player/zelpa/female_02.mdl",
+        "models/player/zelpa/female_02_b.mdl",
+        "models/player/zelpa/female_03.mdl",
+        "models/player/zelpa/female_03_b.mdl",
+        "models/player/zelpa/female_04.mdl",
+        "models/player/zelpa/female_04_b.mdl",
+        "models/player/zelpa/female_06.mdl",
+        "models/player/zelpa/female_06_b.mdl",
+        "models/player/zelpa/female_07.mdl",
+        "models/player/zelpa/female_07_b.mdl",
+        "models/player/zelpa/male_01.mdl",
+        "models/player/zelpa/male_02.mdl",
+        "models/player/zelpa/male_03.mdl",
+        "models/player/zelpa/male_04.mdl",
+        "models/player/zelpa/male_05.mdl",
+        "models/player/zelpa/male_06.mdl",
+        "models/player/zelpa/male_07.mdl",
+        "models/player/zelpa/male_08.mdl",
+        "models/player/zelpa/male_09.mdl",
+        "models/player/zelpa/male_10.mdl",
+        "models/player/zelpa/male_11.mdl",
+	"models/joshers/badasses/playermodels/breen.mdl",
+	"models/joshers/badasses/playermodels/breen_closed.mdl",
+	"models/joshers/badasses/playermodels/barney.mdl",
+	"models/joshers/badasses/playermodels/barney_closed.mdl",
+	"models/joshers/badasses/playermodels/eli.mdl",
+	"models/joshers/badasses/playermodels/eli_closed.mdl",
+	"models/joshers/badasses/playermodels/gman.mdl",
+	"models/joshers/badasses/playermodels/gman_closed.mdl",
+	"models/joshers/badasses/playermodels/gordon.mdl",
+	"models/joshers/badasses/playermodels/gordon_closed.mdl",
+	"models/joshers/badasses/playermodels/grigori.mdl",
+	"models/joshers/badasses/playermodels/grigori_closed.mdl",
+	"models/joshers/badasses/playermodels/kleiner.mdl",
+	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
+	"models/joshers/badasses/playermodels/magnusson.mdl",
+	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
+	"models/joshers/badasses/playermodels/odessa.mdl",
+	"models/joshers/badasses/playermodels/odessa_closed.mdl"
+    },
+    description = [[Use your repair tool to help fix up people's cars.]],
+    weapons = {weapon_simrepair},
+    command = "mechanic",
+    max = 3,
+    salary = GAMEMODE.Config.normalsalary,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Citizens",
+})
+
 TEAM_HITMAN = DarkRP.createJob("Mercenary", {
     color = Color(75, 0, 0, 255),
     model = {
-		"models/player/leet.mdl",
-		"models/player/guerilla.mdl",
-		"models/player/arctic.mdl",
-		"models/player/phoenix.mdl"},
+        "models/player/zelpa/female_01.mdl",
+        "models/player/zelpa/female_01_b.mdl",
+        "models/player/zelpa/female_02.mdl",
+        "models/player/zelpa/female_02_b.mdl",
+        "models/player/zelpa/female_03.mdl",
+        "models/player/zelpa/female_03_b.mdl",
+        "models/player/zelpa/female_04.mdl",
+        "models/player/zelpa/female_04_b.mdl",
+        "models/player/zelpa/female_06.mdl",
+        "models/player/zelpa/female_06_b.mdl",
+        "models/player/zelpa/female_07.mdl",
+        "models/player/zelpa/female_07_b.mdl",
+        "models/player/zelpa/male_01.mdl",
+        "models/player/zelpa/male_02.mdl",
+        "models/player/zelpa/male_03.mdl",
+        "models/player/zelpa/male_04.mdl",
+        "models/player/zelpa/male_05.mdl",
+        "models/player/zelpa/male_06.mdl",
+        "models/player/zelpa/male_07.mdl",
+        "models/player/zelpa/male_08.mdl",
+        "models/player/zelpa/male_09.mdl",
+        "models/player/zelpa/male_10.mdl",
+        "models/player/zelpa/male_11.mdl",
+	"models/joshers/badasses/playermodels/breen.mdl",
+	"models/joshers/badasses/playermodels/breen_closed.mdl",
+	"models/joshers/badasses/playermodels/barney.mdl",
+	"models/joshers/badasses/playermodels/barney_closed.mdl",
+	"models/joshers/badasses/playermodels/eli.mdl",
+	"models/joshers/badasses/playermodels/eli_closed.mdl",
+	"models/joshers/badasses/playermodels/gman.mdl",
+	"models/joshers/badasses/playermodels/gman_closed.mdl",
+	"models/joshers/badasses/playermodels/gordon.mdl",
+	"models/joshers/badasses/playermodels/gordon_closed.mdl",
+	"models/joshers/badasses/playermodels/grigori.mdl",
+	"models/joshers/badasses/playermodels/grigori_closed.mdl",
+	"models/joshers/badasses/playermodels/kleiner.mdl",
+	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
+	"models/joshers/badasses/playermodels/magnusson.mdl",
+	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
+	"models/joshers/badasses/playermodels/odessa.mdl",
+	"models/joshers/badasses/playermodels/odessa_closed.mdl"
+    },
     description = [[Get yourself a gun and get hired for jobs.
 	Get paid to participate in raids, guard the Mob Boss, or for simple hits.
 	Just be careful not to get caught by the cops.]],
     weapons = {},
     command = "mercenary",
-    max = 3,
+    max = 1,
     salary = GAMEMODE.Config.normalsalary,
     admin = 0,
     vote = false,
@@ -38,14 +190,53 @@ TEAM_HITMAN = DarkRP.createJob("Mercenary", {
 
 TEAM_MEDIC = DarkRP.createJob("Medic", {
     color = Color(47, 79, 79, 255),
-    model = "models/player/kleiner.mdl",
-    description = [[With your medical knowledge you work to restore players to full health.
-        Without a medic, people cannot be healed.
-        Left click with the Medical Kit to heal other players.
-        Right click with the Medical Kit to heal yourself.]],
+    model = {
+        "models/player/zelpa/female_01.mdl",
+        "models/player/zelpa/female_01_b.mdl",
+        "models/player/zelpa/female_02.mdl",
+        "models/player/zelpa/female_02_b.mdl",
+        "models/player/zelpa/female_03.mdl",
+        "models/player/zelpa/female_03_b.mdl",
+        "models/player/zelpa/female_04.mdl",
+        "models/player/zelpa/female_04_b.mdl",
+        "models/player/zelpa/female_06.mdl",
+        "models/player/zelpa/female_06_b.mdl",
+        "models/player/zelpa/female_07.mdl",
+        "models/player/zelpa/female_07_b.mdl",
+        "models/player/zelpa/male_01.mdl",
+        "models/player/zelpa/male_02.mdl",
+        "models/player/zelpa/male_03.mdl",
+        "models/player/zelpa/male_04.mdl",
+        "models/player/zelpa/male_05.mdl",
+        "models/player/zelpa/male_06.mdl",
+        "models/player/zelpa/male_07.mdl",
+        "models/player/zelpa/male_08.mdl",
+        "models/player/zelpa/male_09.mdl",
+        "models/player/zelpa/male_10.mdl",
+        "models/player/zelpa/male_11.mdl",
+	"models/joshers/badasses/playermodels/breen.mdl",
+	"models/joshers/badasses/playermodels/breen_closed.mdl",
+	"models/joshers/badasses/playermodels/barney.mdl",
+	"models/joshers/badasses/playermodels/barney_closed.mdl",
+	"models/joshers/badasses/playermodels/eli.mdl",
+	"models/joshers/badasses/playermodels/eli_closed.mdl",
+	"models/joshers/badasses/playermodels/gman.mdl",
+	"models/joshers/badasses/playermodels/gman_closed.mdl",
+	"models/joshers/badasses/playermodels/gordon.mdl",
+	"models/joshers/badasses/playermodels/gordon_closed.mdl",
+	"models/joshers/badasses/playermodels/grigori.mdl",
+	"models/joshers/badasses/playermodels/grigori_closed.mdl",
+	"models/joshers/badasses/playermodels/kleiner.mdl",
+	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
+	"models/joshers/badasses/playermodels/magnusson.mdl",
+	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
+	"models/joshers/badasses/playermodels/odessa.mdl",
+	"models/joshers/badasses/playermodels/odessa_closed.mdl"
+    },
+    description = [[With your medical knowledge you work to restore players to full health bring them back from the brink.]],
     weapons = {"med_kit","weapon_defibrillator"},
     command = "medic",
-    max = 3,
+    max = 4,
     salary = GAMEMODE.Config.normalsalary,
     admin = 0,
     vote = false,
@@ -54,19 +245,19 @@ TEAM_MEDIC = DarkRP.createJob("Medic", {
     category = "Citizens",
 })
 
-TEAM_POLICE = DarkRP.createJob("Civil Protection", {
+TEAM_POLICE = DarkRP.createJob("Police Officer", {
     color = Color(25, 25, 170, 255),
     model = {
-		"models/player/police.mdl",
-		"models/player/police_fem.mdl"},
+		"models/dpfilms/metropolice/playermodels/pm_hdpolice.mdl",
+		"models/dpfilms/metropolice/playermodels/pm_female_police.mdl"},
     description = [[The protector of every citizen that lives in the city.
-        You have the power to arrest criminals and protect innocents.
-        Hit a player with your arrest baton to put them in jail.
-        Bash a player with a stunstick and they may learn to obey the law.
-        The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
-        The Battering Ram can also unfreeze frozen props (if enabled).
+	You have the power to arrest criminals and protect innocents.
+	Hit a player with your arrest baton to put them in jail.
+	Bash a player with a stunstick and they may learn to obey the law.
+	The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
+	The Battering Ram can also unfreeze frozen props (if enabled).
         Type /wanted <name> to alert the public to the presence of a criminal.]],
-    weapons = {"arrest_stick", "unarrest_stick", "m9k_m92beretta", "stunstick", "door_ram", "weaponchecker", "weapon_cuff_police", "weapon_stungun"},
+    weapons = {"arrest_stick", "unarrest_stick", "cw_p99", "stunstick", "door_ram", "weaponchecker", "weapon_cuff_police", "weapon_stungun"},
     command = "cp",
     max = 7,
     salary = GAMEMODE.Config.normalsalary * 1.56,
@@ -74,22 +265,46 @@ TEAM_POLICE = DarkRP.createJob("Civil Protection", {
     vote = true,
     hasLicense = true,
     ammo = {
-        ["pistol"] = 60,
+        ["cw_ammo_9x19"] = 45,
     },
     category = "Civil Protection",
 })
 
-TEAM_CHIEF = DarkRP.createJob("Civil Protection Chief", {
+TEAM_DEA = DarkRP.createJob("DEA Agent", {
+    color = Color(15, 15, 150, 255),
+    model = {
+		"models/dpfilms/metropolice/playermodels/pm_retrocop.mdl"},
+    description = [[As a member of the DEA, your job is to be on the lookout for drugs within the city.
+	Use your drug sniffer to sniff out some product or an illegal setup.
+	Hit a player with your arrest baton to put them in jail.
+	Bash a player with a stunstick and they may learn to obey the law.
+	The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
+	The Battering Ram can also unfreeze frozen props (if enabled).
+	Type /wanted <name> to alert the public to the presence of a criminal.]],
+    weapons = {"arrest_stick", "unarrest_stick", "cw_p99", "stunstick", "door_ram", "weaponchecker", "weapon_cuff_police", "weapon_stungun", "zwf_sniffer"},
+    command = "dea",
+    max = 2,
+    salary = GAMEMODE.Config.normalsalary * 1.56,
+    admin = 0,
+    vote = false,
+    hasLicense = true,
+    ammo = {
+        ["cw_ammo_9x19"] = 45,
+    },
+    category = "Civil Protection",
+})
+
+TEAM_CHIEF = DarkRP.createJob("Chief of Police", {
     color = Color(20, 20, 255, 255),
-    model = {"models/player/combine_soldier_prisonguard.mdl"},
-    description = [[The Chief is the leader of the Civil Protection unit.
-        Coordinate the police force to enforce law in the city.
-        Hit a player with arrest baton to put them in jail.
-        Bash a player with a stunstick and they may learn to obey the law.
-        The Battering Ram can break down the door of a criminal, with a warrant for his/her arrest.
-        Type /wanted <name> to alert the public to the presence of a criminal.
-        Type /jailpos to set the Jail Position]],
-    weapons = {"arrest_stick", "unarrest_stick", "m9k_m29satan", "stunstick", "door_ram", "weaponchecker", "weapon_cuff_police", "weapon_stungun"},
+    model = {"models/dpfilms/metropolice/playermodels/pm_policetrench.mdl"},
+    description = [[The Chief is the leader of city Police.
+	Coordinate the police force to enforce law in the city.
+	Hit a player with arrest baton to put them in jail.
+	Bash a player with a stunstick and they may learn to obey the law.
+	The Battering Ram can break down the door of a criminal, with a warrant for his/her arrest.
+	Type /wanted <name> to alert the public to the presence of a criminal.
+	Type /jailpos to set the Jail Position]],
+    weapons = {"arrest_stick", "unarrest_stick", "cw_deagle", "stunstick", "door_ram", "weaponchecker", "weapon_cuff_police", "weapon_stungun"},
     command = "chief",
     max = 1,
     salary = GAMEMODE.Config.normalsalary * 1.78,
@@ -97,57 +312,63 @@ TEAM_CHIEF = DarkRP.createJob("Civil Protection Chief", {
     vote = false,
     hasLicense = true,
     chief = true,
-    NeedToChangeFrom = TEAM_POLICE,
     ammo = {
-        ["pistol"] = 60,
+        ["cw_ammo_50ae"] = 21,
     },
     category = "Civil Protection",
-})
-
-TEAM_GUARD = DarkRP.createJob("Security Guard", {
-    color = Color(175, 255, 0, 255),
-    model = {
-		"models/player/odessa.mdl",
-		"models/player/swat.mdl",
-		"models/player/urban.mdl",
-		"models/player/gasmask.mdl",
-		"models/player/riot.mdl"},
-    description = [[Get hired to do guard work for businesses or organizations.
-	Be sure to know what you're getting into beforehand,
-	and what your pay will be.]],
-    weapons = {"stunstick"},
-    command = "guard",
-    max = 4,
-    salary = GAMEMODE.Config.normalsalary,
-    admin = 0,
-    vote = false,
-    hasLicense = false,
-    category = "Citizens",
 })
 
 TEAM_GANG = DarkRP.createJob("Gangster", {
     color = Color(75, 75, 75, 255),
     model = {
-        "models/player/Group03/Female_01.mdl",
-        "models/player/Group03/Female_02.mdl",
-        "models/player/Group03/Female_03.mdl",
-        "models/player/Group03/Female_04.mdl",
-        "models/player/Group03/Female_06.mdl",
-        "models/player/group03/male_01.mdl",
-        "models/player/Group03/Male_02.mdl",
-        "models/player/Group03/male_03.mdl",
-        "models/player/Group03/Male_04.mdl",
-        "models/player/Group03/Male_05.mdl",
-        "models/player/Group03/Male_06.mdl",
-        "models/player/Group03/Male_07.mdl",
-        "models/player/Group03/Male_08.mdl",
-        "models/player/Group03/Male_09.mdl"},
+        "models/player/zelpa/female_01.mdl",
+        "models/player/zelpa/female_01_b.mdl",
+        "models/player/zelpa/female_02.mdl",
+        "models/player/zelpa/female_02_b.mdl",
+        "models/player/zelpa/female_03.mdl",
+        "models/player/zelpa/female_03_b.mdl",
+        "models/player/zelpa/female_04.mdl",
+        "models/player/zelpa/female_04_b.mdl",
+        "models/player/zelpa/female_06.mdl",
+        "models/player/zelpa/female_06_b.mdl",
+        "models/player/zelpa/female_07.mdl",
+        "models/player/zelpa/female_07_b.mdl",
+        "models/player/zelpa/male_01.mdl",
+        "models/player/zelpa/male_02.mdl",
+        "models/player/zelpa/male_03.mdl",
+        "models/player/zelpa/male_04.mdl",
+        "models/player/zelpa/male_05.mdl",
+        "models/player/zelpa/male_06.mdl",
+        "models/player/zelpa/male_07.mdl",
+        "models/player/zelpa/male_08.mdl",
+        "models/player/zelpa/male_09.mdl",
+        "models/player/zelpa/male_10.mdl",
+        "models/player/zelpa/male_11.mdl",
+	"models/joshers/badasses/playermodels/breen.mdl",
+	"models/joshers/badasses/playermodels/breen_closed.mdl",
+	"models/joshers/badasses/playermodels/barney.mdl",
+	"models/joshers/badasses/playermodels/barney_closed.mdl",
+	"models/joshers/badasses/playermodels/eli.mdl",
+	"models/joshers/badasses/playermodels/eli_closed.mdl",
+	"models/joshers/badasses/playermodels/gman.mdl",
+	"models/joshers/badasses/playermodels/gman_closed.mdl",
+	"models/joshers/badasses/playermodels/gordon.mdl",
+	"models/joshers/badasses/playermodels/gordon_closed.mdl",
+	"models/joshers/badasses/playermodels/grigori.mdl",
+	"models/joshers/badasses/playermodels/grigori_closed.mdl",
+	"models/joshers/badasses/playermodels/kleiner.mdl",
+	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
+	"models/joshers/badasses/playermodels/magnusson.mdl",
+	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
+	"models/joshers/badasses/playermodels/odessa.mdl",
+	"models/joshers/badasses/playermodels/odessa_closed.mdl"
+    },
     description = [[The lowest person of crime.
-        A gangster generally works for the Mobboss who runs the crime family.
-        The Mob boss sets your agenda and you follow it or you might be punished.]],
+	A gangster generally works for the Mobboss who runs the crime family.
+	The Mob boss sets your agenda and you follow it or you might be punished.]],
     weapons = {},
     command = "gangster",
-    max = 6,
+    max = 0,
     salary = GAMEMODE.Config.normalsalary,
     admin = 0,
     vote = false,
@@ -158,8 +379,48 @@ TEAM_GANG = DarkRP.createJob("Gangster", {
 TEAM_GUN = DarkRP.createJob("Gun Dealer", {
     color = Color(255, 140, 0, 255),
     model = {
-		"models/player/monk.mdl",
-		"models/player/alyx.mdl"},
+        "models/player/zelpa/female_01.mdl",
+        "models/player/zelpa/female_01_b.mdl",
+        "models/player/zelpa/female_02.mdl",
+        "models/player/zelpa/female_02_b.mdl",
+        "models/player/zelpa/female_03.mdl",
+        "models/player/zelpa/female_03_b.mdl",
+        "models/player/zelpa/female_04.mdl",
+        "models/player/zelpa/female_04_b.mdl",
+        "models/player/zelpa/female_06.mdl",
+        "models/player/zelpa/female_06_b.mdl",
+        "models/player/zelpa/female_07.mdl",
+        "models/player/zelpa/female_07_b.mdl",
+        "models/player/zelpa/male_01.mdl",
+        "models/player/zelpa/male_02.mdl",
+        "models/player/zelpa/male_03.mdl",
+        "models/player/zelpa/male_04.mdl",
+        "models/player/zelpa/male_05.mdl",
+        "models/player/zelpa/male_06.mdl",
+        "models/player/zelpa/male_07.mdl",
+        "models/player/zelpa/male_08.mdl",
+        "models/player/zelpa/male_09.mdl",
+        "models/player/zelpa/male_10.mdl",
+        "models/player/zelpa/male_11.mdl",
+	"models/joshers/badasses/playermodels/breen.mdl",
+	"models/joshers/badasses/playermodels/breen_closed.mdl",
+	"models/joshers/badasses/playermodels/barney.mdl",
+	"models/joshers/badasses/playermodels/barney_closed.mdl",
+	"models/joshers/badasses/playermodels/eli.mdl",
+	"models/joshers/badasses/playermodels/eli_closed.mdl",
+	"models/joshers/badasses/playermodels/gman.mdl",
+	"models/joshers/badasses/playermodels/gman_closed.mdl",
+	"models/joshers/badasses/playermodels/gordon.mdl",
+	"models/joshers/badasses/playermodels/gordon_closed.mdl",
+	"models/joshers/badasses/playermodels/grigori.mdl",
+	"models/joshers/badasses/playermodels/grigori_closed.mdl",
+	"models/joshers/badasses/playermodels/kleiner.mdl",
+	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
+	"models/joshers/badasses/playermodels/magnusson.mdl",
+	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
+	"models/joshers/badasses/playermodels/odessa.mdl",
+	"models/joshers/badasses/playermodels/odessa_closed.mdl"
+    },
     description = [[A Gun Dealer is the only person who can sell guns to other people.
         Make sure you aren't caught selling illegal firearms to the public! You might get arrested!]],
     weapons = {},
@@ -174,7 +435,49 @@ TEAM_GUN = DarkRP.createJob("Gun Dealer", {
 
 TEAM_MAYOR = DarkRP.createJob("Mayor", {
     color = Color(150, 20, 20, 255),
-    model = "models/player/breen.mdl",
+    model = {
+        "models/player/zelpa/female_01.mdl",
+        "models/player/zelpa/female_01_b.mdl",
+        "models/player/zelpa/female_02.mdl",
+        "models/player/zelpa/female_02_b.mdl",
+        "models/player/zelpa/female_03.mdl",
+        "models/player/zelpa/female_03_b.mdl",
+        "models/player/zelpa/female_04.mdl",
+        "models/player/zelpa/female_04_b.mdl",
+        "models/player/zelpa/female_06.mdl",
+        "models/player/zelpa/female_06_b.mdl",
+        "models/player/zelpa/female_07.mdl",
+        "models/player/zelpa/female_07_b.mdl",
+        "models/player/zelpa/male_01.mdl",
+        "models/player/zelpa/male_02.mdl",
+        "models/player/zelpa/male_03.mdl",
+        "models/player/zelpa/male_04.mdl",
+        "models/player/zelpa/male_05.mdl",
+        "models/player/zelpa/male_06.mdl",
+        "models/player/zelpa/male_07.mdl",
+        "models/player/zelpa/male_08.mdl",
+        "models/player/zelpa/male_09.mdl",
+        "models/player/zelpa/male_10.mdl",
+        "models/player/zelpa/male_11.mdl",
+	"models/joshers/badasses/playermodels/breen.mdl",
+	"models/joshers/badasses/playermodels/breen_closed.mdl",
+	"models/joshers/badasses/playermodels/barney.mdl",
+	"models/joshers/badasses/playermodels/barney_closed.mdl",
+	"models/joshers/badasses/playermodels/eli.mdl",
+	"models/joshers/badasses/playermodels/eli_closed.mdl",
+	"models/joshers/badasses/playermodels/gman.mdl",
+	"models/joshers/badasses/playermodels/gman_closed.mdl",
+	"models/joshers/badasses/playermodels/gordon.mdl",
+	"models/joshers/badasses/playermodels/gordon_closed.mdl",
+	"models/joshers/badasses/playermodels/grigori.mdl",
+	"models/joshers/badasses/playermodels/grigori_closed.mdl",
+	"models/joshers/badasses/playermodels/kleiner.mdl",
+	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
+	"models/joshers/badasses/playermodels/magnusson.mdl",
+	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
+	"models/joshers/badasses/playermodels/odessa.mdl",
+	"models/joshers/badasses/playermodels/odessa_closed.mdl"
+    },
     description = [[The Mayor of the city creates laws to govern the city.
     If you are the mayor you may create and accept warrants.
     Type /wanted <name>  to warrant a player.
@@ -192,24 +495,13 @@ TEAM_MAYOR = DarkRP.createJob("Mayor", {
     hasLicense = false,
     mayor = true,
     category = "Civil Protection",
-    PlayerDeath = function(ply)
-        if ply:Team() == TEAM_MAYOR then
-            ply:changeTeam( TEAM_CITIZEN, true )
-            for k,v in pairs( player.GetAll() ) do
-                    DarkRP.notify(v, 1, 4, "The mayor has been killed!")
-            end
-        end
-    end,
 })
 
 TEAM_HOBO = DarkRP.createJob("Hobo", {
     color = Color(80, 45, 0, 255),
     model = "models/player/corpse1.mdl",
-    description = [[The lowest member of society. Everybody laughs at you.
-        You have no home.
-        Beg for your food and money
-        Sing for everyone who passes to get money
-        Make your own wooden home somewhere in a corner or outside someone else's door]],
+    description = [[You're homeless and out of a job.
+	Set up a makeshift home somewhere and try to make some money.]],
     weapons = {"weapon_bugbait"},
     command = "hobo",
     max = 0,
@@ -222,33 +514,56 @@ TEAM_HOBO = DarkRP.createJob("Hobo", {
     category = "Citizens",
 })
 
-TEAM_MOB = DarkRP.createJob("Mob Boss", {
-    color = Color(25, 25, 25, 255),
-    model = "models/player/gman_high.mdl",
-    description = [[The Mob boss is the boss of the criminals in the city.
-        With his power he coordinates the gangsters and forms an efficient crime organization.
-        He has the ability to break into houses by using a lockpick.
-        The Mob boss posesses the ability to unarrest you.]],
-    weapons = {"unarrest_stick"},
-    command = "mobboss",
-    max = 1,
-    salary = GAMEMODE.Config.normalsalary * 1.34,
-    admin = 0,
-    vote = false,
-    hasLicense = false,
-    category = "Gangsters",
-})
-
 TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
     color = Color(150, 70, 0, 255),
-	model = {
-		"models/player/eli.mdl",
-		"models/player/p2_chell.mdl"},
-    description = [[Sell shady tools and weapons to the populace.
+    model = {
+        "models/player/zelpa/female_01.mdl",
+        "models/player/zelpa/female_01_b.mdl",
+        "models/player/zelpa/female_02.mdl",
+        "models/player/zelpa/female_02_b.mdl",
+        "models/player/zelpa/female_03.mdl",
+        "models/player/zelpa/female_03_b.mdl",
+        "models/player/zelpa/female_04.mdl",
+        "models/player/zelpa/female_04_b.mdl",
+        "models/player/zelpa/female_06.mdl",
+        "models/player/zelpa/female_06_b.mdl",
+        "models/player/zelpa/female_07.mdl",
+        "models/player/zelpa/female_07_b.mdl",
+        "models/player/zelpa/male_01.mdl",
+        "models/player/zelpa/male_02.mdl",
+        "models/player/zelpa/male_03.mdl",
+        "models/player/zelpa/male_04.mdl",
+        "models/player/zelpa/male_05.mdl",
+        "models/player/zelpa/male_06.mdl",
+        "models/player/zelpa/male_07.mdl",
+        "models/player/zelpa/male_08.mdl",
+        "models/player/zelpa/male_09.mdl",
+        "models/player/zelpa/male_10.mdl",
+        "models/player/zelpa/male_11.mdl",
+	"models/joshers/badasses/playermodels/breen.mdl",
+	"models/joshers/badasses/playermodels/breen_closed.mdl",
+	"models/joshers/badasses/playermodels/barney.mdl",
+	"models/joshers/badasses/playermodels/barney_closed.mdl",
+	"models/joshers/badasses/playermodels/eli.mdl",
+	"models/joshers/badasses/playermodels/eli_closed.mdl",
+	"models/joshers/badasses/playermodels/gman.mdl",
+	"models/joshers/badasses/playermodels/gman_closed.mdl",
+	"models/joshers/badasses/playermodels/gordon.mdl",
+	"models/joshers/badasses/playermodels/gordon_closed.mdl",
+	"models/joshers/badasses/playermodels/grigori.mdl",
+	"models/joshers/badasses/playermodels/grigori_closed.mdl",
+	"models/joshers/badasses/playermodels/kleiner.mdl",
+	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
+	"models/joshers/badasses/playermodels/magnusson.mdl",
+	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
+	"models/joshers/badasses/playermodels/odessa.mdl",
+	"models/joshers/badasses/playermodels/odessa_closed.mdl"
+    },
+    description = [[Sell shady tools to the populace.
 	Watch out for cops, or try and buy them off.]],
     weapons = {},
     command = "blackmarket",
-    max = 3,
+    max = 2,
     salary = GAMEMODE.Config.normalsalary,
     admin = 0,
     vote = false,
@@ -259,12 +574,50 @@ TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
 if not DarkRP.disabledDefaults["modules"]["hungermod"] then
     TEAM_COOK = DarkRP.createJob("Cook", {
         color = Color(238, 99, 99, 255),
-        model = {
-			"models/player/mossman.mdl",
-			"models/player/magnusson.mdl"},
-        description = [[As a cook, it is your responsibility to feed the other members of your city.
-            You can spawn a microwave and sell the food you make:
-            /buymicrowave]],
+    model = {
+        "models/player/zelpa/female_01.mdl",
+        "models/player/zelpa/female_01_b.mdl",
+        "models/player/zelpa/female_02.mdl",
+        "models/player/zelpa/female_02_b.mdl",
+        "models/player/zelpa/female_03.mdl",
+        "models/player/zelpa/female_03_b.mdl",
+        "models/player/zelpa/female_04.mdl",
+        "models/player/zelpa/female_04_b.mdl",
+        "models/player/zelpa/female_06.mdl",
+        "models/player/zelpa/female_06_b.mdl",
+        "models/player/zelpa/female_07.mdl",
+        "models/player/zelpa/female_07_b.mdl",
+        "models/player/zelpa/male_01.mdl",
+        "models/player/zelpa/male_02.mdl",
+        "models/player/zelpa/male_03.mdl",
+        "models/player/zelpa/male_04.mdl",
+        "models/player/zelpa/male_05.mdl",
+        "models/player/zelpa/male_06.mdl",
+        "models/player/zelpa/male_07.mdl",
+        "models/player/zelpa/male_08.mdl",
+        "models/player/zelpa/male_09.mdl",
+        "models/player/zelpa/male_10.mdl",
+        "models/player/zelpa/male_11.mdl",
+	"models/joshers/badasses/playermodels/breen.mdl",
+	"models/joshers/badasses/playermodels/breen_closed.mdl",
+	"models/joshers/badasses/playermodels/barney.mdl",
+	"models/joshers/badasses/playermodels/barney_closed.mdl",
+	"models/joshers/badasses/playermodels/eli.mdl",
+	"models/joshers/badasses/playermodels/eli_closed.mdl",
+	"models/joshers/badasses/playermodels/gman.mdl",
+	"models/joshers/badasses/playermodels/gman_closed.mdl",
+	"models/joshers/badasses/playermodels/gordon.mdl",
+	"models/joshers/badasses/playermodels/gordon_closed.mdl",
+	"models/joshers/badasses/playermodels/grigori.mdl",
+	"models/joshers/badasses/playermodels/grigori_closed.mdl",
+	"models/joshers/badasses/playermodels/kleiner.mdl",
+	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
+	"models/joshers/badasses/playermodels/magnusson.mdl",
+	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
+	"models/joshers/badasses/playermodels/odessa.mdl",
+	"models/joshers/badasses/playermodels/odessa_closed.mdl"
+    },
+        description = [[As a cook, it is your responsibility to feed the other members of your city.]],
         weapons = {},
         command = "cook",
         max = 4,
@@ -276,25 +629,6 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
 	category = "Citizens"
     })
 end
-
-TEAM_STAFF = DarkRP.createJob("Staff-On-Duty", {
-    color = Color(0, 128, 128, 255),
-    model = {
-		"models/player/hostage/hostage_01.mdl",
-		"models/player/hostage/hostage_02.mdl",
-		"models/player/hostage/hostage_03.mdl",
-		"models/player/hostage/hostage_04.mdl"},
-    description = [[Staff Job]],
-    weapons = {"unarrest_stick", "weaponchecker", "weapon_keypadchecker"},
-    command = "staff",
-    max = 0,
-    salary = GAMEMODE.Config.normalsalary,
-    admin = 0,
-    vote = false,
-    hasLicense = false,
-	customCheck = function(ply) return table.HasValue( {"moderator", "admin", "superadmin", "owner"}, ply:GetUserGroup() ) end,
-    category = "Other",
-})
 
 --[[---------------------------------------------------------------------------
 Define which team joining players spawn into and what team you change to if demoted
@@ -308,6 +642,7 @@ GAMEMODE.CivilProtection = {
     [TEAM_POLICE] = true,
     [TEAM_CHIEF] = true,
     [TEAM_MAYOR] = true,
+    [TEAM_DEA] = true,
 }
 --[[---------------------------------------------------------------------------
 Jobs that are hitmen (enables the hitman menu)
