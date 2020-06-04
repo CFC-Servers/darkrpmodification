@@ -61,7 +61,7 @@ TEAM_CITIZEN = DarkRP.createJob("Citizen", {
 	"models/joshers/badasses/playermodels/odessa.mdl",
 	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
-    description = [[The Citizen is the most basic level of society you can hold besides being a hobo. You have no specific role in city life.]],
+    description = [[You don't have a specific role in life. Live your day how you want to live it.]],
     weapons = {},
     command = "citizen",
     max = 0,
@@ -118,7 +118,7 @@ TEAM_MECHANIC = DarkRP.createJob("Mechanic", {
 	"models/joshers/badasses/playermodels/odessa.mdl",
 	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
-    description = [[Use your repair tool to help fix up people's cars.]],
+    description = [[You are a master of all things car. Use your special repair tool to keep people on the road.]],
     weapons = {weapon_simrepair},
     command = "mechanic",
     max = 3,
@@ -250,10 +250,8 @@ TEAM_POLICE = DarkRP.createJob("Police Officer", {
     model = {
 		"models/dpfilms/metropolice/playermodels/pm_hdpolice.mdl",
 		"models/dpfilms/metropolice/playermodels/pm_female_police.mdl"},
-    description = [[The protector of every citizen that lives in the city.
-	You have the power to arrest criminals and protect innocents.
+    description = [[The protector of every the city and its people.
 	Hit a player with your arrest baton to put them in jail.
-	Bash a player with a stunstick and they may learn to obey the law.
 	The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
 	The Battering Ram can also unfreeze frozen props (if enabled).
         Type /wanted <name> to alert the public to the presence of a criminal.]],
@@ -262,7 +260,7 @@ TEAM_POLICE = DarkRP.createJob("Police Officer", {
     max = 7,
     salary = GAMEMODE.Config.normalsalary * 1.56,
     admin = 0,
-    vote = true,
+    vote = false,
     hasLicense = true,
     ammo = {
         ["cw_ammo_9x19"] = 45,
@@ -273,11 +271,12 @@ TEAM_POLICE = DarkRP.createJob("Police Officer", {
 TEAM_DEA = DarkRP.createJob("DEA Agent", {
     color = Color(15, 15, 150, 255),
     model = {
-		"models/dpfilms/metropolice/playermodels/pm_retrocop.mdl"},
+		"models/dpfilms/metropolice/playermodels/pm_retrocop.mdl",
+		"models/dpfilms/metropolice/playermodels/pm_retrocop_female.mdl"
+	},
     description = [[As a member of the DEA, your job is to be on the lookout for drugs within the city.
 	Use your drug sniffer to sniff out some product or an illegal setup.
 	Hit a player with your arrest baton to put them in jail.
-	Bash a player with a stunstick and they may learn to obey the law.
 	The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
 	The Battering Ram can also unfreeze frozen props (if enabled).
 	Type /wanted <name> to alert the public to the presence of a criminal.]],
@@ -363,9 +362,7 @@ TEAM_GANG = DarkRP.createJob("Gangster", {
 	"models/joshers/badasses/playermodels/odessa.mdl",
 	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
-    description = [[The lowest person of crime.
-	A gangster generally works for the Mobboss who runs the crime family.
-	The Mob boss sets your agenda and you follow it or you might be punished.]],
+    description = [[A connoisseur of crime. Strike out on your own, or try to join or form a criminal organization.]],
     weapons = {},
     command = "gangster",
     max = 0,
@@ -479,19 +476,13 @@ TEAM_MAYOR = DarkRP.createJob("Mayor", {
 	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
     description = [[The Mayor of the city creates laws to govern the city.
-    If you are the mayor you may create and accept warrants.
-    Type /wanted <name>  to warrant a player.
-    Type /jailpos to set the Jail Position.
-    Type /lockdown initiate a lockdown of the city.
-    Everyone must be inside during a lockdown.
-    The cops patrol the area.
-    /unlockdown to end a lockdown]],
+	The computer in your office will allow you to manage the city, it's laws, and the police force.]],
     weapons = {},
     command = "mayor",
     max = 1,
     salary = GAMEMODE.Config.normalsalary * 2,
     admin = 0,
-    vote = true,
+    vote = false,
     hasLicense = false,
     mayor = true,
     category = "Civil Protection",
