@@ -16,7 +16,7 @@ Set to true or false.
 ]]
 
 -- voice3D - Enable/disable 3DVoice is enabled.
-GM.Config.voice3D                       = true
+GM.Config.voice3D                       = false
 -- AdminsCopWeapons - Enable/disable admins spawning with cop weapons.
 GM.Config.AdminsCopWeapons              = false
 -- adminBypassJobCustomCheck - Enable/disable whether an admin can force set a job with whenever customCheck returns false.
@@ -84,7 +84,7 @@ GM.Config.droppocketdeath               = true
 -- dropweapondeath - Enable/disable whether people drop their current weapon when they die.
 GM.Config.dropweapondeath               = false
 -- Whether players can drop the weapons they spawn with.
-GM.Config.dropspawnedweapons            = true
+GM.Config.dropspawnedweapons            = false
 -- dynamicvoice - Enable/disable whether only people in the same room as you can hear your mic.
 GM.Config.dynamicvoice                  = true
 -- earthquakes - Enable/disable earthquakes.
@@ -114,7 +114,7 @@ GM.Config.lottery                       = true
 -- showname - Whether or not to display a player's name above their head in-game.
 GM.Config.showname                      = true
 -- showhealth - Whether or not to display a player's health above their head in-game.
-GM.Config.showhealth                    = true
+GM.Config.showhealth                    = false
 -- needwantedforarrest - Enable/disable Cops can only arrest wanted people.
 GM.Config.needwantedforarrest           = false
 -- noguns - Enabling this feature bans Guns and Gun Dealers.
@@ -203,7 +203,7 @@ GM.Config.entremovedelay                = 0
 -- gunlabweapon - The weapon that the gunlab spawns.
 GM.Config.gunlabweapon                  = "weapon_p2282"
 -- jailtimer - Sets the jailtimer (in seconds).
-GM.Config.jailtimer                     = 120
+GM.Config.jailtimer                     = 300
 -- lockdowndelay - The amount of time a mayor must wait before starting the next lockdown.
 GM.Config.lockdowndelay                 = 120
 -- maxadvertbillboards - The maximum number of /advert billboards a player can place.
@@ -255,11 +255,11 @@ GM.Config.respawntime                   = 1
 -- changejobtime - Minimum amount of seconds a player has to wait before changing job.
 GM.Config.changejobtime                 = 10
 -- runspeed - Sets the max running speed.
-GM.Config.runspeed                      = 240
+GM.Config.runspeed                      = 270
 -- runspeed - Sets the max running speed for CP teams.
-GM.Config.runspeedcp                    = 255
+GM.Config.runspeedcp                    = 290
 -- searchtime - Number of seconds for which a search warrant is valid.
-GM.Config.searchtime                    = 30
+GM.Config.searchtime                    = 90
 -- ShipmentSpawnTime - Antispam time between spawning shipments.
 GM.Config.ShipmentSpamTime              = 3
 -- shipmenttime - The number of seconds it takes for a shipment to spawn.
@@ -277,11 +277,11 @@ GM.Config.wallettaxmin                  = 0
 -- wallettaxtime - Time in seconds between taxing players. Requires server restart.
 GM.Config.wallettaxtime                 = 900
 -- wantedtime - Number of seconds for which a player is wanted for.
-GM.Config.wantedtime                    = 120
+GM.Config.wantedtime                    = 300
 -- walkspeed - Sets the max walking speed.
 GM.Config.walkspeed                     = 160
 -- falldamagedamper - The damper on realistic fall damage. Default is 15. Decrease this for more damage.
-GM.Config.falldamagedamper              = 15
+GM.Config.falldamagedamper              = 12
 -- falldamageamount - The base damage taken from falling for static fall damage. Default is 10.
 GM.Config.falldamageamount              = 10
 -- printeroverheatchance - The likelyhood of a printer overheating. The higher this number, the less likely (minimum 3, default 22).
@@ -531,6 +531,6 @@ GM.Config.hitCustomerCooldown = 240
 Hungermod module
 ---------------------------------------------------------------------------]]
 -- hungerspeed <Amount> - Set the rate at which players will become hungry (2 is the default).
-GM.Config.hungerspeed = .5
+GM.Config.hungerspeed = .25
 -- starverate <Amount> - How much health that is taken away every second the player is starving  (3 is the default).
 GM.Config.starverate = 1
