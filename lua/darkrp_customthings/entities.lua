@@ -42,11 +42,3 @@ DarkRP.createEntity("Printer", {
     max = 2, 
     cmd = "buytierprinter" 
 }) 
- 
-DarkRP.createEntity("Printer Battery", { 
-    ent = "tierp_battery", 
-    model = "models/freeman/giant_battery.mdl", 
-    price = 500, 
-    max = 2, 
-    cmd = "buytierbattery" 
-}) 
