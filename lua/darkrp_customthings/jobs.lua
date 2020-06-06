@@ -248,8 +248,8 @@ TEAM_MEDIC = DarkRP.createJob("Medic", {
 TEAM_POLICE = DarkRP.createJob("Police Officer", {
     color = Color(25, 25, 170, 255),
     model = {
-		"models/dpfilms/metropolice/playermodels/pm_hdpolice.mdl",
-		"models/dpfilms/metropolice/playermodels/pm_female_police.mdl"},
+		"models/player/police.mdl",
+		"models/player/police_fem.mdl"},
     description = [[The protector of every the city and its people.
 	Hit a player with your arrest baton to put them in jail.
 	The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
@@ -271,8 +271,7 @@ TEAM_POLICE = DarkRP.createJob("Police Officer", {
 TEAM_DEA = DarkRP.createJob("DEA Agent", {
     color = Color(15, 15, 150, 255),
     model = {
-		"models/dpfilms/metropolice/playermodels/pm_retrocop.mdl",
-		"models/dpfilms/metropolice/playermodels/pm_retrocop_female.mdl"
+		"models/player/combine_soldier.mdl",
 	},
     description = [[As a member of the DEA, your job is to be on the lookout for drugs within the city.
 	Use your drug sniffer to sniff out some product or an illegal setup.
@@ -295,7 +294,7 @@ TEAM_DEA = DarkRP.createJob("DEA Agent", {
 
 TEAM_CHIEF = DarkRP.createJob("Chief of Police", {
     color = Color(20, 20, 255, 255),
-    model = {"models/dpfilms/metropolice/playermodels/pm_policetrench.mdl"},
+    model = {"models/player/combine_soldier_prisonguard.mdl"},
     description = [[The Chief is the leader of city Police.
 	Coordinate the police force to enforce law in the city.
 	Hit a player with arrest baton to put them in jail.
