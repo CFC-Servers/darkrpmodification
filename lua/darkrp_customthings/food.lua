@@ -16,7 +16,7 @@ https://github.com/FPtje/DarkRP/blob/master/gamemode/modules/hungermod/sh_init.l
 
 Add food under the following line:
 ---------------------------------------------------------------------------]]
-
+--[[
 DarkRP.createFood("Bagel", {
     model = "models/foodnhouseholditems/bagel1.mdl",
     energy = 12,
@@ -280,3 +280,4 @@ DarkRP.createFood("Rainbow Fish", {
     energy = 12,
     price = 2
 })
+]]
