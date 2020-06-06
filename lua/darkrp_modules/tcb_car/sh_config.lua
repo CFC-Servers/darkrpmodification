@@ -58,7 +58,7 @@ TCBDealer.dealerSpawns["rp_downtown_tits_v2"] = {
 	}
 }
 
-TCBDealer.dealerSpawns["rp_southside"] = {
+TCBDealer.dealerSpawns["rp_southside_day"] = {
 	{
 		pos = Vector(-7583, 1600, 32.031250),
 		ang = Angle(0, 0, 0),
