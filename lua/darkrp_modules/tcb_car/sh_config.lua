@@ -26,6 +26,7 @@ TCBDealer.version = 1.4
 TCBDealer.settings.testDriveLength = 20
 TCBDealer.settings.salePercentage = 50
 TCBDealer.settings.storeDistance = 400
+TCBDealer.settings.sellDistance = 1000
 TCBDealer.settings.colorPicker = true
 TCBDealer.settings.randomColor = false
 TCBDealer.settings.checkSpawn = false

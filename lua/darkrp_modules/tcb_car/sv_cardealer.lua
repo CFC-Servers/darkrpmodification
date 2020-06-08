@@ -214,6 +214,17 @@ function TCBDealer.purchaseVehicle(length, ply)
 end
 net.Receive("TCBDealerPurchase", TCBDealer.purchaseVehicle)
 
+function TCBDealer.vehicleInSellRange( vehicle )
+    if not IsValid( vehicle ) then return false end
+
+    local maxDistance = TCBDealer.settings.sellDistance or 1000
+    local distanceSqr = TCBDealer:GetPos():DistToSqr( vehicle:GetPos() )
+
+    if distanceSqr > maxDistance * maxDistance then return false end
+
+    return true
+end
+
 --[[---------------------------------------------------------
 	Sell Vehicle
 -----------------------------------------------------------]]
@@ -225,7 +236,14 @@ function TCBDealer.sellVehicle(length, ply)
 		DarkRP.notify(ply, 1, 4, "The requested vehicle can't be sold.") 
 		return 
 	end
-	vehicle = TCBDealer.vehicleTable[vehID]
+
+	local vehicle = TCBDealer.vehicleTable[vehID]
+
+	local isInSellRange = TCBDealer.vehicleIsInSellRange( vehicle )
+	if not isInSellRange then
+        DarkRP.notify(ply, 1, 4, "That vehicle is too far away to sell!")
+        return
+    end
 
 	local vehicleInfo = list.Get("Vehicles")[vehID] or list.Get("simfphys_vehicles")[vehID]
 	if !vehicleInfo then return end
