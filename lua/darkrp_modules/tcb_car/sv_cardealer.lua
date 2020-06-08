@@ -239,7 +239,7 @@ function TCBDealer.sellVehicle(length, ply)
 
 	local vehicle = TCBDealer.vehicleTable[vehID]
 
-	local isInSellRange = TCBDealer.vehicleIsInSellRange( vehicle )
+	local isInSellRange = TCBDealer.vehicleInSellRange( vehicle )
 	if not isInSellRange then
         DarkRP.notify(ply, 1, 4, "That vehicle is too far away to sell!")
         return
