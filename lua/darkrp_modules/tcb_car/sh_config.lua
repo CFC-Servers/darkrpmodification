@@ -100,33 +100,33 @@ TCBDealer.vehicleTable["sim_fphys_van"] = {
 }
 
 TCBDealer.vehicleTable["sim_fphys_pwzaz"] = {
-	price = 3000,
-}
-
-TCBDealer.vehicleTable["sim_fphys_pwvan"] = {
-	price = 4000,
-}
-
-TCBDealer.vehicleTable["sim_fphys_pwhatchback"] = {
 	price = 5000,
 }
 
+TCBDealer.vehicleTable["sim_fphys_pwvan"] = {
+	price = 10000,
+}
+
+TCBDealer.vehicleTable["sim_fphys_pwhatchback"] = {
+	price = 15000,
+}
+
 TCBDealer.vehicleTable["sim_fphys_pwmoskvich"] = {
-	price = 6000,
+	price = 20000,
 }
 
 TCBDealer.vehicleTable["sim_fphys_pwvolga"] = {
-	price = 7000,
+	price = 25000,
 }
 
 TCBDealer.vehicleTable["sim_fphys_pwtrabant"] = {
-	price = 8000,
+	price = 30000,
 }
 
 TCBDealer.vehicleTable["sim_fphys_pwtrabant02"] = {
-	price = 8000,
+	price = 30000,
 }
 
 TCBDealer.vehicleTable["sim_fphys_pwavia"] = {
-	price = 10000,
+	price = 40000,
 }
