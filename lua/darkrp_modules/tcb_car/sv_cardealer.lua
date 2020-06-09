@@ -534,14 +534,17 @@ function TCBDealer.storeVehicle(length, ply)
             local maxHealth = currentVehicle:GetMaxHealth()
             local healthPercent = math.Round( ( health / maxHealth ) * 100 )
             local vehicleType = currentVehicle:GetSpawn_List()
-            local fuelAmount = currentVehicle:GetFuel()
+
+            local fuel = currentVehicle:GetFuel()
+            local maxFuel = currentVehicle:GetMaxFuel()
+            local fuelPercent = math.Round( ( fuel / maxFuel ) * 100 )
 
             MySQLite.query(
                 string.format([[
                         UPDATE tcb_cardealer SET health=%i, fuel=%i WHERE steamID=%s AND vehicle=%s
                     ]],
                     healthPercent,
-                    fuelAmount,
+                    fuelPercent,
                     MySQLite.SQLStr(ply:SteamID()),
                     MySQLite.SQLStr(vehicleType)
                 )
@@ -572,14 +575,17 @@ function TCBDealer.removeVehicle(ply)
             local maxHealth = currentVehicle:GetMaxHealth()
             local healthPercent = math.Round( ( health / maxHealth ) * 100 )
             local vehicleType = currentVehicle:GetSpawn_List()
-            local fuelAmount = currentVehicle:GetFuel()
+
+            local fuel = currentVehicle:GetFuel()
+            local maxFuel = currentVehicle:GetMaxFuel()
+            local fuelPercent = math.Round( ( fuel / maxFuel ) * 100 )
 
             MySQLite.query(
                 string.format([[
                         UPDATE tcb_cardealer SET health=%i, fuel=%i WHERE steamID=%s AND vehicle=%s
                     ]],
                     healthPercent,
-                    fuelAmount,
+                    fuelPercent,
                     MySQLite.SQLStr(ply:SteamID()),
                     MySQLite.SQLStr(vehicleType)
                 )
