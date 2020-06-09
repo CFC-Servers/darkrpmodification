@@ -92,7 +92,7 @@ function TCBDealer.spawnDealer()
 					
 					--> Loop
 					for k, v in pairs(data or {}) do
-					    local vehicleInfo = { vehicle = v.vehicle, health = v.health }
+					    local vehicleInfo = { vehicle = v.vehicle, health = tonumber(v.health or 100) }
 						table.insert(vehicles, vehicleInfo)
 					end
 
@@ -346,7 +346,7 @@ function TCBDealer.spawnVehicle(length, ply)
 
             MySQLite.query(string.format([[SELECT health FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
                 local maxHealth = spawnedVehicle:GetMaxHealth()
-                local healthPercent = data[1].health
+                local healthPercent = tonumber(data[1].health or 100)
                 local newHealth = maxHealth * healthPercent
 
                 if healthPercent < 100 then
