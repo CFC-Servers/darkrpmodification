@@ -348,27 +348,29 @@ function TCBDealer.spawnVehicle(length, ply)
             
 		    spawnedVehicle = simfphys.SpawnVehicleSimple(vehID, spawnPoint.pos, spawnPoint.ang)
 
-            MySQLite.query(string.format([[SELECT health FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
-                PrintTable( data )
-                local maxHealth = spawnedVehicle:GetMaxHealth()
-                print("Max Health" .. maxHealth)
-                local healthPercent = tonumber(data[1].health or 100)
-                print("Health Percent: " .. healthPercent)
-                local newHealth = math.Round( maxHealth * ( healthPercent / 100 ) )
-                print("New health: " .. newHealth)
+            timer.Simple( 0, function()
+                MySQLite.query(string.format([[SELECT health FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
+                    PrintTable( data )
+                    local maxHealth = spawnedVehicle:GetMaxHealth()
+                    print("Max Health" .. maxHealth)
+                    local healthPercent = tonumber(data[1].health or 100)
+                    print("Health Percent: " .. healthPercent)
+                    local newHealth = math.Round( maxHealth * ( healthPercent / 100 ) )
+                    print("New health: " .. newHealth)
 
-                if healthPercent < 100 then
-                    DarkRP.notify(ply, 1, 4, "Your stored vehicle has " .. healthPercent .. "% health. Maybe look for a mechanic?")
-                end
+                    if healthPercent < 100 then
+                        DarkRP.notify(ply, 1, 4, "Your stored vehicle has " .. healthPercent .. "% health. Maybe look for a mechanic?")
+                    end
 
-                -- Smoking and on-fire are mutually exclusive
-                if newHealth <= ( maxHealth * 0.3 ) then
-                    spawnedVehicle:SetOnFire( true )
-                elseif newHealth <= ( maxHealth * 0.6 ) then
-                    spawnedVehicle:SetOnSmoke( true )
-                end
+                    -- Smoking and on-fire are mutually exclusive
+                    if newHealth <= ( maxHealth * 0.3 ) then
+                        spawnedVehicle:SetOnFire( true )
+                    elseif newHealth <= ( maxHealth * 0.6 ) then
+                        spawnedVehicle:SetOnSmoke( true )
+                    end
 
-                spawnedVehicle:SetCurHealth( newHealth )
+                    spawnedVehicle:SetCurHealth( newHealth )
+                end )
             end )
         else
             spawnedVehicle = ents.Create(vehicleClass)
