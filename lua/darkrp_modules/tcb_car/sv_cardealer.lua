@@ -29,7 +29,8 @@ function TCBDealer.databaseSetup()
 		CREATE TABLE IF NOT EXISTS tcb_cardealer (
 			id INTEGER NOT NULL PRIMARY KEY ]]..AUTOINCREMENT..[[,
 			steamID VARCHAR(50) NOT NULL,
-			vehicle VARCHAR(255) NOT NULL
+			vehicle VARCHAR(255) NOT NULL,
+			health INTEGER NOT NULL
 		)
 	]])
 
@@ -91,7 +92,8 @@ function TCBDealer.spawnDealer()
 					
 					--> Loop
 					for k, v in pairs(data or {}) do
-						table.insert(vehicles, v.vehicle)
+					    local vehicleInfo = { vehicle = v.vehicle, health = v.health }
+						table.insert(vehicles, vehicleInfo)
 					end
 
 					--> Network
@@ -118,57 +120,8 @@ function TCBDealer.spawnDealer()
 		end	
 	end
 
-	--> Version
-	timer.Create("CarDealerFiVersion", 10, 1, function()
-		TCBDealer.versionCheck()
-	end)
-
 end
 hook.Add("InitPostEntity", "TCBDealer.spawnDealer", TCBDealer.spawnDealer)
-
---[[---------------------------------------------------------
-	Version Check
------------------------------------------------------------]]
-local versionCheck = 0
-function TCBDealer.versionCheck()
-
-	--> Variables
-	versionCheck = versionCheck+1;
-	local newVersion = nil
-
-	--> HTTP
-	http.Fetch("https://raw.githubusercontent.com/TheCodingBeast/TCB_CarDealer/master/version.txt",
-		function(body, len, headers, code)
-
-			--> Variables
-			newVersion = tonumber(body)
-
-			--> Check
-			if TCBDealer.version < newVersion then
-				timer.Create("CarDealerVersion", 30, 0, function()
-					MsgC(Color(0, 255, 0), "[TCB] There is a new version of 'TCB Car Dealer' available.\n")
-				end)
-			else
-				MsgC(Color(0, 255, 0), "[TCB] Car Dealer is up to date.\n")
-			end
-
-		end,
-		function(error)
-
-			--> Warn
-			if versionCheck != 1 then
-				MsgC(Color(255, 0, 0), "[TCB] There was an error verifying the version.\n"..error.."\n")
-			end
-
-			--> Timer
-			timer.Create("CarDealerReVersion", 10, 1, function()
-				TCBDealer.versionCheck()
-			end)
-
-		end
-	)
-
-end
 
 --[[---------------------------------------------------------
 	Purchase Vehicle
@@ -184,7 +137,7 @@ function TCBDealer.purchaseVehicle(length, ply)
 	local vehicle = TCBDealer.vehicleTable[vehID]
 
 	local vehicleInfo = list.Get("Vehicles")[vehID] or list.Get("simfphys_vehicles")[vehID]
-	if !vehicleInfo then return end
+	if not vehicleInfo then return end
 
 	local vehName = vehicle.name or vehicleInfo.Name
 
@@ -206,7 +159,7 @@ function TCBDealer.purchaseVehicle(length, ply)
 	ply:addMoney(-vehicle.price)
 
 	--> Purchase
-	MySQLite.query(string.format([[INSERT INTO tcb_cardealer (steamID, vehicle) VALUES (%s, %s)]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)))
+	MySQLite.query(string.format([[INSERT INTO tcb_cardealer (steamID, vehicle, health) VALUES (%s, %s)]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID), 100))
 
 	--> Notify
 	DarkRP.notify(ply, 3, 4, "You bought a "..vehName.." for "..DarkRP.formatMoney(vehicle.price).."!")
@@ -308,6 +261,13 @@ function TCBDealer.spawnVehicle(length, ply)
 		return
 	end
 
+    local currentVehicle = ply:GetNWEntity("currentVehicle", nil)
+
+    if currentVehicle and IsValid( currentVehicle ) then
+        DarkRP.notify( ply, 1, 4, "You already have a vehicle! You must store or sell your existing vehicle before spawning another." )
+        return
+    end
+
 	--> Function
 	function spawnCode()
 
@@ -383,6 +343,25 @@ function TCBDealer.spawnVehicle(length, ply)
             end
             
 		    spawnedVehicle = simfphys.SpawnVehicleSimple(vehID, spawnPoint.pos, spawnPoint.ang)
+
+            MySQLite.query(string.format([[SELECT health FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
+                local maxHealth = spawnedVehicle:GetMaxHealth()
+                local healthPercent = data[1].health
+                local newHealth = maxHealth * healthPercent
+
+                if healthPercent < 100 then
+                    DarkRP.notify(ply, 1, 4, "Your stored vehicle has " .. healthPercent .. "% health. Maybe look for a mechanic?")
+                end
+
+                -- Smoking and on-fire are mutually exclusive
+                if newHealth <= ( maxHealth * 0.3 ) then
+                    spawnedVehicle:SetOnFire( true )
+                elseif newHealth <= ( maxHealth * 0.6 ) then
+                    spawnedVehicle:SetOnSmoke( true )
+                end
+
+                spawnedVehicle:SetCurHealth( newHealth )
+            end )
         else
             spawnedVehicle = ents.Create(vehicleClass)
 		    spawnedVehicle:SetModel(vehicleList.Model)
@@ -393,6 +372,7 @@ function TCBDealer.spawnVehicle(length, ply)
         end
 
 		if not spawnedVehicle then
+            DarkRP.notify( ply, 1, 4, "Something went wrong! Contact an admin ASAP" )
 		    error("Tried to spawn a vehicle but failed! (" .. vehicleClass .. ")")
 		    return
 		end
@@ -490,7 +470,7 @@ function TCBDealer.spawnVehicle(length, ply)
 			end
 
 			--> Code
-			spawnCode()
+			spawnCode( )
 
 		end)
 
@@ -500,7 +480,6 @@ function TCBDealer.spawnVehicle(length, ply)
 		spawnCode()
 		
 	end
-
 end
 net.Receive("TCBDealerSpawn", TCBDealer.spawnVehicle)
 
@@ -528,6 +507,25 @@ function TCBDealer.storeVehicle(length, ply)
 	--> Vehicle
 	local currentVehicle = ply:GetNWEntity("currentVehicle")
 	if IsValid(currentVehicle) and currentVehicle:GetPos():Distance(ply:GetPos()) <= TCBDealer.settings.storeDistance then
+		local isSimfPhys = currentVehicle:GetClass() == "gmod_sent_vehicle_fphysics_base"
+
+		if isSimfPhys then
+            local health = currentVehicle:GetCurHealth()
+            local maxHealth = currentVehicle:GetMaxHealth()
+            local healthPercent = math.Round( ( health / maxHealth ) * 100 )
+            local vehicleType = currentVehicle:GetSpawn_List()
+
+            MySQLite.query(
+                string.format([[
+                        UPDATE tcb_cardealer SET health=%i WHERE steamID=%s AND vehicle=%s
+                    ]],
+                    healthPercent,
+                    MySQLite.SQLStr(ply:SteamID()),
+                    MySQLite.SQLStr(vehicleType)
+                )
+            )
+        end
+
 		TCBDealer.removeVehicle(ply)
 		DarkRP.notify(ply, 3, 4, "Your vehicle was stored in your garage!")
 		return
@@ -545,6 +543,24 @@ net.Receive("TCBDealerStore", TCBDealer.storeVehicle)
 function TCBDealer.removeVehicle(ply)
 	local currentVehicle = ply:GetNWEntity("currentVehicle")
 	if IsValid(currentVehicle) then
+		local isSimfPhys = currentVehicle:GetClass() == "gmod_sent_vehicle_fphysics_base"
+
+		if isSimfPhys then
+            local health = currentVehicle:GetCurHealth()
+            local maxHealth = currentVehicle:GetMaxHealth()
+            local healthPercent = math.Round( ( health / maxHealth ) * 100 )
+            local vehicleType = currentVehicle:GetSpawn_List()
+
+            MySQLite.query(
+                string.format([[
+                        UPDATE tcb_cardealer SET health=%i WHERE steamID=%s AND vehicle=%s
+                    ]],
+                    healthPercent,
+                    MySQLite.SQLStr(ply:SteamID()),
+                    MySQLite.SQLStr(vehicleType)
+                )
+            )
+        end
 
 		--> Remove
 		currentVehicle:Remove()
