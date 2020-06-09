@@ -31,7 +31,8 @@ function TCBDealer.databaseSetup()
 			id INTEGER NOT NULL PRIMARY KEY ]]..AUTOINCREMENT..[[,
 			steamID VARCHAR(50) NOT NULL,
 			vehicle VARCHAR(255) NOT NULL,
-			health INTEGER NOT NULL
+			health INTEGER NOT NULL,
+			fuel INTEGER NOT NULL
 		)
 	]])
 
@@ -93,7 +94,7 @@ function TCBDealer.spawnDealer()
 					
 					--> Loop
 					for k, v in pairs(data or {}) do
-					    local vehicleInfo = { vehicle = v.vehicle, health = tonumber(v.health or 100) }
+					    local vehicleInfo = { vehicle = v.vehicle, health = tonumber(v.health or 100), fuel = tonumber(v.fuel or 100) }
 						table.insert(vehicles, vehicleInfo)
 					end
 
@@ -160,7 +161,7 @@ function TCBDealer.purchaseVehicle(length, ply)
 	ply:addMoney(-vehicle.price)
 
 	--> Purchase
-	MySQLite.query(string.format([[INSERT INTO tcb_cardealer (steamID, vehicle, health) VALUES (%s, %s, %d)]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID), 100), function(data)
+	MySQLite.query(string.format([[INSERT INTO tcb_cardealer (steamID, vehicle, health) VALUES (%s, %s, %d)]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID), 100, 100), function(data)
 	    print(data)
 	    PrintTable(data)
     end )
@@ -351,17 +352,14 @@ function TCBDealer.spawnVehicle(length, ply)
             timer.Simple( 1, function()
                 print(spawnedVehicle)
                 print(spawnedVehicle:EntIndex())
-                MySQLite.query(string.format([[SELECT health FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
+                MySQLite.query(string.format([[SELECT health, fuel FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
                     PrintTable( data )
                     local maxHealth = spawnedVehicle:GetMaxHealth()
-                    print("Max Health" .. maxHealth)
                     local healthPercent = tonumber(data[1].health or 100)
-                    print("Health Percent: " .. healthPercent)
                     local newHealth = math.Round( maxHealth * ( healthPercent / 100 ) )
-                    print("New health: " .. newHealth)
 
                     if healthPercent < 100 then
-                        DarkRP.notify(ply, 1, 4, "Your stored vehicle has " .. healthPercent .. "% health. Maybe look for a mechanic?")
+                        DarkRP.notify(ply, 1, 8, "Your stored vehicle has " .. healthPercent .. "% health. Maybe look for a mechanic?")
                     end
 
                     -- Smoking and on-fire are mutually exclusive
@@ -372,6 +370,16 @@ function TCBDealer.spawnVehicle(length, ply)
                     end
 
                     spawnedVehicle:SetCurHealth( newHealth )
+
+                    local fuelPercent = tonumber( data[1].fuel )
+                    local maxFuel = spawnedVehicle:GetMaxFuel()
+                    local newFuel = math.Round( maxFuel * ( fuelPercent / 100 ) ) 
+
+                    if fuelPercent < 100 then
+                        DarkRP.notify(ply, 1, 8, "Your stored vehicle has " .. fuelPercent .. "% fuel. Maybe find a gas station?")
+                    end
+
+                    spawnedVehicle:SetFuel( newFuel )
                 end )
             end )
         else
@@ -526,12 +534,14 @@ function TCBDealer.storeVehicle(length, ply)
             local maxHealth = currentVehicle:GetMaxHealth()
             local healthPercent = math.Round( ( health / maxHealth ) * 100 )
             local vehicleType = currentVehicle:GetSpawn_List()
+            local fuelAmount = currentVehicle:GetFuel()
 
             MySQLite.query(
                 string.format([[
-                        UPDATE tcb_cardealer SET health=%i WHERE steamID=%s AND vehicle=%s
+                        UPDATE tcb_cardealer SET health=%i, fuel=%i WHERE steamID=%s AND vehicle=%s
                     ]],
                     healthPercent,
+                    fuelAmount,
                     MySQLite.SQLStr(ply:SteamID()),
                     MySQLite.SQLStr(vehicleType)
                 )
@@ -562,12 +572,14 @@ function TCBDealer.removeVehicle(ply)
             local maxHealth = currentVehicle:GetMaxHealth()
             local healthPercent = math.Round( ( health / maxHealth ) * 100 )
             local vehicleType = currentVehicle:GetSpawn_List()
+            local fuelAmount = currentVehicle:GetFuel()
 
             MySQLite.query(
                 string.format([[
-                        UPDATE tcb_cardealer SET health=%i WHERE steamID=%s AND vehicle=%s
+                        UPDATE tcb_cardealer SET health=%i, fuel=%i WHERE steamID=%s AND vehicle=%s
                     ]],
                     healthPercent,
+                    fuelAmount,
                     MySQLite.SQLStr(ply:SteamID()),
                     MySQLite.SQLStr(vehicleType)
                 )
