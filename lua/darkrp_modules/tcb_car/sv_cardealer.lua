@@ -350,7 +350,7 @@ function TCBDealer.spawnVehicle(length, ply)
             MySQLite.query(string.format([[SELECT health FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
                 local maxHealth = spawnedVehicle:GetMaxHealth()
                 local healthPercent = tonumber(data[1].health or 100)
-                local newHealth = maxHealth * healthPercent
+                local newHealth = maxHealth * ( healthPercent / 100 )
 
                 if healthPercent < 100 then
                     DarkRP.notify(ply, 1, 4, "Your stored vehicle has " .. healthPercent .. "% health. Maybe look for a mechanic?")
