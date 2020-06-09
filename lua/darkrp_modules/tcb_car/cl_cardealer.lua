@@ -64,6 +64,12 @@ local function carDealer()
 	local vehiclesTable = TCBDealer.vehicleTable
 	local ownedTable 	= net.ReadTable()
 
+	-- Owned Table comes in with health info, so we need to extract just the vehicles for ownership checking
+	local ownedVehicles = {}
+	for _, veh in pairs( ownedTable ) do
+	    table.insert( ownedVehicles, veh.vehicle )
+    end
+
 	local dealerID = net.ReadInt(32)
 
 	local w = 450
@@ -341,7 +347,7 @@ local function carDealer()
 		end
 
 		--> Buttons
-		if !table.HasValue(ownedTable, k) then
+		if !table.HasValue(ownedVehicles, k) then
 
 			--> Purchase
 			local purchase = vgui.Create("DButton", vehicle)
