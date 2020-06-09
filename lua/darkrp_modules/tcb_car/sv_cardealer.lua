@@ -159,7 +159,10 @@ function TCBDealer.purchaseVehicle(length, ply)
 	ply:addMoney(-vehicle.price)
 
 	--> Purchase
-	MySQLite.query(string.format([[INSERT INTO tcb_cardealer (steamID, vehicle, health) VALUES (%s, %s)]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID), 100))
+	MySQLite.query(string.format([[INSERT INTO tcb_cardealer (steamID, vehicle, health) VALUES (%s, %s, %d)]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID), 100), function(data)
+	    print(data)
+	    PrintTable(data)
+    end )
 
 	--> Notify
 	DarkRP.notify(ply, 3, 4, "You bought a "..vehName.." for "..DarkRP.formatMoney(vehicle.price).."!")
