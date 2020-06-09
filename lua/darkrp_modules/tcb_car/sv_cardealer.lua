@@ -348,7 +348,9 @@ function TCBDealer.spawnVehicle(length, ply)
             
 		    spawnedVehicle = simfphys.SpawnVehicleSimple(vehID, spawnPoint.pos, spawnPoint.ang)
 
-            timer.Simple( 0.1, function()
+            timer.Simple( 1, function()
+                print(spawnedVehicle)
+                print(spawnedVehicle:EntIndex())
                 MySQLite.query(string.format([[SELECT health FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
                     PrintTable( data )
                     local maxHealth = spawnedVehicle:GetMaxHealth()
