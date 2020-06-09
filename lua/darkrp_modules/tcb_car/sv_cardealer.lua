@@ -1,4 +1,5 @@
 /*---------------------------------------------------------------------------
+
 	
 	Creator: TheCodingBeast - TheCodingBeast.com
 	This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
@@ -348,9 +349,11 @@ function TCBDealer.spawnVehicle(length, ply)
 		    spawnedVehicle = simfphys.SpawnVehicleSimple(vehID, spawnPoint.pos, spawnPoint.ang)
 
             MySQLite.query(string.format([[SELECT health FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
+                PrintTable( data )
                 local maxHealth = spawnedVehicle:GetMaxHealth()
                 local healthPercent = tonumber(data[1].health or 100)
-                local newHealth = maxHealth * ( healthPercent / 100 )
+                local newHealth = math.Round( maxHealth * ( healthPercent / 100 ) )
+                print("New health: " .. newHealth)
 
                 if healthPercent < 100 then
                     DarkRP.notify(ply, 1, 4, "Your stored vehicle has " .. healthPercent .. "% health. Maybe look for a mechanic?")
