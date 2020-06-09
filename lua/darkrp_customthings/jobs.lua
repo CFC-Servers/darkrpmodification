@@ -58,8 +58,6 @@ TEAM_CITIZEN = DarkRP.createJob("Citizen", {
 	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
 	"models/joshers/badasses/playermodels/magnusson.mdl",
 	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
-	"models/joshers/badasses/playermodels/odessa.mdl",
-	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
     description = [[You don't have a specific role in life. Live your day how you want to live it.]],
     weapons = {},
@@ -115,11 +113,9 @@ TEAM_MECHANIC = DarkRP.createJob("Mechanic", {
 	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
 	"models/joshers/badasses/playermodels/magnusson.mdl",
 	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
-	"models/joshers/badasses/playermodels/odessa.mdl",
-	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
     description = [[You are a master of all things car. Use your special repair tool to keep people on the road.]],
-    weapons = {weapon_simrepair},
+    weapons = {"weapon_simrepair"},
     command = "mechanic",
     max = 3,
     salary = GAMEMODE.Config.normalsalary,
@@ -172,8 +168,6 @@ TEAM_HITMAN = DarkRP.createJob("Mercenary", {
 	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
 	"models/joshers/badasses/playermodels/magnusson.mdl",
 	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
-	"models/joshers/badasses/playermodels/odessa.mdl",
-	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
     description = [[Get yourself a gun and get hired for jobs.
 	Get paid to participate in raids, guard the Mob Boss, or for simple hits.
@@ -230,8 +224,6 @@ TEAM_MEDIC = DarkRP.createJob("Medic", {
 	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
 	"models/joshers/badasses/playermodels/magnusson.mdl",
 	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
-	"models/joshers/badasses/playermodels/odessa.mdl",
-	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
     description = [[With your medical knowledge you work to restore players to full health bring them back from the brink.]],
     weapons = {"med_kit","weapon_defibrillator"},
@@ -358,8 +350,6 @@ TEAM_GANG = DarkRP.createJob("Gangster", {
 	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
 	"models/joshers/badasses/playermodels/magnusson.mdl",
 	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
-	"models/joshers/badasses/playermodels/odessa.mdl",
-	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
     description = [[A connoisseur of crime. Strike out on your own, or try to join or form a criminal organization.]],
     weapons = {},
@@ -414,8 +404,6 @@ TEAM_GUN = DarkRP.createJob("Gun Dealer", {
 	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
 	"models/joshers/badasses/playermodels/magnusson.mdl",
 	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
-	"models/joshers/badasses/playermodels/odessa.mdl",
-	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
     description = [[A Gun Dealer is the only person who can sell guns to other people.
         Make sure you aren't caught selling illegal firearms to the public! You might get arrested!]],
@@ -471,8 +459,6 @@ TEAM_MAYOR = DarkRP.createJob("Mayor", {
 	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
 	"models/joshers/badasses/playermodels/magnusson.mdl",
 	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
-	"models/joshers/badasses/playermodels/odessa.mdl",
-	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
     description = [[The Mayor of the city creates laws to govern the city.
 	The computer in your office will allow you to manage the city, it's laws, and the police force.]],
@@ -546,8 +532,6 @@ TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
 	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
 	"models/joshers/badasses/playermodels/magnusson.mdl",
 	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
-	"models/joshers/badasses/playermodels/odessa.mdl",
-	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
     description = [[Sell shady tools to the populace.
 	Watch out for cops, or try and buy them off.]],
@@ -604,8 +588,6 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
 	"models/joshers/badasses/playermodels/kleiner_closed.mdl",
 	"models/joshers/badasses/playermodels/magnusson.mdl",
 	"models/joshers/badasses/playermodels/magnusson_closed.mdl",
-	"models/joshers/badasses/playermodels/odessa.mdl",
-	"models/joshers/badasses/playermodels/odessa_closed.mdl"
     },
         description = [[As a cook, it is your responsibility to feed the other members of your city.]],
         weapons = {},
