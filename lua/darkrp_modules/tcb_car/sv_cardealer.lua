@@ -388,7 +388,7 @@ function TCBDealer.spawnVehicle(length, ply)
                         local healthPercent = math.Round( ( health / maxHealth ) * 100 )
                         local vehicleType = veh:GetSpawn_List()
 
-                        local fuel = veh:GetFuel()
+                        local fuel = veh:GetFuel() or 0
                         local maxFuel = veh:GetMaxFuel()
                         local fuelPercent = math.Round( ( fuel / maxFuel ) * 100 )
 
