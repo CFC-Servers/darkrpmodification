@@ -161,10 +161,7 @@ function TCBDealer.purchaseVehicle(length, ply)
 	ply:addMoney(-vehicle.price)
 
 	--> Purchase
-	MySQLite.query(string.format([[INSERT INTO tcb_cardealer (steamID, vehicle, health) VALUES (%s, %s, %d)]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID), 100, 100), function(data)
-	    print(data)
-	    PrintTable(data)
-    end )
+	MySQLite.query(string.format([[INSERT INTO tcb_cardealer (steamID, vehicle, health) VALUES (%s, %s, %d)]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID), 100, 100))
 
 	--> Notify
 	DarkRP.notify(ply, 3, 4, "You bought a "..vehName.." for "..DarkRP.formatMoney(vehicle.price).."!")
@@ -197,14 +194,20 @@ function TCBDealer.sellVehicle(length, ply)
 
 	local vehicle = TCBDealer.vehicleTable[vehID]
 
-	local isInSellRange = TCBDealer.vehicleInSellRange( vehicle )
-	if not isInSellRange then
-        DarkRP.notify(ply, 1, 4, "That vehicle is too far away to sell!")
-        return
-    end
-
 	local vehicleInfo = list.Get("Vehicles")[vehID] or list.Get("simfphys_vehicles")[vehID]
-	if !vehicleInfo then return end
+	if not vehicleInfo then return end
+
+	local currentVehicle = ply:GetNWEntity( "currentVehicle", nil )
+	if IsValid( currentvehicle ) then
+        if currentVehicle:GetSpawn_List() == vehID then
+            local isInSellRange = TCBDealer.vehicleInSellRange( currentVehicle )
+
+            if not isInSellRange then
+                DarkRP.notify(ply, 1, 4, "That vehicle is too far away to sell!")
+                return
+            end
+        end
+    end
 
 	local vehName = vehicle.name or vehicleInfo.Name
 
@@ -350,8 +353,6 @@ function TCBDealer.spawnVehicle(length, ply)
 		    spawnedVehicle = simfphys.SpawnVehicleSimple(vehID, spawnPoint.pos, spawnPoint.ang)
 
             timer.Simple( 1, function()
-                print(spawnedVehicle)
-                print(spawnedVehicle:EntIndex())
                 MySQLite.query(string.format([[SELECT health, fuel FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
                     PrintTable( data )
                     local maxHealth = spawnedVehicle:GetMaxHealth()
@@ -371,7 +372,7 @@ function TCBDealer.spawnVehicle(length, ply)
 
                     spawnedVehicle:SetCurHealth( newHealth )
 
-                    local fuelPercent = tonumber( data[1].fuel )
+                    local fuelPercent = tonumber( data[1].fuel or 100 )
                     local maxFuel = spawnedVehicle:GetMaxFuel()
                     local newFuel = math.Round( maxFuel * ( fuelPercent / 100 ) ) 
 
@@ -380,6 +381,28 @@ function TCBDealer.spawnVehicle(length, ply)
                     end
 
                     spawnedVehicle:SetFuel( newFuel )
+
+                    spawnedVehicle:CallOnRemove( "TCBSaveCarDataOnRemove", function( veh )
+                        local health = veh:GetCurHealth()
+                        local maxHealth = veh:GetMaxHealth()
+                        local healthPercent = math.Round( ( health / maxHealth ) * 100 )
+                        local vehicleType = veh:GetSpawn_List()
+
+                        local fuel = veh:GetFuel()
+                        local maxFuel = veh:GetMaxFuel()
+                        local fuelPercent = math.Round( ( fuel / maxFuel ) * 100 )
+
+                        MySQLite.query(
+                            string.format([[
+                                    UPDATE tcb_cardealer SET health=%i, fuel=%i WHERE steamID=%s AND vehicle=%s
+                                ]],
+                                healthPercent,
+                                fuelPercent,
+                                MySQLite.SQLStr(ply:SteamID()),
+                                MySQLite.SQLStr(vehicleType)
+                            )
+                        )
+                     end )
                 end )
             end )
         else
@@ -568,29 +591,6 @@ net.Receive("TCBDealerStore", TCBDealer.storeVehicle)
 function TCBDealer.removeVehicle(ply)
 	local currentVehicle = ply:GetNWEntity("currentVehicle")
 	if IsValid(currentVehicle) then
-		local isSimfPhys = currentVehicle:GetClass() == "gmod_sent_vehicle_fphysics_base"
-
-		if isSimfPhys then
-            local health = currentVehicle:GetCurHealth()
-            local maxHealth = currentVehicle:GetMaxHealth()
-            local healthPercent = math.Round( ( health / maxHealth ) * 100 )
-            local vehicleType = currentVehicle:GetSpawn_List()
-
-            local fuel = currentVehicle:GetFuel()
-            local maxFuel = currentVehicle:GetMaxFuel()
-            local fuelPercent = math.Round( ( fuel / maxFuel ) * 100 )
-
-            MySQLite.query(
-                string.format([[
-                        UPDATE tcb_cardealer SET health=%i, fuel=%i WHERE steamID=%s AND vehicle=%s
-                    ]],
-                    healthPercent,
-                    fuelPercent,
-                    MySQLite.SQLStr(ply:SteamID()),
-                    MySQLite.SQLStr(vehicleType)
-                )
-            )
-        end
 
 		--> Remove
 		currentVehicle:Remove()
