@@ -88,6 +88,12 @@ TCBDealer.vehicleTable["sim_fphys_mw_cop_1st"] = {
 	CustomCheckFailMsg = "This vehicle is only available to police officers",
 }
 
+TCBDealer.vehicleTable["sim_fphys_combineapc"] = {
+	price = 0,
+	customCheck = function(ply) return table.HasValue({TEAM_DEA}, ply:Team()) end,
+	CustomCheckFailMsg = "This vehicle is only available to DEA Agents",
+}
+
 TCBDealer.vehicleTable["sim_fphys_mobscot"] = {
 	price = 750,
 }
@@ -130,4 +136,12 @@ TCBDealer.vehicleTable["sim_fphys_pwtrabant02"] = {
 
 TCBDealer.vehicleTable["sim_fphys_pwavia"] = {
 	price = 40000,
+}
+
+TCBDealer.vehicleTable["sim_fphys_v8elite"] = {
+	price = 75000,
+}
+
+TCBDealer.vehicleTable["sim_fphys_pwavia"] = {
+	price = 125000,
 }
