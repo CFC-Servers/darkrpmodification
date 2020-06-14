@@ -358,6 +358,7 @@ function TCBDealer.spawnVehicle(length, ply)
                     local maxHealth = spawnedVehicle:GetMaxHealth()
                     local healthPercent = tonumber(data[1].health or 100)
                     local newHealth = math.Round( maxHealth * ( healthPercent / 100 ) )
+                    spawnedVehicle.tcbOwner = ply
 
                     if healthPercent < 100 then
                         DarkRP.notify(ply, 1, 8, "Your stored vehicle has " .. healthPercent .. "% health. Maybe look for a mechanic?")
@@ -412,6 +413,8 @@ function TCBDealer.spawnVehicle(length, ply)
             spawnedVehicle:SetAngles(spawnPoint.ang)
             spawnedVehicle:Spawn()
             spawnedVehicle:Activate()
+
+            spawnedVehicle.tcbOwner = ply
         end
 
 		if not spawnedVehicle then
