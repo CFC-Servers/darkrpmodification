@@ -142,6 +142,6 @@ TCBDealer.vehicleTable["sim_fphys_v8elite"] = {
 	price = 75000,
 }
 
-TCBDealer.vehicleTable["sim_fphys_pwavia"] = {
+TCBDealer.vehicleTable["sim_fphys_dukes"] = {
 	price = 125000,
 }
