@@ -358,10 +358,9 @@ function TCBDealer.spawnVehicle(length, ply)
                     local maxHealth = spawnedVehicle:GetMaxHealth()
                     local healthPercent = tonumber(data[1].health or 100)
                     local newHealth = math.Round( maxHealth * ( healthPercent / 100 ) )
-                    spawnedVehicle.tcbOwner = ply
 
                     if healthPercent < 100 then
-                        DarkRP.notify(ply, 1, 8, "Your stored vehicle has " .. healthPercent .. "% health. Maybe look for a mechanic?")
+                        DarkRP.notify(ply, 1, 8, "Your stored vehicle has " .. healthPercent .. "% health")
                     end
 
                     -- Smoking and on-fire are mutually exclusive
@@ -378,7 +377,7 @@ function TCBDealer.spawnVehicle(length, ply)
                     local newFuel = math.Round( maxFuel * ( fuelPercent / 100 ) ) 
 
                     if fuelPercent < 100 then
-                        DarkRP.notify(ply, 1, 8, "Your stored vehicle has " .. fuelPercent .. "% fuel. Maybe find a gas station?")
+                        DarkRP.notify(ply, 1, 8, "Your stored vehicle has " .. fuelPercent .. "% fuel")
                     end
 
                     spawnedVehicle:SetFuel( newFuel )
@@ -419,8 +418,6 @@ function TCBDealer.spawnVehicle(length, ply)
             spawnedVehicle:SetAngles(spawnPoint.ang)
             spawnedVehicle:Spawn()
             spawnedVehicle:Activate()
-
-            spawnedVehicle.tcbOwner = ply
         end
 
 		if not spawnedVehicle then
@@ -440,6 +437,7 @@ function TCBDealer.spawnVehicle(length, ply)
 		spawnedVehicle:keysOwn(ply)
 		spawnedVehicle:keysLock()
 
+		spawnedVehicle:SetNWEntity( "tcbOwner", ply )
 		spawnedVehicle:SetNWString("dealerName", vehicle.name or vehicleList.Name)
 		spawnedVehicle:SetNWString("dealerClass", vehID)
 
