@@ -391,7 +391,13 @@ function TCBDealer.spawnVehicle(length, ply)
 
                         local fuel = veh:GetFuel() or 0
                         local maxFuel = veh:GetMaxFuel()
-                        local fuelPercent = math.Round( ( fuel / maxFuel ) * 100 )
+
+                        local fuelPercent
+                        if not maxFuel then
+                            fuelPercent = 0
+                        else
+                            fuelPercent = math.Round( ( fuel / maxFuel ) * 100 )
+                        end
 
                         MySQLite.query(
                             string.format([[
