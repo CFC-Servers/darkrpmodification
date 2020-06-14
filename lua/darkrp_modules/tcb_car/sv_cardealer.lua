@@ -373,7 +373,7 @@ function TCBDealer.spawnVehicle(length, ply)
 
                     spawnedVehicle:SetCurHealth( newHealth )
 
-                    local fuelPercent = tonumber( data[1].fuel or 100 )
+                    local fuelPercent = tonumber( data[1].fuel or 100 ) or 100
                     local maxFuel = spawnedVehicle:GetMaxFuel()
                     local newFuel = math.Round( maxFuel * ( fuelPercent / 100 ) ) 
 
