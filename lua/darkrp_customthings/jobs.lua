@@ -255,7 +255,10 @@ TEAM_POLICE = DarkRP.createJob("Police Officer", {
     vote = true,
     hasLicense = true,
     ammo = {
-        ["cw_ammo_9x19"] = 45,
+    [52] = 120, -- cw_p99 ammo
+    [45] = 120, -- cw_ar15 ammo
+    [42] = 120, -- cw_m3super90 ammo
+    [52] = 120 -- cw_mp5 ammo
     },
     category = "Civil Protection",
 })
@@ -279,7 +282,10 @@ TEAM_DEA = DarkRP.createJob("DEA Agent", {
     vote = true,
     hasLicense = true,
     ammo = {
-        ["cw_ammo_9x19"] = 45,
+    [52] = 120, -- cw_p99 ammo
+    [45] = 120, -- cw_ar15 ammo
+    [42] = 120, -- cw_m3super90 ammo
+    [52] = 120 -- cw_mp5 ammo
     },
     category = "Civil Protection",
 })
@@ -303,7 +309,10 @@ TEAM_CHIEF = DarkRP.createJob("Chief of Police", {
     hasLicense = true,
     chief = true,
     ammo = {
-        ["cw_ammo_50ae"] = 21,
+    [45] = 120, -- cw_ar15 ammo
+    [42] = 120, -- cw_m3super90 ammo
+    [52] = 120, -- cw_mp5 ammo
+    [41] = 120 -- cw_deagle
     },
     category = "Civil Protection",
 })
