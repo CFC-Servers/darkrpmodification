@@ -81,11 +81,11 @@ local AMMO = {
 }
 
 local BASE_CP_AMMO = {
-    AMMO.cw_p99 = 120,
-    AMMO.cw_ar15 = 120,
-    AMMO.cw_m3super90 = 120,
-    AMMO.cw_mp5 = 120,
-    AMMO.cw_deagle = 120
+    [AMMO.cw_p99] = 120,
+    [AMMO.cw_ar15] = 120,
+    [AMMO.cw_m3super90] = 120,
+    [AMMO.cw_mp5] = 120,
+    [AMMO.cw_deagle] = 120
 }
 
 -- Helper function to return base + extras - exceptions
@@ -101,6 +101,7 @@ end
 
 local function baseCpWeapons( data )
     return tableMod( BASE_CP_WEAPONS, data or {} )
+end
 
 local function allHumanModels( data )
     return tableMod( ALL_HUMAN_MODELS, data or {} )
