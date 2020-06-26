@@ -61,6 +61,7 @@ local ALL_HUMAN_MODELS = {
     "models/joshers/badasses/playermodels/magnusson_closed.mdl",
 }
 
+-- The weapon set that all CP are based off of
 local BASE_CP_WEAPONS = {
     "arrest_stick",
     "unarrest_stick",
@@ -72,6 +73,7 @@ local BASE_CP_WEAPONS = {
     "weapon_stungun"
 }
 
+-- Ammo types
 local AMMO = {
     cw_p99 = 52,
     cw_ar15 = 45,
@@ -80,6 +82,7 @@ local AMMO = {
     cw_deagle = 41
 }
 
+-- Ammo that all CP spawn with
 local BASE_CP_AMMO = {
     [AMMO.cw_p99] = 120,
     [AMMO.cw_ar15] = 120,
@@ -90,9 +93,9 @@ local BASE_CP_AMMO = {
 
 -- Helper function to return base + extras - exceptions
 local function tableMod( base, data )
-    local new = table.Merge( base, data.extras or {} )
+    local new = table.Merge( base, data.also or {} )
 
-    for _, exception in pairs( data.exceptions or {} ) do
+    for _, exception in pairs( data.except or {} ) do
         table.RemoveByValue( new, exception )
     end
 
