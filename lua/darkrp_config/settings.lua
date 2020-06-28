@@ -50,7 +50,7 @@ GM.Config.cit_propertytax               = false
 -- copscanunfreeze - Enable/disable the ability of cops to unfreeze other people's props.
 GM.Config.copscanunfreeze               = true
 -- copscanunweld - Enable/disable the ability of cops to unweld other people's props.
-GM.Config.copscanunweld                 = false
+GM.Config.copscanunweld                 = true
 -- cpcanarrestcp - Allow/Disallow CPs to arrest other CPs.
 GM.Config.cpcanarrestcp                 = true
 -- currencyLeft - The position of the currency symbol. true for left, false for right.
