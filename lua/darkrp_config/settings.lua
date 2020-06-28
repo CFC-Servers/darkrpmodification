@@ -255,9 +255,9 @@ GM.Config.respawntime                   = 1
 -- changejobtime - Minimum amount of seconds a player has to wait before changing job.
 GM.Config.changejobtime                 = 10
 -- runspeed - Sets the max running speed.
-GM.Config.runspeed                      = 270
+GM.Config.runspeed                      = 240
 -- runspeed - Sets the max running speed for CP teams.
-GM.Config.runspeedcp                    = 290
+GM.Config.runspeedcp                    = 255
 -- searchtime - Number of seconds for which a search warrant is valid.
 GM.Config.searchtime                    = 90
 -- ShipmentSpawnTime - Antispam time between spawning shipments.
