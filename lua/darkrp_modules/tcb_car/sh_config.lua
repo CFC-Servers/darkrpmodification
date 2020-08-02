@@ -79,6 +79,25 @@ TCBDealer.dealerSpawns["rp_southside_day"] = {
 	}
 }
 
+TCBDealer.dealerSpawns["rp_downtown_evilmelon_v1"] = {
+	{
+		pos = Vector(1774, -1518, 49.031250),
+		ang = Angle(0, 90, 0),
+		mdl = "models/Humans/Group01/male_07.mdl",
+
+		spawns = {
+			{
+				pos = Vector(1843, -1341, 41.031250),
+				ang = Angle(0, 90, 0)
+			},
+			{
+				pos = Vector(1664, -1341, 41.031250),
+				ang = Angle(0, -90, 0)
+			},
+
+		}
+	}
+}
 --[[---------------------------------------------------------
 	Vehicles - http://facepunch.com/showthread.php?t=1481400 / https://www.youtube.com/watch?v=WSTBFk6nX6k
 -----------------------------------------------------------]]
