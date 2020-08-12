@@ -74,3 +74,75 @@ DarkRP.createEntity("Printer", {
     max = 2, 
     cmd = "buytierprinter" 
 }) 
+
+DarkRP.createEntity("9x19mm Ammo", {
+	ent = "cw_ammo_9x19",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 72,
+	max = 3,
+	cmd = "buy9x19",
+	category = "Ammo",
+})
+
+DarkRP.createEntity("9x17mm Ammo", {
+	ent = "cw_ammo_9x17",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 75,
+	max = 3,
+	cmd = "buy9x17",
+	category = "Ammo",
+})
+
+DarkRP.createEntity("45 .ACP Ammo", {
+	ent = "cw_ammo_45acp",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 85,
+	max = 3,
+	cmd = "buy45acp",
+	category = "Ammo",
+})
+
+DarkRP.createEntity("5.45x39mm Ammo", {
+	ent = "cw_ammo_545x39",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 180,
+	max = 3,
+	cmd = "buy545x39",
+	category = "Ammo",
+})
+
+DarkRP.createEntity("5.56x45mm Ammo", {
+	ent = "cw_ammo_556x45",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 200,
+	max = 3,
+	cmd = "buy556x45",
+	category = "Ammo",
+})
+
+DarkRP.createEntity("7.62x51mm Ammo", {
+	ent = "cw_ammo_762x51",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 210,
+	max = 3,
+	cmd = "buy762x51",
+	category = "Ammo",
+})
+
+DarkRP.createEntity(".44 Magnum Ammo", {
+	ent = "cw_ammo_44magnum",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 50,
+	max = 3,
+	cmd = "buy44magnum",
+	category = "Ammo",
+})
+
+DarkRP.createEntity("12 Guage Ammo", {
+	ent = "cw_ammo_12gauge",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 80,
+	max = 3,
+	cmd = "buy12guage",
+	category = "Ammo",
+})
