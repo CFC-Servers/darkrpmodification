@@ -78,3 +78,12 @@ DarkRP.createCategory{
 	 canSee = fp{fn.Id, true},
 	 sortOrder = 101,
 }
+
+DarkRP.createCategory{
+    name = "Attachments",
+    categorises = "entities",
+    startExpanded = true,
+    color = Color(255, 140, 0, 255),
+	 canSee = fp{fn.Id, true},
+	 sortOrder = 100,
+}
