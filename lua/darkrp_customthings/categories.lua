@@ -87,3 +87,12 @@ DarkRP.createCategory{
 	 canSee = fp{fn.Id, true},
 	 sortOrder = 100,
 }
+
+DarkRP.createCategory{
+    name = "Ammo",
+    categorises = "entities",
+    startExpanded = true,
+    color = Color(255, 140, 0, 255),
+	 canSee = fp{fn.Id, true},
+	 sortOrder = 99,
+}
