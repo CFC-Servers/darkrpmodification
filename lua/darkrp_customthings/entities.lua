@@ -17,22 +17,54 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
-DarkRP.createEntity("Weapons Bench", {
-	ent = "bcrafting_weaponsbench",
-	model = "models/workshop/workbench/workbench_weapons.mdl",
-	price = 500,
-	max = 1,
-	cmd = "buyweaponsbench",
+DarkRP.createEntity("Close Range Sights", {
+	ent = "cw_attpack_sights_cqb",
+	model = "models/Items/BoxSRounds.mdl",
+	price = 450,
+	max = 3,
+	cmd = "buyclosesights",
 	allowed = {TEAM_GUN},
+	category = "Attachments",
 })
 
-DarkRP.createEntity("Crafting Bench", {
-	ent = "bcrafting_generalbench",
-	model = "models/workshop/workbench/workbench.mdl",
+DarkRP.createEntity("Mid-Range Sights", {
+	ent = "cw_attpack_sights_midrange",
+	model = "models/Items/BoxSRounds.mdl",
 	price = 500,
-	max = 1,
-	cmd = "buycraftingbench",
-	allowed = {TEAM_BLACKMARKET},
+	max = 3,
+	cmd = "buymidsights",
+	allowed = {TEAM_GUN},
+	category = "Attachments",
+})
+
+DarkRP.createEntity("Long-Range Sights", {
+	ent = "cw_attpack_sights_longrange",
+	model = "models/Items/BoxSRounds.mdl",
+	price = 550,
+	max = 3,
+	cmd = "buylongsights",
+	allowed = {TEAM_GUN},
+	category = "Attachments",
+})
+
+DarkRP.createEntity("Sniper Sights", {
+	ent = "cw_attpack_sights_sniper",
+	model = "models/Items/BoxSRounds.mdl",
+	price = 600,
+	max = 3,
+	cmd = "buysnipersights",
+	allowed = {TEAM_GUN},
+	category = "Attachments",
+})
+
+DarkRP.createEntity("Suppressors", {
+	ent = "cw_attpack_suppressors",
+	model = "models/Items/BoxSRounds.mdl",
+	price = 400,
+	max = 3,
+	cmd = "buysuppressors",
+	allowed = {TEAM_GUN},
+	category = "Attachments",
 })
 
 DarkRP.createEntity("Printer", { 
