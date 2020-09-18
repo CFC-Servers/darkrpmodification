@@ -75,14 +75,6 @@ DarkRP.createEntity("Suppressors", {
 	category = "Attachments",
 })
 
-DarkRP.createEntity("Printer", { 
-    ent = "tierp_printer", 
-    model = "models/freeman/money_printer.mdl", 
-    price = 3000, 
-    max = 2, 
-    cmd = "buytierprinter" 
-}) 
-
 DarkRP.createEntity("9x19mm Ammo", {
 	ent = "cw_ammo_9x19",
 	model = "models/Items/BoxMRounds.mdl",
