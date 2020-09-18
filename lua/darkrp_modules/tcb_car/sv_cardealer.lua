@@ -356,7 +356,8 @@ function TCBDealer.spawnVehicle(length, ply)
                 MySQLite.query(string.format([[SELECT health, fuel FROM tcb_cardealer WHERE steamID = %s AND vehicle = %s]], MySQLite.SQLStr(ply:SteamID()), MySQLite.SQLStr(vehID)), function(data)
                     PrintTable( data )
                     local maxHealth = spawnedVehicle:GetMaxHealth()
-                    local healthPercent = tonumber(data[1].health or 100)
+                    local healthPercent = tonumber( data[1].health or 100 )
+                    healthPercent = math.Clamp( healthPercent, 25, 100 )
                     local newHealth = math.Round( maxHealth * ( healthPercent / 100 ) )
 
                     if healthPercent < 100 then
