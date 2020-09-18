@@ -17,6 +17,14 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
+DarkRP.createEntity("Money Printer", {
+    ent = "money_printer",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 1000,
+    max = 2,
+    cmd = "buymoneyprinter"
+})
+
 DarkRP.createEntity("Close Range Sights", {
 	ent = "cw_attpack_sights_cqb",
 	model = "models/Items/BoxSRounds.mdl",
