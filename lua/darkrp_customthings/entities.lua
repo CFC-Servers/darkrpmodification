@@ -17,132 +17,102 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
+--[[
 DarkRP.createEntity("Money Printer", {
     ent = "money_printer",
     model = "models/props_c17/consolebox01a.mdl",
     price = 1000,
     max = 2,
-    cmd = "buymoneyprinter"
+    cmd = "buymoneyprinter",
+})
+]]
+
+DarkRP.createEntity("Bananas", {
+    ent = "eoti_food_bananas",
+    model = "models/food/bananas/banana_regime.mdl",
+    price = 25,
+    max = 10,
+    cmd = "buybananas",
+	allowed = {TEAM_COOK},
+	category = "Food",
 })
 
-DarkRP.createEntity("Close Range Sights", {
-	ent = "cw_attpack_sights_cqb",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 450,
-	max = 3,
-	cmd = "buyclosesights",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
+DarkRP.createEntity("Bread", {
+    ent = "eoti_food_bread",
+    model = "models/food/bread/bread.mdl",
+    price = 60,
+    max = 10,
+    cmd = "buybread",
+	allowed = {TEAM_COOK},
+	category = "Food",
 })
 
-DarkRP.createEntity("Mid-Range Sights", {
-	ent = "cw_attpack_sights_midrange",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 500,
-	max = 3,
-	cmd = "buymidsights",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
+DarkRP.createEntity("Cider Ale", {
+    ent = "eoti_food_ciderale",
+    model = "models/props_junk/garbage_glassbottle003a.mdl",
+    price = 55,
+    max = 10,
+    cmd = "buyciderale",
+	allowed = {TEAM_COOK},
+	category = "Food",
 })
 
-DarkRP.createEntity("Long-Range Sights", {
-	ent = "cw_attpack_sights_longrange",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 550,
-	max = 3,
-	cmd = "buylongsights",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
+DarkRP.createEntity("Smoked Ham", {
+    ent = "eoti_food_ham",
+    model = "models/food/ham/ham.mdl",
+    price = 250,
+    max = 10,
+    cmd = "buyham",
+	allowed = {TEAM_COOK},
+	category = "Food",
 })
 
-DarkRP.createEntity("Sniper Sights", {
-	ent = "cw_attpack_sights_sniper",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 600,
-	max = 3,
-	cmd = "buysnipersights",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
+DarkRP.createEntity("Dark Lager", {
+    ent = "eoti_food_lager",
+    model = "models/food/lager/mn_pitcher.mdl",
+    price = 145,
+    max = 10,
+    cmd = "buylager",
+	allowed = {TEAM_COOK},
+	category = "Food",
 })
 
-DarkRP.createEntity("Suppressors", {
-	ent = "cw_attpack_suppressors",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 400,
-	max = 3,
-	cmd = "buysuppressors",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
+DarkRP.createEntity("Meat Pie", {
+    ent = "eoti_food_pie",
+    model = "models/food/pie/pie.mdl",
+    price = 175,
+    max = 10,
+    cmd = "buymeatpie",
+	allowed = {TEAM_COOK},
+	category = "Food",
 })
 
-DarkRP.createEntity("9x19mm Ammo", {
-	ent = "cw_ammo_9x19",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 72,
-	max = 3,
-	cmd = "buy9x19",
-	category = "Ammo",
+DarkRP.createEntity("Fish", {
+    ent = "eoti_food_rawfish",
+    model = "models/food/fish/hanged_fishes.mdl",
+    price = 95,
+    max = 10,
+    cmd = "buyfish",
+	allowed = {TEAM_COOK},
+	category = "Food",
 })
 
-DarkRP.createEntity("9x17mm Ammo", {
-	ent = "cw_ammo_9x17",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 75,
-	max = 3,
-	cmd = "buy9x17",
-	category = "Ammo",
+DarkRP.createEntity("Ribs", {
+    ent = "eoti_food_ribs",
+    model = "models/food/ribs/ribs_cooked.mdl",
+    price = 140,
+    max = 10,
+    cmd = "buyribs",
+	allowed = {TEAM_COOK},
+	category = "Food",
 })
 
-DarkRP.createEntity("45 .ACP Ammo", {
-	ent = "cw_ammo_45acp",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 85,
-	max = 3,
-	cmd = "buy45acp",
-	category = "Ammo",
-})
-
-DarkRP.createEntity("5.45x39mm Ammo", {
-	ent = "cw_ammo_545x39",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 180,
-	max = 3,
-	cmd = "buy545x39",
-	category = "Ammo",
-})
-
-DarkRP.createEntity("5.56x45mm Ammo", {
-	ent = "cw_ammo_556x45",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 200,
-	max = 3,
-	cmd = "buy556x45",
-	category = "Ammo",
-})
-
-DarkRP.createEntity("7.62x51mm Ammo", {
-	ent = "cw_ammo_762x51",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 210,
-	max = 3,
-	cmd = "buy762x51",
-	category = "Ammo",
-})
-
-DarkRP.createEntity(".44 Magnum Ammo", {
-	ent = "cw_ammo_44magnum",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 50,
-	max = 3,
-	cmd = "buy44magnum",
-	category = "Ammo",
-})
-
-DarkRP.createEntity("12 Guage Ammo", {
-	ent = "cw_ammo_12gauge",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 80,
-	max = 3,
-	cmd = "buy12guage",
-	category = "Ammo",
+DarkRP.createEntity("Magic Wine", {
+    ent = "eoti_food_winepitcher",
+    model = "models/food/winepitcher/winepitcher.mdl",
+    price = 380,
+    max = 10,
+    cmd = "buymagicwine",
+	allowed = {TEAM_MERCHANT},
+	category = "Food",
 })
