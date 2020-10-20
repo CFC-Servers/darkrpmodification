@@ -13,3 +13,4 @@ AddDoorGroup("NAME OF THE GROUP HERE, you will see this when looking at a door",
 -- Example: AddDoorGroup("Gundealer only", TEAM_GUN)
 
 AddDoorGroup("Guards Only", TEAM_CAPTAIN, TEAM_GUARD, TEAM_KNIGHT, TEAM_KING)
+AddDoorGroup("Guards and Royalty", TEAM_CAPTAIN, TEAM_GUARD, TEAM_KNIGHT, TEAM_KING, TEAM_QUEEN, TEAM_PRINCE, TEAM_PRINCESS)
