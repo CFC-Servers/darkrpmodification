@@ -132,7 +132,7 @@ GM.Config.proppaying                    = false
 -- propspawning - Enable/disable props spawning. Applies to admins too.
 GM.Config.propspawning                  = true
 -- removeclassitems - Enable/disable shipments/microwaves/etc. removal when someone changes team.
-GM.Config.removeclassitems              = true
+GM.Config.removeclassitems              = false
 -- removeondisconnect - Enable/disable shipments/microwaves/etc. removal when someone disconnects.
 GM.Config.removeondisconnect            = false
 -- respawninjail - Enable/disable whether people can respawn in jail when they die.
