@@ -85,7 +85,7 @@ DarkRP.createShipment("Hatchet", {
 	separate = false,
 	pricesep = 700,
 	noship = false,
-	allowed = {TEAM_BLACKSMITH},
+	allowed = {TEAM_BLACKSMITH, TEAM_ORCSMITH},
 	category = "Weapons",
 })
 
@@ -97,7 +97,7 @@ DarkRP.createShipment("Cleaver", {
 	separate = false,
 	pricesep = 500,
 	noship = false,
-	allowed = {TEAM_BLACKSMITH},
+	allowed = {TEAM_BLACKSMITH, TEAM_ORCSMITH},
 	category = "Weapons",
 })
 
@@ -182,6 +182,18 @@ DarkRP.createShipment("Katana", {
 	pricesep = 1400,
 	noship = false,
 	allowed = {TEAM_MERCHANT},
+	category = "Weapons",
+})
+
+DarkRP.createShipment("Trench Axe", {
+	model = "models/models/danguyen/sappersaxe.mdl",
+	entity = "meleearts_axe_trenchaxe",
+	price = 3000,
+	amount = 5,
+	separate = false,
+	pricesep = 600,
+	noship = false,
+	allowed = {TEAM_ORCSMITH},
 	category = "Weapons",
 })
 
