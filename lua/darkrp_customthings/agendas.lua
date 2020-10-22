@@ -9,3 +9,7 @@ AddAgenda(Title of the agenda, Manager (who edits it), {Listeners (the ones who 
 ---------------------------------------------------------------------------]]
 -- Example: AddAgenda("Gangster's agenda", TEAM_MOB, {TEAM_GANG})
 -- Example: AddAgenda("Police agenda", TEAM_MAYOR, {TEAM_CHIEF, TEAM_POLICE, TEAM_DEA})
+
+AddAgenda("Kingdom's Agenda", TEAM_KING, {TEAM_QUEEN, TEAM_PRINCE, TEAM_PRINCESS, TEAM_KNIGHT, TEAM_CAPTAIN, TEAM_GUARD})
+AddAgenda("Orc's Agenda", TEAM_ORCCHIEF, {TEAM_ORC, TEAM_ORCSMITH, TEAM_ORCHEALER})
+AddAgenda("Cult's Agenda", TEAM_CULTLEADER, {TEAM_CULT})
