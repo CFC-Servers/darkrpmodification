@@ -116,3 +116,33 @@ DarkRP.createEntity("Magic Wine", {
 	allowed = {TEAM_MERCHANT},
 	category = "Food",
 })
+
+DarkRP.createEntity("Blood Ale", {
+    ent = "eoti_food_bloodale",
+    model = "models/food/potion/life_potion.mdl",
+    price = 325,
+    max = 5,
+    cmd = "buybloodale",
+	allowed = {TEAM_CULTLEADER},
+	category = "Food",
+})
+
+DarkRP.createEntity("Smoked Baby", {
+    ent = "eoti_food_smoked_baby",
+    model = "models/food/smoked_baby/cr_wickerdoll.mdl",
+    price = 220,
+    max = 5,
+    cmd = "buysmokedbaby",
+	allowed = {TEAM_CULTLEADER},
+	category = "Food",
+})
+
+DarkRP.createEntity("Chieftan's Feast", {
+    ent = "eoti_food_boarhead",
+    model = "models/roastboar/roastboar.mdl",
+    price = 1090,
+    max = 2,
+    cmd = "buychieftansfeast",
+	allowed = {TEAM_ORCCHIEF},
+	category = "Food",
+})
