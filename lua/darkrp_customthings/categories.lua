@@ -26,7 +26,7 @@ DarkRP.createCategory{
 	categorises = "jobs",
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),
-	sortOrder = 100
+	sortOrder = 1
 }
 
 DarkRP.createCategory{
@@ -58,7 +58,23 @@ DarkRP.createCategory{
 	categorises = "jobs",
 	startExpanded = true,
 	color = Color(50, 50, 50, 255),
+	sortOrder = 100
+}
+
+DarkRP.createCategory{
+	name = "Orcs",
+	categorises = "jobs",
+	startExpanded = true,
+	color = Color(0, 50, 0, 255),
 	sortOrder = 101
+}
+
+DarkRP.createCategory{
+	name = "Cultists",
+	categorises = "jobs",
+	startExpanded = true,
+	color = Color(50, 0, 0, 255),
+	sortOrder = 102
 }
 
 DarkRP.createCategory{
