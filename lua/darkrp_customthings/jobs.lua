@@ -321,6 +321,147 @@ TEAM_MERCHANT = DarkRP.createJob("Elven Merchant", {
     category = "Peasants",
 })
 
+TEAM_CULT = DarkRP.createJob("Cultist", {
+    color = Color(100, 0, 0, 255),
+
+    model = {
+        "models/player/martin/medieval2019_playermodels/greybeard_priestver01.mdl",
+		"models/models/maester/maester.mdl",
+    },
+
+    description = [[A worshipper of some particular god or idol. They follow the teachings of the Cult Leader, and will do anything to acheive the cult's goals.]],
+    weapons = {},
+    command = "cultist",
+    max = 3,
+    salary = GAMEMODE.Config.normalsalary,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    category = "Cultists",
+})
+
+TEAM_CULTLEADER = DarkRP.createJob("Cult Leader", {
+    color = Color(50, 0, 0, 255),
+
+    model = {
+		"models/player/martin/medieval2019_playermodels/mage_fem01.mdl",
+		"models/player/martin/medieval2019_playermodels/elfe_mage_hom01.mdl",
+    },
+
+    description = [[The leader of the cult of some particular god or idol.
+Teach cult members about the cult's beliefs, and lead them to greatness.
+Supply the cult members and all others with special evil food and drink, but be carful about doing it in public.]],
+    weapons = {},
+    command = "cultleader",
+    max = 1,
+    salary = GAMEMODE.Config.normalsalary * 1.34,
+    admin = 0,
+    vote = true,
+	NeedToChangeFrom = TEAM_CULT,
+    hasLicense = false,
+    category = "Cultists",
+	PlayerDeath = function(ply)
+        if ply:Team() == TEAM_CULTLEADER then
+            ply:changeTeam( TEAM_CULT, true )
+            for k,v in pairs( player.GetAll() ) do
+                DarkRP.notify(v, 1, 4, "The Cult Leader has been killed!")
+            end
+        end
+    end,
+})
+
+-- == ORCS == --
+
+TEAM_ORC = DarkRP.createJob("Orc", {
+    color = Color(0, 100, 0, 255),
+
+    model = {
+        "models/mailer/characters/orc_male.mdl",
+		"models/mailer/characters/orc_female.mdl",
+    },
+
+    description = [[A member of the Orc clan held up in their Stronghold.]],
+    weapons = {},
+    command = "orc",
+    max = 3,
+    salary = GAMEMODE.Config.normalsalary,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    category = "Orcs",
+})
+
+TEAM_ORCSMITH = DarkRP.createJob("Orc Blacksmith", {
+    color = Color(75, 100, 0, 255),
+
+    model = {
+        "models/mailer/characters/hots_thrall.mdl",
+    },
+
+    description = [[The Orc Blacksmith is responsible for equipping the rest of the stronghold with weaponry.]],
+    weapons = {},
+    command = "orcsmith",
+    max = 1,
+    salary = GAMEMODE.Config.normalsalary,
+    admin = 0,
+    vote = false,
+	NeedToChangeFrom = TEAM_ORC,
+    hasLicense = false,
+    category = "Orcs",
+})
+
+TEAM_ORCHEALER = DarkRP.createJob("Orc Shaman", {
+    color = Color(0, 100, 75, 255),
+
+    model = {
+        "models/mailer/characters/thrall.mdl",
+		"models/mailer/characters/wow_aggra.mdl",
+    },
+
+    description = [[The Shaman is tasked with keeping the inhabitants of the Orc Stronghold healthy.]],
+    weapons = {
+		"med_kit",
+	},
+    command = "orcshaman",
+    max = 1,
+    salary = GAMEMODE.Config.normalsalary,
+    admin = 0,
+    vote = false,
+	NeedToChangeFrom = TEAM_ORC,
+    hasLicense = false,
+    category = "Orcs",
+})
+
+TEAM_ORCCHIEF = DarkRP.createJob("Orc Chieftan", {
+    color = Color(0, 50, 0, 255),
+
+    model = {
+        "models/mailer/characters/rehgar.mdl",
+    },
+
+    description = [[You lead the Orcs of the Stronghold. Keep your clan fed, supplied, and safe.
+Conduct diplomacy and trade with the other factions, or go out on raids.]],
+    weapons = {
+		"meleearts_blade_greatsword",
+	},
+    command = "orcchief",
+    max = 1,
+    salary = GAMEMODE.Config.normalsalary * 1.34,
+    admin = 0,
+    vote = true,
+	NeedToChangeFrom = TEAM_ORC,
+    hasLicense = false,
+    category = "Orcs",
+	PlayerDeath = function(ply)
+        if ply:Team() == TEAM_ORCCHIEF then
+            ply:changeTeam( TEAM_ORC, true )
+            for k,v in pairs( player.GetAll() ) do
+                DarkRP.notify(v, 1, 4, "The Orc Chieftan has been killed!")
+            end
+        end
+    end,
+})
+
 -- == GUARDS == --
 TEAM_GUARD = DarkRP.createJob("Guard", {
     color = Color(0, 0, 200, 255),
