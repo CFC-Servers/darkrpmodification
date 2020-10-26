@@ -53,6 +53,7 @@ DarkRP.createShipment("Zweihander", {
 	category = "Weapons",
 })
 
+--[[
 DarkRP.createShipment("Yari", {
 	model = "models/models/danguyen/silver_knight_spear.mdl",
 	entity = "meleearts_spear_basic",
@@ -76,7 +77,7 @@ DarkRP.createShipment("Spear", {
 	allowed = {TEAM_BLACKSMITH},
 	category = "Weapons",
 })
-
+]]
 DarkRP.createShipment("Hatchet", {
 	model = "models/models/danguyen/hatchet.mdl",
 	entity = "meleearts_axe_hatchet",
@@ -137,6 +138,7 @@ DarkRP.createShipment("Shiv", {
 	category = "Weapons",
 })
 
+--[[
 DarkRP.createShipment("Harpoon", {
 	model = "models/props_junk/harpoon002a.mdl",
 	entity = "meleearts_spear_harpoon",
@@ -148,6 +150,7 @@ DarkRP.createShipment("Harpoon", {
 	allowed = {TEAM_BLACKSMITH},
 	category = "Weapons",
 })
+]]
 
 DarkRP.createShipment("Nunchucks", {
 	model = "models/models/danguyen/w_nunchucks.mdl",
