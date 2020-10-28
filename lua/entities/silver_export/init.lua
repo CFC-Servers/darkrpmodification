@@ -19,7 +19,7 @@ function ENT:Initialize()
     self.sparking = false
     self.damage = 100
     self.IsMoneyPrinter = true
-    timer.Simple(math.random(300, 300), function() PrintMore(self) end)
+    timer.Simple(math.random(180, 300), function() PrintMore(self) end)
 
 end
 
@@ -96,14 +96,11 @@ function ENT:CreateMoneybag()
         if math.random(1, overheatchance) == 3 then self:BurstIntoFlames() end
     end
 
-    local amount = GAMEMODE.Config.mprintamount
-    if amount == 0 then
-        amount = 400
-    end
+    local amount = 400
 
     DarkRP.createMoneyBag(Vector(MoneyPos.x + 15, MoneyPos.y, MoneyPos.z + 15), amount)
     self.sparking = false
-    timer.Simple(math.random(300, 300), function() PrintMore(self) end)
+    timer.Simple(math.random(180, 300), function() PrintMore(self) end)
 end
 
 function ENT:Think()
