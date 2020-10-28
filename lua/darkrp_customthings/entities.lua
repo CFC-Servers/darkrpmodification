@@ -27,6 +27,33 @@ DarkRP.createEntity("Money Printer", {
 })
 ]]
 
+DarkRP.createEntity("Wheat Export", {
+    ent = "wheat_export",
+    model = "models/graincrate/graincrate.mdl",
+    price = 600,
+    max = 1,
+    cmd = "buywheatexport",
+	category = "Exports",
+})
+
+DarkRP.createEntity("Weapon Export", {
+    ent = "weapon_export",
+    model = "models/weaponcrate/weaponcrate.mdl",
+    price = 1000,
+    max = 1,
+    cmd = "buyweaponexport",
+	category = "Exports",
+})
+
+DarkRP.createEntity("Silver Export", {
+    ent = "silver_export",
+    model = "models/silverstack/silverstack.mdl",
+    price = 2400,
+    max = 1,
+    cmd = "buysilverexport",
+	category = "Exports",
+})
+
 DarkRP.createEntity("Bananas", {
     ent = "eoti_food_bananas",
     model = "models/food/bananas/banana_regime.mdl",
