@@ -166,7 +166,7 @@ GM.Config.wantedsuicide                 = false
 -- realisticfalldamage - Enable/Disable dynamic fall damage. Setting mp_falldamage to 1 will over-ride this.
 GM.Config.realisticfalldamage           = true
 -- printeroverheat - Whether the default money printer can overheat on its own.
-GM.Config.printeroverheat               = true
+GM.Config.printeroverheat               = false
 -- weaponCheckerHideDefault - Hide default weapons when checking weapons.
 GM.Config.weaponCheckerHideDefault      = true
 -- weaponCheckerHideNoLicense - Hide weapons that do not require a license.
@@ -361,11 +361,10 @@ GM.Config.DisallowDrop = {
 -- The list of weapons people spawn with.
 GM.Config.DefaultWeapons = {
     "keys",
-    "meleearts_bludgeon_fists",
     "weapon_physcannon",
     "gmod_camera",
     "gmod_tool",
-	"pocket",
+    "pocket",
     "weapon_physgun",
 }
 
@@ -457,6 +456,9 @@ GM.Config.PocketBlacklist = {
     ["darkrp_tip_jar"] = true,
     ["weapon_cuff_police"] = true,
     ["weapon_defibrillator"] = true,
+    ["silver_export"] = true,
+    ["weapon_export"] = true,
+    ["wheat_export"] = true,
 }
 
 -- These weapons are classed as 'legal' in the weapon checker and are not stripped when confiscating weapons.
