@@ -20,86 +20,44 @@ DarkRP.createCategory{
 
 Add new categories under the next line!
 ---------------------------------------------------------------------------]]
-
 DarkRP.createCategory{
-	name = "Peasants",
-	categorises = "jobs",
+	name = "Pistols",
+	categorises = "shipments",
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),
-	sortOrder = 1
 }
-
 DarkRP.createCategory{
-	name = "Royalty",
-	categorises = "jobs",
+	name = "Machine Guns",
+	categorises = "shipments",
 	startExpanded = true,
-	color = Color(75, 0, 75, 255),
-	sortOrder = 200
+	color = Color(0, 107, 0, 255),
 }
-
 DarkRP.createCategory{
-	name = "Guards",
-	categorises = "jobs",
+	name = "Sub-Machine Guns",
+	categorises = "shipments",
 	startExpanded = true,
-	color = Color(0, 0, 150, 255),
-	sortOrder = 103
+	color = Color(0, 107, 0, 255),
 }
-
 DarkRP.createCategory{
-	name = "Other",
-	categorises = "jobs",
+	name = "Sniper Rifles",
+	categorises = "shipments",
 	startExpanded = true,
-	color = Color(0, 0, 0, 255),
-	sortOrder = 102
+	color = Color(0, 107, 0, 255),
 }
-
 DarkRP.createCategory{
-	name = "Criminals",
-	categorises = "jobs",
-	startExpanded = true,
-	color = Color(50, 50, 50, 255),
-	sortOrder = 100
-}
-
-DarkRP.createCategory{
-	name = "Orcs",
-	categorises = "jobs",
-	startExpanded = true,
-	color = Color(0, 50, 0, 255),
-	sortOrder = 101
-}
-
-DarkRP.createCategory{
-	name = "Cultists",
-	categorises = "jobs",
-	startExpanded = true,
-	color = Color(50, 0, 0, 255),
-	sortOrder = 102
-}
-
-DarkRP.createCategory{
-	name = "Weapons",
+	name = "Revolvers",
 	categorises = "shipments",
 	startExpanded = true,
 	color = Color(0, 107, 0, 255),
 }
 
 DarkRP.createCategory{
-    name = "Exports",
+    name = "Printers",
     categorises = "entities",
     startExpanded = true,
     color = Color(0, 107, 0, 255),
 	 canSee = fp{fn.Id, true},
 	 sortOrder = 99,
-}
-
-DarkRP.createCategory{
-    name = "Food",
-    categorises = "entities",
-    startExpanded = true,
-    color = Color(0, 107, 0, 255),
-	 canSee = fp{fn.Id, true},
-	 sortOrder = 100,
 }
 
 DarkRP.createCategory{
@@ -109,4 +67,22 @@ DarkRP.createCategory{
     color = Color(150, 70, 0, 255),
 	 canSee = fp{fn.Id, true},
 	 sortOrder = 98,
+}
+
+DarkRP.createCategory{
+    name = "Other",
+    categorises = "jobs",
+    startExpanded = true,
+    color = Color(10, 10, 10, 255),
+	 canSee = fp{fn.Id, true},
+	 sortOrder = 101,
+}
+
+DarkRP.createCategory{
+    name = "Attachments",
+    categorises = "entities",
+    startExpanded = true,
+    color = Color(255, 140, 0, 255),
+	 canSee = fp{fn.Id, true},
+	 sortOrder = 100,
 }
