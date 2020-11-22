@@ -18,194 +18,191 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomShipmentFields
 Add shipments and guns under the following line:
 ---------------------------------------------------------------------------]]
 
-DarkRP.createShipment("Battle Axe", {
-	model = "models/models/danguyen/grognakaxe.mdl",
-	entity = "meleearts_axe_battleaxe",
-	price = 4500,
-	amount = 5,
-	separate = true,
-	pricesep = 900,
-	noship = true,
-	allowed = {TEAM_BLACKSMITH},
-	category = "Weapons",
-})
-
-DarkRP.createShipment("Quiver of Arrows", {
-	model = "models/weapons/w_quiver.mdl",
-	entity = "huntingbow_quiver",
-	price = 250,
-	amount = 5,
-	separate = true,
-	pricesep = 50,
-	noship = true,
+DarkRP.createShipment("Health Vial", {
+	model = "models/healthvial.mdl",
+	entity = "item_healthvial",
+	price = 500,
+	amount = 10,
+	separate = false,
+	pricesep = 500,
+	noship = false,
+	allowed = {TEAM_MEDIC},
 	category = "Other",
 })
 
-DarkRP.createShipment("Zweihander", {
-	model = "models/models/danguyen/great_flammenschwert.mdl",
-	entity = "meleearts_blade_greatsword",
-	price = 5000,
-	amount = 5,
+DarkRP.createShipment("M1911", {
+	model = "models/weapons/cw_pist_m1911.mdl",
+	entity = "cw_m1911",
+	price = 7650,
+	amount = 10,
 	separate = true,
-	pricesep = 1000,
+	pricesep = 900,
 	noship = true,
-	allowed = {TEAM_BLACKSMITH},
-	category = "Weapons",
+	allowed = {TEAM_GUN},
+	category = "Pistols",
 })
 
---[[
-DarkRP.createShipment("Yari", {
-	model = "models/models/danguyen/silver_knight_spear.mdl",
-	entity = "meleearts_spear_basic",
-	price = 4750,
-	amount = 5,
+DarkRP.createShipment("MR96", {
+	model = "models/weapons/w_357.mdl",
+	entity = "cw_mr96",
+	price = 8325,
+	amount = 10,
+	separate = true,
+	pricesep = 925,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Pistols",
+})
+
+DarkRP.createShipment("P99", {
+	model = "models/weapons/w_pist_p228.mdl",
+	entity = "cw_p99",
+	price = 9225,
+	amount = 10,
+	separate = true,
+	pricesep = 1025,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Pistols",
+})
+
+DarkRP.createShipment("Deagle", {
+	model = "models/weapons/w_pist_deagle.mdl",
+	entity = "cw_deagle",
+	price = 10800,
+	amount = 10,
+	separate = true,
+	pricesep = 1200,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Pistols",
+})
+
+DarkRP.createShipment("Remington 870", {
+	model = "models/weapons/cw2_super_shorty.mdl",
+	entity = "cw_shorty",
+	price = 12600,
+	amount = 10,
 	separate = true,
 	pricesep = 950,
 	noship = true,
-	allowed = {TEAM_BLACKSMITH},
-	category = "Weapons",
+	allowed = {TEAM_GUN},
+	category = "Shotguns",
 })
 
-DarkRP.createShipment("Spear", {
-	model = "models/models/danguyen/spartan_spear.mdl",
-	entity = "meleearts_spear_spartan",
-	price = 4750,
-	amount = 5,
-	separate = true,
-	pricesep = 950,
-	noship = true,
-	allowed = {TEAM_BLACKSMITH},
-	category = "Weapons",
-})
-]]
-
-DarkRP.createShipment("Hatchet", {
-	model = "models/models/danguyen/hatchet.mdl",
-	entity = "meleearts_axe_hatchet",
-	price = 3500,
-	amount = 5,
-	separate = true,
-	pricesep = 700,
-	noship = true,
-	allowed = {TEAM_BLACKSMITH, TEAM_ORCSMITH},
-	category = "Weapons",
-})
-
-DarkRP.createShipment("Cleaver", {
-	model = "models/models/danguyen/cleaver.mdl",
-	entity = "meleearts_axe_crafted",
-	price = 2500,
-	amount = 5,
-	separate = true,
-	pricesep = 500,
-	noship = true,
-	allowed = {TEAM_BLACKSMITH, TEAM_ORCSMITH},
-	category = "Weapons",
-})
-
-DarkRP.createShipment("Sickle", {
-	model = "models/models/danguyen/w_gms_sickle.mdl",
-	entity = "meleearts_blade_sickle",
-	price = 2000,
-	amount = 5,
-	separate = true,
-	pricesep = 400,
-	noship = true,
-	allowed = {TEAM_BLACKSMITH},
-	category = "Weapons",
-})
-
-DarkRP.createShipment("Bow", {
-	model = "models/weapons/w_huntingbow.mdl",
-	entity = "weapon_huntingbow",
-	price = 3250,
-	amount = 5,
-	separate = true,
-	pricesep = 650,
-	noship = true,
-	allowed = {TEAM_BLACKSMITH},
-	category = "Weapons",
-})
-
-DarkRP.createShipment("Shiv", {
-	model = "models/models/danguyen/knife_shank.mdl",
-	entity = "meleearts_blade_shiv",
-	price = 1500,
-	amount = 5,
-	separate = true,
-	pricesep = 300,
-	noship = true,
-	allowed = {TEAM_BLACKSMITH},
-	category = "Weapons",
-})
-
---[[
-DarkRP.createShipment("Harpoon", {
-	model = "models/props_junk/harpoon002a.mdl",
-	entity = "meleearts_spear_harpoon",
-	price = 1250,
-	amount = 5,
-	separate = true,
-	pricesep = 250,
-	noship = true,
-	allowed = {TEAM_BLACKSMITH},
-	category = "Weapons",
-})
-]]
-
-DarkRP.createShipment("Nunchucks", {
-	model = "models/models/danguyen/w_nunchucks.mdl",
-	entity = "meleearts_staff_nunchucks",
-	price = 4000,
-	amount = 5,
-	separate = true,
-	pricesep = 800,
-	noship = true,
-	allowed = {TEAM_MERCHANT},
-	category = "Weapons",
-})
-
-DarkRP.createShipment("Bo Staff", {
-	model = "models/models/danguyen/staff.mdl",
-	entity = "meleearts_staff_bamboo",
-	price = 3750,
-	amount = 5,
-	separate = true,
-	pricesep = 750,
-	noship = true,
-	allowed = {TEAM_MERCHANT},
-	category = "Weapons",
-})
-
-DarkRP.createShipment("Katana", {
-	model = "models/models/danguyen/hattori.mdl",
-	entity = "meleearts_blade_katana",
-	price = 7000,
-	amount = 5,
+DarkRP.createShipment("Benelli M3", {
+	model = "models/weapons/w_cstm_m3super90.mdl",
+	entity = "cw_m3super90",
+	price = 16200,
+	amount = 10,
 	separate = true,
 	pricesep = 1400,
 	noship = true,
-	allowed = {TEAM_MERCHANT},
-	category = "Weapons",
+	allowed = {TEAM_GUN},
+	category = "Shotguns",
 })
 
-DarkRP.createShipment("Trench Axe", {
-	model = "models/models/danguyen/sappersaxe.mdl",
-	entity = "meleearts_axe_trenchaxe",
-	price = 3000,
-	amount = 5,
+DarkRP.createShipment("MAC-11", {
+	model = "models/weapons/w_cst_mac11.mdl",
+	entity = "cw_mac11",
+	price = 12150,
+	amount = 10,
 	separate = true,
-	pricesep = 600,
+	pricesep = 1350,
 	noship = true,
-	allowed = {TEAM_ORCSMITH},
-	category = "Weapons",
+	allowed = {TEAM_GUN},
+	category = "Sub-Machine Guns",
+})
+
+DarkRP.createShipment("HK MP5", {
+	model = "models/weapons/w_smg_mp5.mdl",
+	entity = "cw_mp5",
+	price = 15300,
+	amount = 10,
+	separate = true,
+	pricesep = 1700,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Sub-Machine Guns",
+})
+
+DarkRP.createShipment("UMP .45", {
+	model = "models/weapons/w_smg_ump45.mdl",
+	entity = "cw_ump45",
+	price = 16650,
+	amount = 10,
+	separate = true,
+	pricesep = 1850,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Sub-Machine Guns",
+})
+
+DarkRP.createShipment("AK-74", {
+	model = "models/weapons/w_rif_ak47.mdl",
+	entity = "cw_ak74",
+	price = 21150,
+	amount = 10,
+	separate = true,
+	pricesep = 2100,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Rifles",
+})
+
+DarkRP.createShipment("AR-15", {
+	model = "models/weapons/w_rif_m4a1.mdl",
+	entity = "cw_ar15",
+	price = 21825,
+	amount = 10,
+	separate = true,
+	pricesep = 2350,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Rifles",
+})
+
+DarkRP.createShipment("FN SCAR-H", {
+	model = "models/cw2/rifles/w_scarh.mdl",
+	entity = "cw_scarh",
+	price = 24750,
+	amount = 10,
+	separate = true,
+	pricesep = 2750,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Rifles",
+})
+
+DarkRP.createShipment("M14 EBR", {
+	model = "models/weapons/w_cstm_m14.mdl",
+	entity = "cw_m14",
+	price = 27900,
+	amount = 10,
+	separate = true,
+	pricesep = 3100,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Rifles",
+})
+
+DarkRP.createShipment("M249", {
+	model = "models/weapons/cw2_0_mach_para.mdl",
+	entity = "cw_m249_official",
+	price = 31950,
+	amount = 10,
+	separate = true,
+	pricesep = 3550,
+	noship = true,
+	allowed = {TEAM_GUN},
+	category = "Machine Guns",
 })
 
 DarkRP.createShipment("Rope Restraint", {
 	model = "models/weapons/w_toolgun.mdl",
 	entity = "weapon_cuff_rope",
-	price = 2750,
-	amount = 5,
+	price = 4950,
+	amount = 10,
 	separate = true,
 	pricesep = 550,
 	noship = true,
@@ -216,8 +213,20 @@ DarkRP.createShipment("Rope Restraint", {
 DarkRP.createShipment("Rope Leash", {
 	model = "models/weapons/w_toolgun.mdl",
 	entity = "weapon_leash_rope",
-	price = 3750,
-	amount = 5,
+	price = 6750,
+	amount = 10,
+	separate = true,
+	pricesep = 750,
+	noship = true,
+	allowed = {TEAM_BLACKMARKET},
+	category = "Restraints",
+})
+
+DarkRP.createShipment("Basic Handcuffs", {
+	model = "models/weapons/w_toolgun.mdl",
+	entity = "weapon_cuff_standard",
+	price = 6750,
+	amount = 10,
 	separate = true,
 	pricesep = 750,
 	noship = true,
@@ -228,10 +237,34 @@ DarkRP.createShipment("Rope Leash", {
 DarkRP.createShipment("Shackles", {
 	model = "models/weapons/w_toolgun.mdl",
 	entity = "weapon_cuff_shackles",
-	price = 5250,
-	amount = 5,
+	price = 9450,
+	amount = 10,
 	separate = true,
 	pricesep = 1050,
+	noship = true,
+	allowed = {TEAM_BLACKMARKET},
+	category = "Restraints",
+})
+
+DarkRP.createShipment("Elastic Restraint", {
+	model = "models/weapons/w_toolgun.mdl",
+	entity = "weapon_cuff_elastic",
+	price = 5400,
+	amount = 10,
+	separate = true,
+	pricesep = 600,
+	noship = true,
+	allowed = {TEAM_BLACKMARKET},
+	category = "Restraints",
+})
+
+DarkRP.createShipment("Elastic Leash", {
+	model = "models/weapons/w_toolgun.mdl",
+	entity = "weapon_leash_elastic",
+	price = 5400,
+	amount = 10,
+	separate = true,
+	pricesep = 600,
 	noship = true,
 	allowed = {TEAM_BLACKMARKET},
 	category = "Restraints",
@@ -240,10 +273,22 @@ DarkRP.createShipment("Shackles", {
 DarkRP.createShipment("Lockpick", {
 	model = "models/weapons/w_crowbar.mdl",
 	entity = "lockpick",
-	price = 1500,
-	amount = 5,
+	price = 2700,
+	amount = 10,
 	separate = true,
 	pricesep = 300,
+	noship = true,
+	allowed = {TEAM_BLACKMARKET},
+	category = "Other",
+})
+
+DarkRP.createShipment("Keypad Cracker", {
+	model = "models/weapons/w_c4_planted.mdl",
+	entity = "keypad_cracker",
+	price = 2250,
+	amount = 10,
+	separate = true,
+	pricesep = 250,
 	noship = true,
 	allowed = {TEAM_BLACKMARKET},
 	category = "Other",
