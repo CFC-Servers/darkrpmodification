@@ -54,7 +54,7 @@ GM.Config.copscanunweld                 = true
 -- cpcanarrestcp - Allow/Disallow CPs to arrest other CPs.
 GM.Config.cpcanarrestcp                 = true
 -- currencyLeft - The position of the currency symbol. true for left, false for right.
-GM.Config.currencyLeft                  = false
+GM.Config.currencyLeft                  = true
 -- customjobs - Enable/disable the /job command (personalized job names).
 GM.Config.customjobs                    = true
 -- customspawns - Enable/disable whether custom spawns should be used.
@@ -120,7 +120,7 @@ GM.Config.needwantedforarrest           = false
 -- noguns - Enabling this feature bans Guns and Gun Dealers.
 GM.Config.noguns                        = false
 -- norespawn - Enable/Disable that people don't have to respawn when they change job.
-GM.Config.norespawn                     = false
+GM.Config.norespawn                     = true
 -- npcarrest - Enable/disable arresting npc's.
 GM.Config.npcarrest                     = true
 -- ooc - Whether or not OOC tags are enabled.
@@ -166,7 +166,7 @@ GM.Config.wantedsuicide                 = false
 -- realisticfalldamage - Enable/Disable dynamic fall damage. Setting mp_falldamage to 1 will over-ride this.
 GM.Config.realisticfalldamage           = true
 -- printeroverheat - Whether the default money printer can overheat on its own.
-GM.Config.printeroverheat               = false
+GM.Config.printeroverheat               = true
 -- weaponCheckerHideDefault - Hide default weapons when checking weapons.
 GM.Config.weaponCheckerHideDefault      = true
 -- weaponCheckerHideNoLicense - Hide weapons that do not require a license.
@@ -255,9 +255,9 @@ GM.Config.respawntime                   = 1
 -- changejobtime - Minimum amount of seconds a player has to wait before changing job.
 GM.Config.changejobtime                 = 10
 -- runspeed - Sets the max running speed.
-GM.Config.runspeed                      = 240
+GM.Config.runspeed                      = 270
 -- runspeed - Sets the max running speed for CP teams.
-GM.Config.runspeedcp                    = 255
+GM.Config.runspeedcp                    = 290
 -- searchtime - Number of seconds for which a search warrant is valid.
 GM.Config.searchtime                    = 90
 -- ShipmentSpawnTime - Antispam time between spawning shipments.
@@ -305,16 +305,16 @@ Other settings
 
 -- The classname of money packets. Use this to create your own money entity!
 -- Note: the money packet must support the "Setamount" method (or the amount DTVar).
-GM.Config.MoneyClass = "medieval_money"
+GM.Config.MoneyClass = "spawned_money"
 -- In case you do wish to keep the default money, but change the model, this option is the way to go:
-GM.Config.moneyModel = "models/copper_bar/copper_bar.mdl"
+GM.Config.moneyModel = "models/props/cs_assault/money.mdl"
 -- You can set your own, custom sound to be played for all players whenever a lockdown is initiated.
 -- Note: Remember to include the folder where the sound file is located.
 GM.Config.lockdownsound = "npc/overwatch/cityvoice/f_confirmcivilstatus_1_spkr.wav"
 
 -- The skin DarkRP uses. Set to "default" to use the GMod default derma theme.
 GM.Config.DarkRPSkin = "DarkRP"
-GM.Config.currency = " gp"
+GM.Config.currency = "$"
 GM.Config.chatCommandPrefix = "/"
 GM.Config.F1MenuHelpPage = "https://wiki.darkrp.com/index.php/Main_Page"
 GM.Config.F1MenuHelpPageTitle = "DarkRP Wiki"
@@ -350,17 +350,13 @@ GM.Config.DisallowDrop = {
     ["weapon_fists"] = true,
     ["weapon_cuff_police"] = true,
     ["weapon_stungun"] = true,
-    ["m9k_m29satan"] = true,
-    ["m9k_m92beretta"] = true,
-    ["m9k_m16a4_acog"] = true,
-    ["m9k_m3"] = true,
-    ["m9k_mp5sd"] = true,
     ["weapon_defibrillator"] = true,
 }
 
 -- The list of weapons people spawn with.
 GM.Config.DefaultWeapons = {
     "keys",
+    "weapon_fists",
     "weapon_physcannon",
     "gmod_camera",
     "gmod_tool",
@@ -456,9 +452,6 @@ GM.Config.PocketBlacklist = {
     ["darkrp_tip_jar"] = true,
     ["weapon_cuff_police"] = true,
     ["weapon_defibrillator"] = true,
-    ["silver_export"] = true,
-    ["weapon_export"] = true,
-    ["wheat_export"] = true,
 }
 
 -- These weapons are classed as 'legal' in the weapon checker and are not stripped when confiscating weapons.
