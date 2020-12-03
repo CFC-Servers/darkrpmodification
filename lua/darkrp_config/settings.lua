@@ -452,6 +452,9 @@ GM.Config.PocketBlacklist = {
     ["darkrp_tip_jar"] = true,
     ["weapon_cuff_police"] = true,
     ["weapon_defibrillator"] = true,
+    ["gmod_sent_vehicle_fphysics_gaspump"] = true,
+    ["gmod_sent_vehicle_fphysics_gaspump_electric"] = true,
+    ["gmod_sent_vehicle_fphysics_gaspump_diesel"] = true,
 }
 
 -- These weapons are classed as 'legal' in the weapon checker and are not stripped when confiscating weapons.
