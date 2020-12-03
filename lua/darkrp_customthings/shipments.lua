@@ -33,11 +33,11 @@ DarkRP.createShipment("Health Vial", {
 DarkRP.createShipment("M1911", {
 	model = "models/weapons/cw_pist_m1911.mdl",
 	entity = "cw_m1911",
-	price = 7650,
+	price = 8100,
 	amount = 10,
 	separate = true,
 	pricesep = 900,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Pistols",
 })
@@ -49,7 +49,7 @@ DarkRP.createShipment("MR96", {
 	amount = 10,
 	separate = true,
 	pricesep = 925,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Pistols",
 })
@@ -61,7 +61,7 @@ DarkRP.createShipment("P99", {
 	amount = 10,
 	separate = true,
 	pricesep = 1025,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Pistols",
 })
@@ -73,7 +73,7 @@ DarkRP.createShipment("Deagle", {
 	amount = 10,
 	separate = true,
 	pricesep = 1200,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Pistols",
 })
@@ -81,11 +81,11 @@ DarkRP.createShipment("Deagle", {
 DarkRP.createShipment("Remington 870", {
 	model = "models/weapons/cw2_super_shorty.mdl",
 	entity = "cw_shorty",
-	price = 12600,
+	price = 8550,
 	amount = 10,
 	separate = true,
 	pricesep = 950,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Shotguns",
 })
@@ -93,11 +93,11 @@ DarkRP.createShipment("Remington 870", {
 DarkRP.createShipment("Benelli M3", {
 	model = "models/weapons/w_cstm_m3super90.mdl",
 	entity = "cw_m3super90",
-	price = 16200,
+	price = 12600,
 	amount = 10,
 	separate = true,
 	pricesep = 1400,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Shotguns",
 })
@@ -109,7 +109,7 @@ DarkRP.createShipment("MAC-11", {
 	amount = 10,
 	separate = true,
 	pricesep = 1350,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Sub-Machine Guns",
 })
@@ -121,7 +121,7 @@ DarkRP.createShipment("HK MP5", {
 	amount = 10,
 	separate = true,
 	pricesep = 1700,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Sub-Machine Guns",
 })
@@ -133,7 +133,7 @@ DarkRP.createShipment("UMP .45", {
 	amount = 10,
 	separate = true,
 	pricesep = 1850,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Sub-Machine Guns",
 })
@@ -141,11 +141,11 @@ DarkRP.createShipment("UMP .45", {
 DarkRP.createShipment("AK-74", {
 	model = "models/weapons/w_rif_ak47.mdl",
 	entity = "cw_ak74",
-	price = 21150,
+	price = 18900,
 	amount = 10,
 	separate = true,
 	pricesep = 2100,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Rifles",
 })
@@ -153,11 +153,11 @@ DarkRP.createShipment("AK-74", {
 DarkRP.createShipment("AR-15", {
 	model = "models/weapons/w_rif_m4a1.mdl",
 	entity = "cw_ar15",
-	price = 21825,
+	price = 21150,
 	amount = 10,
 	separate = true,
 	pricesep = 2350,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Rifles",
 })
@@ -169,7 +169,7 @@ DarkRP.createShipment("FN SCAR-H", {
 	amount = 10,
 	separate = true,
 	pricesep = 2750,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Rifles",
 })
@@ -181,7 +181,7 @@ DarkRP.createShipment("M14 EBR", {
 	amount = 10,
 	separate = true,
 	pricesep = 3100,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Rifles",
 })
@@ -193,7 +193,7 @@ DarkRP.createShipment("M249", {
 	amount = 10,
 	separate = true,
 	pricesep = 3550,
-	noship = true,
+	noship = false,
 	allowed = {TEAM_GUN},
 	category = "Machine Guns",
 })
