@@ -146,3 +146,12 @@ DarkRP.createEntity("12 Guage Ammo", {
 	cmd = "buy12guage",
 	category = "Ammo",
 })
+
+DarkRP.createEntity(".50 AE Ammo", {
+	ent = "cw_ammo_50ae",
+	model = "models/Items/BoxMRounds.mdl",
+	price = 84,
+	max = 3,
+	cmd = "buy50ae",
+	category = "Ammo",
+})
