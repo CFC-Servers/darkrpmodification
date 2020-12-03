@@ -351,6 +351,7 @@ GM.Config.DisallowDrop = {
     ["weapon_cuff_police"] = true,
     ["weapon_stungun"] = true,
     ["weapon_defibrillator"] = true,
+    ["weapon_simfillerpistol"] = true,
 }
 
 -- The list of weapons people spawn with.
@@ -455,6 +456,7 @@ GM.Config.PocketBlacklist = {
     ["gmod_sent_vehicle_fphysics_gaspump"] = true,
     ["gmod_sent_vehicle_fphysics_gaspump_electric"] = true,
     ["gmod_sent_vehicle_fphysics_gaspump_diesel"] = true,
+    ["weapon_simfillerpistol"] = true,
 }
 
 -- These weapons are classed as 'legal' in the weapon checker and are not stripped when confiscating weapons.
