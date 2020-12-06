@@ -441,6 +441,47 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
     })
 end
 
+TEAM_DRUG = DarkRP.createJob("Drug Dealer", {
+    color = Color(175, 175, 0, 255),
+
+    model = allHumanModels({
+        also = {
+        },
+        except = {
+        }
+    }),
+
+    description = [[As a skilled chemist, you supply drugs to the city's populace.]],
+    weapons = {},
+    command = "drug",
+    max = 2,
+    salary = GAMEMODE.Config.normalsalary,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Gangsters",
+})
+
+TEAM_STAFF = DarkRP.createJob("Staff-On-Duty", {
+    color = Color(0, 128, 128, 255),
+    model = {
+		"models/player/hostage/hostage_01.mdl",
+		"models/player/hostage/hostage_02.mdl",
+		"models/player/hostage/hostage_03.mdl",
+		"models/player/hostage/hostage_04.mdl"},
+    description = [[Staff Job]],
+    weapons = {"weaponchecker", "weapon_keypadchecker"},
+    command = "staff",
+    max = 0,
+    salary = GAMEMODE.Config.normalsalary,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+	customCheck = function(ply) return table.HasValue( {"moderator", "admin", "superadmin", "owner"}, ply:GetUserGroup() ) end,
+    category = "Other",
+})
+
 --[[---------------------------------------------------------------------------
 Define which team joining players spawn into and what team you change to if demoted
 ---------------------------------------------------------------------------]]
