@@ -25,6 +25,24 @@ DarkRP.createEntity("Money Printer", {
     cmd = "buymoneyprinter",
 })
 
+DarkRP.createEntity("Dazzle Dust", {
+    ent = "drug_dazzle",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 225,
+    max = 10,
+    cmd = "buydazzledust",
+	allowed = {TEAM_DRUG},
+})
+
+DarkRP.createEntity("Violet Slug", {
+    ent = "drug_slug",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 180,
+    max = 10,
+    cmd = "buyvioletslug",
+	allowed = {TEAM_DRUG},
+})
+
 DarkRP.createEntity("Close Range Sights", {
 	ent = "cw_attpack_sights_cqb",
 	model = "models/Items/BoxSRounds.mdl",
