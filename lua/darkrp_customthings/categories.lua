@@ -21,6 +21,41 @@ DarkRP.createCategory{
 Add new categories under the next line!
 ---------------------------------------------------------------------------]]
 DarkRP.createCategory{
+    name = "Civilians", --normal civilian jobs
+    categorises = "jobs", 
+    startExpanded = true, 
+    color = Color(50, 200, 50, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 100, 
+}
+DarkRP.createCategory{
+    name = "Government", --government jobs
+    categorises = "jobs", 
+    startExpanded = true, 
+    color = Color(50, 50, 200, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 112, 
+}
+DarkRP.createCategory{
+    name = "Law-Breakers", --jobs based on criminal activity
+    categorises = "jobs", 
+    startExpanded = true, 
+    color = Color(200, 50, 50, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 107, 
+}
+DarkRP.createCategory{
+    name = "Vendors", --jobs that legally sell goods
+    categorises = "jobs", 
+    startExpanded = true, 
+    color = Color(200, 200, 50, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 104, 
+}
+
+------------------------------------
+
+DarkRP.createCategory{
 	name = "Pistols",
 	categorises = "shipments",
 	startExpanded = true,
