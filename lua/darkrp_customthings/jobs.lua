@@ -106,25 +106,42 @@ local function allHumanModels( data )
 end
 
 TEAM_CITIZEN = DarkRP.createJob("Citizen", {
-    color = Color(20, 150, 20, 255),
+    color = Color(155, 255, 155, 255),
+    model = {
+        "models/kayf/humans/group01/male_01.mdl",
+        "models/kayf/humans/group01/male_02.mdl",
+        "models/kayf/humans/group01/male_05.mdl",
+        "models/kayf/humans/group02/male_03.mdl",
+        "models/kayf/humans/group01/male_07.mdl",
+        "models/kayf/humans/group02/male_06.mdl",
+		"models/dawson/obese_male_deluxe_edition/obese_male_gregory_01.mdl",
+		"models/kayf/humans/group01/female_02.mdl",
+        "models/kayf/humans/group01/female_03.mdl",
+        "models/kayf/humans/group02/female_03.mdl",
+        "models/kayf/humans/group02/female_02.mdl",
+		"models/kayf/humans/group02/female_06.mdl",
+    },
+    description = [[Citizens are normal people, nothing special and make up the majority of the server.
 
-    model = allHumanModels({
-        also = {
-        },
-        except = {
-        }
-    }),
-
-    description = [[You don't have a specific role in life. Live your day how you want to live it.]],
-    weapons = {},
+-Income and Salary-
+   $50/10min
+  
+-Special Commands-
+   None
+   
+-Abilities-
+   None
+  
+]],
+    weapons = {"weapon_fists"},
     command = "citizen",
     max = 0,
-    salary = GAMEMODE.Config.normalsalary,
+    salary = 50,
     admin = 0,
     vote = false,
     hasLicense = false,
     candemote = false,
-    category = "Citizens",
+    category = "Civilians",
 })
 
 TEAM_MECHANIC = DarkRP.createJob("Mechanic", {
@@ -175,66 +192,119 @@ TEAM_HITMAN = DarkRP.createJob("Mercenary", {
     category = "Gangsters",
 })
 
-TEAM_MEDIC = DarkRP.createJob("Medic", {
-    color = Color(47, 79, 79, 255),
-
-    model = allHumanModels({
-        also = {
-        },
-        except = {
-        }
-    }),
-
-    description = [[With your medical knowledge you work to restore players to full health bring them back from the brink.]],
-
-    weapons = {
-        "med_kit",
-        "weapon_defibrillator"
+TEAM_MEDIC = DarkRP.createJob("Rescue", {
+    color = Color(255, 114, 0, 255),
+    model = {
+        "models/player/kerry/medic/medic_01.mdl",
+        "models/player/kerry/medic/medic_03.mdl",
+        "models/player/kerry/medic/medic_06.mdl",
+        "models/player/kerry/medic/medic_04_f.mdl",
+        "models/player/kerry/medic/medic_05_f.mdl",
+        "models/player/kerry/medic/medic_03_f.mdl",
     },
+    description = [[Rescue is there to help people. You'll find work by healing people and putting out fires, some of which may be arson.
 
+-Income and Salary-
+   $200/10min
+   Any profits from services
+  
+-Special Commands-
+   None
+   
+-Abilities-
+   Can heal people
+   Can put out fires
+   Can sell morphine syringes
+  
+]],
+    weapons = {"med_kit","weapon_extinguisher"},
     command = "medic",
-    max = 4,
-    salary = GAMEMODE.Config.normalsalary,
+    max = 3,
+    salary = 200,
     admin = 0,
     vote = false,
     hasLicense = false,
     medic = true,
-    category = "Citizens",
+    category = "Government",
+})
+
+TEAM_MOB = DarkRP.createJob("Kingpin", {
+    color = Color(172,0,255, 255),
+    model = {
+        "models/humans/group10/male_08.mdl",
+        "models/humans/group10/male_03.mdl",
+        "models/humans/group10/female_02.mdl",
+        "models/humans/group10/female_07.mdl",
+    },
+    description = [[The kingpin is the boss of the criminal underworld. Employ an army of underlings to do your dirty work and run your very own crime empire. Keep yourself protected at all times, as some people may be interested in taking you out.
+
+-Income and Salary-
+   $600/10min
+   Any profits from rackets
+  
+-Special Commands-
+   /agenda - Sets gang agenda
+   /addagenda - Adds line to gang agenda
+   
+-Abilities-
+   You have a forged gun license
+   Break people out of jail
+   People may want to work for you
+  
+]],
+    weapons = {"lockpick","cw_shorty", "unarrest_stick"},
+    command = "mobboss",
+    max = 1,
+    salary = 600,
+    admin = 0,
+    vote = false,
+    hasLicense = true,
+    category = "Law-Breakers",
+	ammo = {
+        ["12 Gauge Rounds"] = 60,
+    },
+	NeedToChangeFrom = TEAM_GANG,
 })
 
 -- == POLICE == --
-TEAM_POLICE = DarkRP.createJob("Police Officer", {
-    color = Color(25, 25, 170, 255),
-
+TEAM_POLICE = DarkRP.createJob("Law Enforcement", {
+    color = Color(0, 140, 255, 255),
     model = {
-        "models/player/police.mdl",
-        "models/player/police_fem.mdl"
+        "models/kerry/player/police_usa/male_04.mdl",
+        "models/kerry/player/police_usa/male_05.mdl",
+        "models/kerry/player/police_usa/male_06.mdl",
+		"models/kerry/player/police_usa/male_03.mdl",
+        "models/kerry/player/police_usa/male_01.mdl",
     },
+    description = [[Law enforcement have the authority to uphold the law, whether that be by issuing fines, arresting criminals, or killing armed psychos.
 
-    description = [[The protector of every the city and its people.
-    Hit a player with your arrest baton to put them in jail.
-    The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
-    The Battering Ram can also unfreeze frozen props (if enabled).
-    Type /wanted <name> to alert the public to the presence of a criminal.]],
-
-	weapons = {
-		"weapon_cuff_police",
-		"weapon_stungun",
-		"unarrest_stick",
-		"arrest_stick",
-		"cw_p99",
-		"stunstick",
-		"door_ram",
-    },
-
+-Income and Salary-
+   $200/10min
+   Cash reward for destroying printers
+   
+-Special Commands-
+   /wanted <PLAYER> - Sets that player as Wanted (needed to arrest)
+   /warrant <PLAYER> - Requests a warrant to search player's property
+   /agenda - Sets shared police agenda
+   /addagenda - Adds line to shared police agenda
+   
+-Abilities-
+   Can issue tickets
+   Can make arrests
+   Can search people
+   
+]],
+    weapons = {"arrest_stick", "unarrest_stick", "cw_nen_glock17", "stunstick", "door_ram", "weaponchecker"},
     command = "cp",
-    max = 7,
-    salary = GAMEMODE.Config.normalsalary * 1.56,
+    max = 6,
+    salary = 250,
     admin = 0,
     vote = true,
     hasLicense = true,
-    ammo = BASE_CP_AMMO,
-    category = "Civil Protection",
+    ammo = {
+        ["pistol"] = 60,
+    },
+    category = "Government",
 })
 
 TEAM_DEA = DarkRP.createJob("DEA Agent", {
@@ -273,148 +343,222 @@ TEAM_DEA = DarkRP.createJob("DEA Agent", {
     category = "Civil Protection",
 })
 
-TEAM_CHIEF = DarkRP.createJob("Chief of Police", {
-    color = Color(20, 20, 255, 255),
-
-    model = {
-        "models/player/combine_soldier_prisonguard.mdl"
+TEAM_CHIEF = DarkRP.createJob("Federal Agent", {
+    color = Color(0, 36, 195, 255),
+     model = {
+        "models/fbi_pack/fbi_05.mdl",
+        "models/fbi_pack/fbi_06.mdl",
+        "models/fbi_pack/fbi_01.mdl",
+        "models/fbi_pack/fbi_03.mdl",
     },
+    description = [[Federal Agents are mainly in charge of high-risk criminals and drug crime.
 
-    description = [[The Chief is the leader of city Police.
-    Coordinate the police force to enforce law in the city.
-    Hit a player with arrest baton to put them in jail.
-    Bash a player with a stunstick and they may learn to obey the law.
-    The Battering Ram can break down the door of a criminal, with a warrant for his/her arrest.
-    Type /wanted <name> to alert the public to the presence of a criminal.
-    Type /jailpos to set the Jail Position]],
-
-	weapons = {
-		"weapon_cuff_police",
-		"weapon_stungun",
-		"unarrest_stick",
-		"arrest_stick",
-		"cw_deagle",
-		"stunstick",
-		"door_ram",
-    },
-
+-Income and Salary-
+   $400/10min
+  
+-Special Commands-
+   /wanted <PLAYER> - Sets that player as Wanted (needed to arrest)
+   /warrant <PLAYER> - Requests a warrant to search player's property
+   /agenda - Sets shared police agenda
+   /addagenda - Adds line to shared police agenda
+   
+-Abilities-
+   Can issue tickets
+   Can make arrests
+   Can search people
+  
+]],
+    weapons = {"arrest_stick", "unarrest_stick", "cw_mp7_official", "stunstick", "door_ram", "weaponchecker"},
     command = "chief",
-    max = 1,
-    salary = GAMEMODE.Config.normalsalary * 1.78,
+    max = 2,
+    salary = 400,
     admin = 0,
     vote = true,
     hasLicense = true,
     chief = true,
-	NeedToChangeFrom = TEAM_POLICE,
-    ammo = BASE_CP_AMMO,
-    category = "Civil Protection",
+    NeedToChangeFrom = TEAM_POLICE,
+    ammo = {
+        ["pistol"] = 60,
+    },
+    category = "Government",
 })
 
-TEAM_GANG = DarkRP.createJob("Gangster", {
-    color = Color(75, 75, 75, 255),
+TEAM_GANG = DarkRP.createJob("Criminal", {
+    color = Color(164,0,235, 255),
+    model = {
+        "models/kayf/humans/group01/male_01.mdl",
+        "models/kayf/humans/group01/male_02.mdl",
+        "models/kayf/humans/group01/male_05.mdl",
+        "models/kayf/humans/group01/male_07.mdl",
+		"models/dawson/obese_male_deluxe_edition/obese_male_gregory_01.mdl",
+		"models/ms13/slow_1.mdl",
+        "models/ms13/slow_2.mdl",
+		"models/ms13/slow_3.mdl",
+		"models/deepalley/alley_thug.mdl",
+        "models/kayf/humans/group01/female_03.mdl",
+        "models/kayf/humans/group02/female_02.mdl",
+		"models/kayf/humans/group02/female_06.mdl",
+    },
+    description = [[You are a career criminal. You often choose the less-than-legal route to get rich. In between running from the cops you make a living by robbing those you deem weaker than you.
 
-    model = allHumanModels({
-        also = {
-        },
-        except = {
-        }
-    }),
-
-    description = [[A connoisseur of crime. Strike out on your own, or try to join or form a criminal organization.]],
-    weapons = {},
+-Income and Salary-
+   $50/10min
+   Any profits from criminal activity
+  
+-Special Commands-
+   None
+   
+-Abilities-
+   None
+  
+]],
+    weapons = {lockpick},
     command = "gangster",
-    max = 8,
-    salary = GAMEMODE.Config.normalsalary,
+    max = 4,
+    salary = 50,
     admin = 0,
     vote = false,
     hasLicense = false,
-    category = "Gangsters",
+    category = "Law-Breakers",
 })
 
-TEAM_GUN = DarkRP.createJob("Gun Dealer", {
-    color = Color(255, 140, 0, 255),
+TEAM_GUN = DarkRP.createJob("Arms Dealer", {
+    color = Color(255, 255, 0, 255),
+    model = {
+        "models/humans/group10/male_08.mdl",
+        "models/humans/group10/male_03.mdl",
+		"models/Player/betaconscript.mdl",
+		"models/ms13/slow_1.mdl",
+        "models/ms13/slow_2.mdl",
+		"models/ms13/slow_3.mdl",
+		"models/humans/group10/female_02.mdl",
+        "models/humans/group10/female_07.mdl",
+    },
+    description = [[Arms dealers sell weapons to those who have the cash to buy. With such a popular product, you'll have no trouble finding business opportunities.
 
-    model = allHumanModels({
-        also = {
-        },
-        except = {
-        }
-    }),
-
-    description = [[A Gun Dealer is the only person who can sell guns to other people.
-    Make sure you aren't caught selling illegal firearms to the public! You might get arrested!]],
-
+-Income and Salary-
+   $100/10min
+   Any profits from sales
+  
+-Special Commands-
+   None
+   
+-Abilities-
+   Can sell weapons
+   Can sell ammunition
+  
+]],
     weapons = {},
     command = "gundealer",
-    max = 3,
-    salary = GAMEMODE.Config.normalsalary,
+    max = 2,
+    salary = 100,
     admin = 0,
     vote = false,
-    hasLicense = false,
-    category = "Citizens",
+    hasLicense = true,
+    category = "Vendors",
 })
 
 TEAM_MAYOR = DarkRP.createJob("Mayor", {
-    color = Color(150, 20, 20, 255),
+    color = Color(0, 255, 255, 255),
+   model = {
+        "models/humans/group10/male_08.mdl",
+        "models/humans/group10/male_03.mdl",
+        "models/humans/group10/female_02.mdl",
+        "models/humans/group10/female_07.mdl",
+    },
+    description = [[You are the elected official of the city. Being such an important person you may find yourself with a price on your head. Stay protected at all times, as you will lose your job upon death.
 
-    model = allHumanModels({
-        also = {
-        },
-        except = {
-        }
-    }),
-
-    description = [[The Mayor of the city creates laws to govern the city.
-    The computer in your office will allow you to manage the city, it's laws, and the police force.]],
-
+-Income and Salary-
+   $800/10min
+  
+-Special Commands-
+   /wanted <PLAYER> - Sets that player as Wanted (needed to arrest)
+   /warrant <PLAYER> - Requests a warrant to search player's property
+   /agenda - Sets shared police agenda
+   /addagenda - Adds line to shared police agenda
+   
+-Abilities-
+   Can edit laws
+   Can issue licenses
+   Can accept or veto warrants
+  
+]],
     weapons = {},
     command = "mayor",
     max = 1,
-    salary = GAMEMODE.Config.normalsalary * 2,
+    salary = 800,
     admin = 0,
     vote = true,
-    hasLicense = false,
+    hasLicense = true,
     mayor = true,
-    category = "Civil Protection",
+    category = "Government",
 })
 
 TEAM_HOBO = DarkRP.createJob("Hobo", {
-    color = Color(80, 45, 0, 255),
-    model = "models/player/corpse1.mdl",
-    description = [[You're homeless and out of a job.
-    Set up a makeshift home somewhere and try to make some money.]],
-    weapons = {"weapon_bugbait"},
+    color = Color(202,179,31,255),
+   model = {       
+        "models/player/corpse1.mdl",
+		"models/player/eli.mdl",
+        "models/jessev92/player/l4d/m9-hunter.mdl",
+	},
+    description = [[Hobos are the lowest members of society. You have no regular income and no safe housing, taking it day by day.
+
+-Income and Salary-
+   $0/10min
+  
+-Special Commands-
+   None
+   
+-Abilities-
+   Can sell garbage
+]],
+    weapons = {"weapon_angryhobo"},
     command = "hobo",
-    max = 0,
+    max = 5,
     salary = 0,
     admin = 0,
     vote = false,
     hasLicense = false,
     candemote = false,
     hobo = true,
-    category = "Citizens",
+    category = "Civilians",
 })
 
-TEAM_BLACKMARKET = DarkRP.createJob("Black Market Dealer", {
-    color = Color(150, 70, 0, 255),
+TEAM_BLACKMARKET = DarkRP.createJob("Black Market", {
+    color = Color(55, 55, 55, 255),
+    model = {       
+        "models/kayf/humans/group01/male_05.mdl",
+        "models/kayf/humans/group01/male_07.mdl",
+		"models/ms13/slow_1.mdl",
+        "models/ms13/slow_2.mdl",
+		"models/ms13/slow_3.mdl",
+		"models/Player/betaconscript.mdl",
+		"models/humans/group10/female_02.mdl",
+        "models/humans/group10/female_07.mdl",
+    },
+    description = [[Black Market dealers sell merchandise that is highly illegal. You'll no doubt make good money with the right people.
 
-    model = allHumanModels({
-        also = {
-        },
-        except = {
-        }
-    }),
-
-    description = [[Sell shady tools to the populace.
-    Watch out for cops, or try and buy them off.]],
+-Income and Salary-
+   $50/10min
+   Any profits from sales
+  
+-Special Commands-
+   None
+   
+-Abilities-
+   Can sell explosives
+   Can sell printers
+   Can sell assault weapons
+  
+]],
     weapons = {},
     command = "blackmarket",
-    max = 2,
-    salary = GAMEMODE.Config.normalsalary,
+    max = 1,
+    salary = 50,
     admin = 0,
     vote = false,
     hasLicense = false,
-    category = "Gangsters",
+    category = "Law-Breakers",
 })
 
 if not DarkRP.disabledDefaults["modules"]["hungermod"] then
@@ -442,25 +586,43 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
 end
 
 TEAM_DRUG = DarkRP.createJob("Drug Dealer", {
-    color = Color(175, 175, 0, 255),
+    color = Color(55, 55, 55, 255),
+    model = {
+        "models/kayf/humans/group01/male_01.mdl",
+        "models/kayf/humans/group01/male_02.mdl",
+        "models/kayf/humans/group01/male_05.mdl",
+        "models/kayf/humans/group01/male_07.mdl",
+		"models/dawson/obese_male_deluxe_edition/obese_male_gregory_01.mdl",
+		"models/ms13/slow_1.mdl",
+        "models/ms13/slow_2.mdl",
+		"models/ms13/slow_3.mdl",
+		"models/jessev92/player/l4d/m9-hunter.mdl",
+		"models/deepalley/alley_thug.mdl",
+        "models/kayf/humans/group01/female_03.mdl",
+        "models/kayf/humans/group02/female_02.mdl",
+		"models/kayf/humans/group02/female_06.mdl",
+    },
+    description = [[Drug dealers peddle the good stuff.
 
-    model = allHumanModels({
-        also = {
-        },
-        except = {
-        }
-    }),
-
-    description = [[As a skilled chemist, you supply drugs to the city's populace.]],
+-Income and Salary-
+   $50/10min
+   Any profits from sales
+  
+-Special Commands-
+   None
+   
+-Abilities-
+   Can sell drugs
+  
+]],
     weapons = {},
-    command = "drug",
-    max = 2,
-    salary = GAMEMODE.Config.normalsalary,
+    command = "drugdealer",
+    max = 4,
+    salary = 50,
     admin = 0,
     vote = false,
     hasLicense = false,
-    candemote = false,
-    category = "Gangsters",
+    category = "Law-Breakers",
 })
 
 TEAM_STAFF = DarkRP.createJob("Staff-On-Duty", {
