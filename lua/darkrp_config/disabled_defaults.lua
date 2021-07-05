@@ -81,7 +81,7 @@ Entities
 DarkRP.disabledDefaults["entities"] = {
     ["Drug lab"]      = true,
     ["Gun lab"]       = true,
-    ["Money printer"] = true,
+    ["Money printer"] = false,
     ["Microwave"]     = true, --Hungermod only
     ["Tip Jar"]       = false,
 }
@@ -154,7 +154,7 @@ Jobs that are hitmen
 set to true to disable
 ---------------------------------------------------------------------------]]
 DarkRP.disabledDefaults["hitmen"] = {
-    ["mobboss"] = true,
+    ["mobboss"] = false,
 }
 
 --[[---------------------------------------------------------------------------
