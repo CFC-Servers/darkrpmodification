@@ -4,7 +4,7 @@ Categories
 The categories of the default F4 menu.
 
 Please read this page for more information:
-http://wiki.darkrp.com/index.php/DarkRP:Categories
+https://darkrp.miraheze.org/wiki/DarkRP:Categories
 
 In case that page can't be reached, here's an example with explanation:
 
@@ -18,8 +18,8 @@ DarkRP.createCategory{
 }
 
 
-Add new categories under the next line!
----------------------------------------------------------------------------]]
+----------------V JOBS V-----------------------------------------------------------]]
+
 DarkRP.createCategory{
     name = "Civilians", --normal civilian jobs
     categorises = "jobs", 
@@ -37,7 +37,7 @@ DarkRP.createCategory{
     sortOrder = 112, 
 }
 DarkRP.createCategory{
-    name = "Law-Breakers", --jobs based on criminal activity
+    name = "Law-Breakers", --jobs for people who arent very nice
     categorises = "jobs", 
     startExpanded = true, 
     color = Color(200, 50, 50, 255), 
@@ -53,80 +53,61 @@ DarkRP.createCategory{
     sortOrder = 104, 
 }
 
-------------------------------------
+-------------V WEAPONS V----------
 
 DarkRP.createCategory{
-	name = "Pistols",
-	categorises = "shipments",
-	startExpanded = true,
-	color = Color(0, 107, 0, 255),
+    name = "Semi-Auto Handguns", 
+    categorises = "shipments", 
+    startExpanded = true, 
+    color = Color(84, 210, 0, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 100, 
 }
 DarkRP.createCategory{
-	name = "Machine Guns",
-	categorises = "shipments",
-	startExpanded = true,
-	color = Color(0, 107, 0, 255),
+    name = "Full-Auto Handguns", 
+    categorises = "shipments", 
+    startExpanded = true, 
+    color = Color(55, 25, 211, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 105, 
 }
 DarkRP.createCategory{
-	name = "Sub-Machine Guns",
-	categorises = "shipments",
-	startExpanded = true,
-	color = Color(0, 107, 0, 255),
+    name = "Shotguns", 
+    categorises = "shipments", 
+    startExpanded = true, 
+    color = Color(255, 123, 0, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 110, 
 }
 DarkRP.createCategory{
-	name = "Sniper Rifles",
-	categorises = "shipments",
-	startExpanded = true,
-	color = Color(0, 107, 0, 255),
+    name = "Rifles", 
+    categorises = "shipments", 
+    startExpanded = true, 
+    color = Color(211, 0, 0, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 115, 
 }
 DarkRP.createCategory{
-	name = "Revolvers",
-	categorises = "shipments",
-	startExpanded = true,
-	color = Color(0, 107, 0, 255),
+    name = "Illegal Guns", 
+    categorises = "shipments", 
+    startExpanded = true, 
+    color = Color(55, 55, 55, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 125, 
 }
-
 DarkRP.createCategory{
-    name = "Printers",
-    categorises = "entities",
-    startExpanded = true,
-    color = Color(0, 107, 0, 255),
-	 canSee = fp{fn.Id, true},
-	 sortOrder = 99,
+    name = "Thrown", 
+    categorises = "shipments", 
+    startExpanded = true, 
+    color = Color(255,106,232, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 120, 
 }
-
 DarkRP.createCategory{
-    name = "Restraints",
-    categorises = "shipments",
-    startExpanded = true,
-    color = Color(150, 70, 0, 255),
-	 canSee = fp{fn.Id, true},
-	 sortOrder = 98,
-}
-
-DarkRP.createCategory{
-    name = "Other",
-    categorises = "jobs",
-    startExpanded = true,
-    color = Color(10, 10, 10, 255),
-	 canSee = fp{fn.Id, true},
-	 sortOrder = 101,
-}
-
-DarkRP.createCategory{
-    name = "Attachments",
-    categorises = "entities",
-    startExpanded = true,
-    color = Color(255, 140, 0, 255),
-	 canSee = fp{fn.Id, true},
-	 sortOrder = 100,
-}
-
-DarkRP.createCategory{
-    name = "Ammo",
-    categorises = "entities",
-	startExpanded = true,
-    color = Color(255, 140, 0, 255),
-	canSee = fp{fn.Id, true},
-	 sortOrder = 98,
+    name = "Fun", 
+    categorises = "shipments", 
+    startExpanded = true, 
+    color = Color(131,0,255, 255), 
+    canSee = function(ply) return true end, 
+    sortOrder = 125, 
 }
