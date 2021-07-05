@@ -9,167 +9,288 @@ Note: If you want to edit a default DarkRP entity, first disable it in darkrp_co
     Once you've done that, copy and paste the entity to this file and edit it.
 
 The default entities can be found here:
-https://github.com/FPtje/DarkRP/blob/master/gamemode/config/addentities.lua#L111
+https://github.com/FPtje/DarkRP/blob/master/gamemode/config/addentities.lua
 
 For examples and explanation please visit this wiki page:
-http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
+https://darkrp.miraheze.org/wiki/DarkRP:CustomEntityFields
 
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
-DarkRP.createEntity("Money Printer", {
-    ent = "money_printer",
-    model = "models/props_c17/consolebox01a.mdl",
-    price = 1000,
-    max = 2,
-    cmd = "buymoneyprinter",
+
+
+
+
+-----------VV WEAPONS VV--------------------------------------------]]
+DarkRP.createShipment("G17", {  
+    model = "models/weapons/nen/glock 17/w_pist_glock17.mdl",
+    entity = "cw_nen_glock17",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Semi-Auto Handguns",
+})
+DarkRP.createShipment("XR9", {  
+    model = "models/weapons/bobs_burgers/w_pist_boberg.mdl",
+    entity = "cw_boberg",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Semi-Auto Handguns",
+})
+DarkRP.createShipment("AMP", {  
+    model = "models/weapons/automag/w_pist_auto.mdl",
+    entity = "cw_automag",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Semi-Auto Handguns",
 })
 
-DarkRP.createEntity("Dazzle Dust", {
-    ent = "drug_dazzle",
-    model = "models/props_c17/consolebox01a.mdl",
+DarkRP.createShipment("G18", {  
+    model = "models/cw2_g18/w_dmg_glock.mdl",
+    entity = "cw_g18",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Full-Auto Handguns",
+})
+DarkRP.createShipment("MAC11", {  
+    model = "models/weapons/w_cst_mac11.mdl",
+    entity = "cw_mac11",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Full-Auto Handguns",
+})
+
+DarkRP.createShipment("Serbu", {  
+    model = "models/weapons/cw2_super_shorty.mdl",
+    entity = "cw_shorty",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Shotguns",
+})
+DarkRP.createShipment("M3", {  
+    model = "models/weapons/w_cstm_m3super90.mdl",
+    entity = "cw_m3super90",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Shotguns",
+})
+
+DarkRP.createShipment("SV98", {  
+    model = "models/weapons/w_snip_scout.mdl",
+    entity = "cw_sv98",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Rifles",
+})
+DarkRP.createShipment("AR15", {  
+    model = "models/weapons/w_rif_m4a1.mdl",
+    entity = "cw_ar15",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Rifles",
+})
+
+DarkRP.createShipment("Flashbang", {  
+    model = "models/weapons/w_eq_flashbang.mdl",
+    entity = "cw_flash_grenade",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_GUN},
+	category = "Thrown",
+})
+DarkRP.createShipment("Molotov", {  
+    model = "models/props_junk/garbage_glassbottle003a.mdl",
+    entity = "weapon_nmrih_molotov",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_BLACKMARKET},
+	category = "Thrown",
+})
+DarkRP.createShipment("IED", {  
+    model = "models/props_junk/cardboard_box004a.mdl",
+    entity = "weapon_ied",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_BLACKMARKET},
+	category = "Thrown",
+})
+
+DarkRP.createShipment("Saiga12", {  
+    model = "models/weapons/w_rif_galil.mdl",
+    entity = "cw_saiga12k_official",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_BLACKMARKET},
+	category = "Illegal Guns",
+})
+DarkRP.createShipment("AK12", {  
+    model = "models/cw2/rifles/w_cw2_ak12.mdl",
+    entity = "cw_ak12_tactical",
+    price = 5600,
+    amount = 5,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_BLACKMARKET},
+	category = "Illegal Guns",
+})
+
+DarkRP.createShipment("Garbage", {  
+    model = "models/props_junk/Shoe001a.mdl",
+    entity = "weapon_angryhobo",
+    price = 300,
+    amount = 2,
+    separate = false,
+    pricesep = 800,
+    noship = false,
+    allowed = {TEAM_HOBO},
+	category = "Fun",
+})
+
+--------------VV DRUGS VV-------------------------------------------------------------]]
+
+DarkRP.createEntity("Aspirine", {
+    ent = "durgz_aspirin",
+    model = "models/w_models/weapons/w_eq_painpills.mdl",
     price = 225,
     max = 10,
-    cmd = "buydazzledust",
-	allowed = {TEAM_DRUG},
+    cmd = "buyaspirine",
+	allowed = {TEAM_DRUG,TEAM_MEDIC},
 })
-
-DarkRP.createEntity("Violet Slug", {
-    ent = "drug_slug",
-    model = "models/props_c17/consolebox01a.mdl",
-    price = 180,
+DarkRP.createEntity("Weed", {
+    ent = "durgz_weed",
+    model = "models/katharsmodels/contraband/jointjes/jointjes.mdl",
+    price = 225,
     max = 10,
-    cmd = "buyvioletslug",
+    cmd = "buyweed",
+	allowed = {TEAM_DRUG},
+})
+DarkRP.createEntity("Speed", {
+    ent = "durgz_meth",
+    model = "models/katharsmodels/contraband/metasync/blue_sky.mdl",
+    price = 225,
+    max = 10,
+    cmd = "buymeth",
+	allowed = {TEAM_DRUG},
+})
+DarkRP.createEntity("Shrooms", {
+    ent = "durgz_mushroom",
+    model = "models/katharsmodels/contraband/zak_wiet/zak_wiet.mdl",
+    price = 225,
+    max = 10,
+    cmd = "buyshrooms",
+	allowed = {TEAM_DRUG},
+})
+DarkRP.createEntity("Acid", {
+    ent = "durgz_lsd",
+    model = "models/jaanus/aspirin.mdl",
+    price = 225,
+    max = 10,
+    cmd = "buyacid",
+	allowed = {TEAM_DRUG},
+})
+DarkRP.createEntity("Coke", {
+    ent = "durgz_cocaine",
+    model = "models/srcocainelab/cocainebrick.mdl",
+    price = 225,
+    max = 10,
+    cmd = "buycoke",
+	allowed = {TEAM_DRUG},
+})
+DarkRP.createEntity("Morphine", {
+    ent = "darky_syringe",
+    model = "models/katharsmodels/syringe_out/syringe_out.mdl",
+    price = 225,
+    max = 10,
+    cmd = "buymorphine",
 	allowed = {TEAM_DRUG},
 })
 
-DarkRP.createEntity("Close Range Sights", {
-	ent = "cw_attpack_sights_cqb",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 450,
-	max = 3,
-	cmd = "buyclosesights",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
-})
+--------------VV MISC VV-------------------------------------------------------------]]
 
-DarkRP.createEntity("Mid-Range Sights", {
-	ent = "cw_attpack_sights_midrange",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 500,
-	max = 3,
-	cmd = "buymidsights",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
-})
 
-DarkRP.createEntity("Long-Range Sights", {
-	ent = "cw_attpack_sights_longrange",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 550,
-	max = 3,
-	cmd = "buylongsights",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
-})
 
-DarkRP.createEntity("Sniper Sights", {
-	ent = "cw_attpack_sights_sniper",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 600,
-	max = 3,
-	cmd = "buysnipersights",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
-})
 
-DarkRP.createEntity("Suppressors", {
-	ent = "cw_attpack_suppressors",
-	model = "models/Items/BoxSRounds.mdl",
-	price = 400,
-	max = 3,
-	cmd = "buysuppressors",
-	allowed = {TEAM_GUN},
-	category = "Attachments",
-})
+if not DarkRP.disabledDefaults["modules"]["hungermod"] then
+    DarkRP.createEntity("Microwave", {
+        ent = "microwave",
+        model = "models/props_c17/tv_monitor01.mdl",
+        price = 400,
+        max = 4,
+        cmd = "buyoven2",
+        allowed = TEAM_COOK
+    })
+end
+DarkRP.createCategory{
+    name = "Other",
+    categorises = "entities",
+    startExpanded = true,
+    color = Color(0, 107, 0, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 255,
+}
 
-DarkRP.createEntity("9x19mm Ammo", {
-	ent = "cw_ammo_9x19",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 72,
-	max = 3,
-	cmd = "buy9x19",
-	category = "Ammo",
-})
+DarkRP.createCategory{
+    name = "Other",
+    categorises = "shipments",
+    startExpanded = true,
+    color = Color(0, 107, 0, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 255,
+}
 
-DarkRP.createEntity("9x17mm Ammo", {
-	ent = "cw_ammo_9x17",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 75,
-	max = 3,
-	cmd = "buy9x17",
-	category = "Ammo",
-})
-
-DarkRP.createEntity("45 .ACP Ammo", {
-	ent = "cw_ammo_45acp",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 85,
-	max = 3,
-	cmd = "buy45acp",
-	category = "Ammo",
-})
-
-DarkRP.createEntity("5.45x39mm Ammo", {
-	ent = "cw_ammo_545x39",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 180,
-	max = 3,
-	cmd = "buy545x39",
-	category = "Ammo",
-})
-
-DarkRP.createEntity("5.56x45mm Ammo", {
-	ent = "cw_ammo_556x45",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 200,
-	max = 3,
-	cmd = "buy556x45",
-	category = "Ammo",
-})
-
-DarkRP.createEntity("7.62x51mm Ammo", {
-	ent = "cw_ammo_762x51",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 210,
-	max = 3,
-	cmd = "buy762x51",
-	category = "Ammo",
-})
-
-DarkRP.createEntity(".44 Magnum Ammo", {
-	ent = "cw_ammo_44magnum",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 50,
-	max = 3,
-	cmd = "buy44magnum",
-	category = "Ammo",
-})
-
-DarkRP.createEntity("12 Guage Ammo", {
-	ent = "cw_ammo_12gauge",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 80,
-	max = 3,
-	cmd = "buy12guage",
-	category = "Ammo",
-})
-
-DarkRP.createEntity(".50 AE Ammo", {
-	ent = "cw_ammo_50ae",
-	model = "models/Items/BoxMRounds.mdl",
-	price = 84,
-	max = 3,
-	cmd = "buy50ae",
-	category = "Ammo",
-})
+DarkRP.createCategory{
+    name = "Other",
+    categorises = "vehicles",
+    startExpanded = true,
+    color = Color(0, 107, 0, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 255,
+}
